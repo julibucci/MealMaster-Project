@@ -1,0 +1,24 @@
+<div *ngIf="formUser">
+  <h2>{{ isEditMode ? 'Edit Profile' : 'Create Profile' }}</h2>
+  <form [formGroup]="formUser" (ngSubmit)="saveUserProfile()">
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name" required />
+
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" type="email" required />
+
+    <label for="bio">Biography:</label>
+    <textarea id="bio" formControlName="bio"></textarea>
+
+    <label for="profileImage">Profile Image URL:</label>
+    <input id="profileImage" formControlName="profileImage" type="text" />
+
+    <!-- Change button text based on mode -->
+    <button type="submit" class="btn btn-primary btn-block mt-3">
+      {{ isEditMode ? 'Update Profile' : 'Create Profile' }}
+    </button>
+    
+    <!-- Show the delete button only in edit mode -->
+    <button *ngIf="isEditMode" type="button" class="btn btn-danger btn-block mt-2" (click)="deleteUserProfile()">Delete Profile</button>
+  </form>
+</div>
