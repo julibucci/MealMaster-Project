@@ -1,37 +1,39 @@
+// src/app/services/user.service.ts
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { User } from '../interfaces/user.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class UserService {
   private apiUrl = 'http://localhost:3000/users';
 
-  constructor(private http: HttpClient) {}  
 
-  // Crear perfil de usuario (Alta)
-  createUser(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, user);
+  constructor(private http: HttpClient) {}
+
+  getUserProfile(): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/1`).pipe( 
+      catchError(this.handleError)
+    );
   }
 
-  // Obtener perfil de usuario
-  getUser(): Observable<User> {
-    return this.http.get<User>(this.apiUrl);
+  updateUserProfile(user: User): Observable<User> {
+    return this.http.put<User>(`${this.apiUrl}/${user.id}`, user).pipe(
+      catchError(this.handleError)
+    );
   }
 
-  // Actualizar perfil de usuario (Modificación)
-updateUser(user: User): Observable<User> {
-  return this.http.put<User>(`${this.apiUrl}/${user.id}`, user); 
+  deleteUserProfile(userId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${userId}`).pipe(
+      catchError(this.handleError)
+    );
+  }
+
+  private handleError(error: HttpErrorResponse): Observable<never> {
+    console.error('Error en la solicitud:', error);
+    return throwError('Hubo un problema con la solicitud. Inténtalo de nuevo más tarde.');
+  }
 }
-
-
-  // Eliminar perfil de usuario (Baja)
-  deleteUser(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`); 
-  }
-}
-
-

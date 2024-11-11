@@ -1,0 +1,22 @@
+/* Estilo para la barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: center; /* Centra los elementos */
+    gap: 1.5rem; /* Espaciado entre enlaces */
+    background-color: #333333; /* Color de fondo gris oscuro */
+    padding: 1rem; /* Espaciado interno */
+    font-size: 1.1rem;
+  }
+  
+  /* Estilo para los enlaces */
+  .navbar a {
+    color: #ff8c00; /* Color del texto en naranja */
+    text-decoration: none; /* Elimina el subrayado */
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #ffa726; /* Naranja claro al pasar el cursor */
+  }
+  

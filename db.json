@@ -1,3 +1,18 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "profileImage": "https://example.com/image.jpg",
+      "bio": "A short bio",
+      "password": "123"
+    },
+    {
+      "id": "08ec",
+      "name": "luis",
+      "email": "luis@gmail.com",
+      "password": "147"
+    }
+  ]
 }

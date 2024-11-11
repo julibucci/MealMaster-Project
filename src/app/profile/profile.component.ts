@@ -1,101 +1,62 @@
-import { Component, OnInit, Injector } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { User } from '../interfaces/user.interface';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
+import { User } from '../interfaces/user.interface';
+import { FormsModule } from '@angular/forms'; // Importar FormsModule
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
+  imports: [FormsModule, CommonModule], // Agregar FormsModule aquí
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css'],
-  imports: [ReactiveFormsModule, CommonModule],
+  styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  formUser: FormGroup;
   user: User | null = null;
-  isEditMode: boolean = false;
-  private userService: UserService;
+  errorMessage: string | null = null;
 
-  constructor(private fb: FormBuilder, private injector: Injector) {
-    this.userService = this.injector.get(UserService); // Inyección indirecta
-    this.formUser = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      bio: [''],
-      profileImage: ['']
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    this.loadUserProfile();
+  }
+
+  loadUserProfile(): void {
+    this.userService.getUserProfile().subscribe({
+      next: (userData) => (this.user = userData),
+      error: (error) =>
+        (this.errorMessage = 'Failed to load profile. Please try again later.'),
     });
   }
 
-  ngOnInit(): void {
-    this.getUserProfile();
-  }
-
-  // profile.component.ts
-getUserProfile(): void {
-  this.userService.getUser().subscribe(
-    (data) => {
-      if (data && data.id) { // Verifica si el usuario tiene un `id`
-        this.user = data;
-        this.formUser.patchValue(data);
-        this.isEditMode = true; // Cambia a modo edición si el perfil ya existe
-      } else {
-        this.user = null;
-        this.formUser.reset();
-        this.isEditMode = false; // Cambia a modo creación si no hay perfil
-      }
-    },
-    (error) => {
-      console.error('Error al obtener el perfil del usuario', error);
-      this.user = null;
-      this.formUser.reset();
-      this.isEditMode = false; // Cambia a modo creación en caso de error
-    }
-  );
-}
-
-
-  // profile.component.ts
-saveUserProfile(): void {
-  if (this.formUser.valid) {
-    const userData = { ...this.user, ...this.formUser.value };
-
-    if (this.isEditMode && userData.id) {
-      // Modo edición: actualizar perfil existente
-      this.userService.updateUser(userData).subscribe(
-        (updatedUser) => {
-          this.user = updatedUser;
-          console.log('Profile updated successfully');
-        },
-        (error) => console.error('Error updating profile', error)
-      );
-    } else {
-      // Modo creación: crear nuevo perfil
-      this.userService.createUser(this.formUser.value).subscribe(
-        (createdUser) => {
-          this.user = createdUser;
-          this.isEditMode = true; // Cambia a modo edición después de crear
-          console.log('Profile created successfully');
-        },
-        (error) => console.error('Error creating profile', error)
-      );
+  saveProfile(): void {
+    if (this.user) {
+      this.userService.updateUserProfile(this.user).subscribe({
+        next: () => alert('Profile updated successfully'),
+        error: () =>
+          (this.errorMessage =
+            'Failed to update profile. Please try again later.'),
+      });
     }
   }
-}
 
-
-  deleteUserProfile(): void {
-    if (this.user && confirm('¿Estás seguro de que quieres eliminar tu perfil?')) {
-      this.userService.deleteUser(this.user.id).subscribe(
-        () => {
-          console.log('Perfil eliminado exitosamente');
+  deleteProfile(): void {
+    if (
+      this.user &&
+      confirm(
+        'Are you sure you want to delete your profile? This action cannot be undone.'
+      )
+    ) {
+      this.userService.deleteUserProfile(this.user.id).subscribe({
+        next: () => {
+          alert('Profile deleted successfully');
           this.user = null;
-          this.formUser.reset();
-          this.isEditMode = false;
         },
-        (error) => console.error('Error al eliminar el perfil', error)
-      );
+        error: () =>
+          (this.errorMessage =
+            'Failed to delete profile. Please try again later.'),
+      });
     }
   }
 }
+
