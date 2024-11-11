@@ -1,23 +1,34 @@
-import { Component } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth-service.service';
 
 @Component({
   selector: 'app-plan-premium',
   standalone: true,
-  imports: [RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './plan-premium.component.html',
-  styleUrl: './plan-premium.component.css'
+  styleUrls: ['./plan-premium.component.css']
 })
-export class PlanPremiumComponent {
+export class PlanPremiumComponent implements OnInit {
+  showWelcomeMessage = true;
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private authService: AuthService
+  ) {}
+
+  ngOnInit(): void {
+    // Detecta cambios en la ruta para ocultar el mensaje en rutas hijas
+    this.router.events.subscribe(() => {
+      this.showWelcomeMessage = this.route.snapshot.children.length === 0;
+    });
+  }
 
   logout(): void {
-    // Llamamos al servicio de autenticación para limpiar el estado del usuario
     this.authService.logout();
-    
-    // Redirigimos al usuario a la pagina de login
     this.router.navigate(['/login']);
-  }}
+  }
+}
 

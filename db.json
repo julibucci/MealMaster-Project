@@ -10,18 +10,13 @@
       "userPlan": "premium"
     },
     {
-      "id": "08ec",
-      "name": "Luis",
-      "email": "luis@gmail.com",
-      "password": "147",
+      "id": "2",
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "profileImage": "https://example.com/image2.jpg",
+      "bio": "I'm an aspiring home cook",
+      "password": "456",
       "userPlan": "basic"
-    },
-    {
-      "id": "9478",
-      "name": "Ana",
-      "email": "ana@example.com",
-      "password": "321",
-      "userPlan": "premium"
     }
   ]
 }
