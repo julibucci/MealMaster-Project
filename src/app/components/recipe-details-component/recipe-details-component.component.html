@@ -1,0 +1,16 @@
+<div *ngIf="recipeDetails">
+  <h2>{{ recipeDetails.strMeal }}</h2>
+  <img [src]="recipeDetails.strMealThumb" alt="{{ recipeDetails.strMeal }}" width="300">
+  <p><strong>Category:</strong> {{ recipeDetails.strCategory }}</p>
+  <p><strong>Area:</strong> {{ recipeDetails.strArea }}</p>
+  <p><strong>Instructions:</strong></p>
+  <p>{{ recipeDetails.strInstructions }}</p>
+
+  <!-- Ingredientes -->
+  <h3>Ingredients:</h3>
+  <ul>
+    <li *ngFor="let ingredient of getIngredients()">
+      {{ ingredient }}
+    </li>
+  </ul>
+</div>

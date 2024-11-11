@@ -1,0 +1,112 @@
+/* Fondo general y espaciado */
+body {
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Encabezado */
+h2 {
+  color: #FF7043; /* Naranja oscuro */
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilo para el selector de categoría */
+select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #FF7043;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+select:hover {
+  border-color: #FF5722; /* Naranja más intenso */
+}
+
+/* Estilo de los favoritos */
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+li {
+  background-color: #FFEBEE; /* Fondo muy suave para cada favorito */
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de las imágenes de los favoritos */
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Títulos y texto */
+p {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+button {
+  margin: 5px; /* Espacio alrededor de los botones */
+  padding: 10px 20px; /* Relleno para que los botones sean más grandes y visibles */
+  font-size: 14px; /* Tamaño de fuente para que el texto sea legible */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  border: none; /* Elimina el borde predeterminado */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave cuando se pasa el ratón */
+}
+
+button:hover {
+  background-color: #007bff; /* Cambia el color de fondo cuando se pasa el ratón */
+  color: white; /* Cambia el color del texto a blanco */
+}
+
+button:focus {
+  outline: none; /* Elimina el contorno del foco cuando se hace clic en el botón */
+}
+
+button:hover {
+  background-color: #FF5722;
+}
+
+/* Mensaje de no favoritos */
+ng-template {
+  color: #FF7043;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

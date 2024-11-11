@@ -1,0 +1,77 @@
+import { Component, inject, Input, OnInit } from '@angular/core';
+import { Favorite } from '../../models/favorite';
+import { CommonModule } from '@angular/common';
+import { MealService } from '../../services/meal.service';
+import { FavoriteService } from '../../services/favorite.service';
+import { FormsModule } from '@angular/forms';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'; // Importar HttpClient
+import { Observable } from 'rxjs'; // Importar Observable
+import { Router } from '@angular/router';
+
+
+@Component({
+  selector: 'app-favorites',
+  standalone: true,
+  imports: [CommonModule,FormsModule],
+  templateUrl: './favorites.component.html',
+  styleUrls: ['./favorites.component.css']
+})
+
+export class FavoritesComponent implements OnInit {
+  favorites: any[] = [];
+  filteredFavorites: any[] = [];
+  categories: string[] = [];
+  selectedCategory: string = '';  // Categoría seleccionada
+
+  constructor(
+    private favoriteService: FavoriteService,
+    private mealService: MealService
+  ) {}
+
+  private router = inject(Router);
+
+  ngOnInit(): void {
+    // Obtener categorías de la API
+    this.mealService.getCategories().subscribe(categories => {
+      this.categories = categories.map(cat => cat.strCategory);
+    });
+
+    // Obtener favoritos del servicio
+    this.favoriteService.getFavorites().subscribe(favorites => {
+      this.favorites = favorites;
+      this.filteredFavorites = favorites;  // Mostrar todos al inicio
+    });
+  }
+
+  // Filtrar favoritos basados en la categoría seleccionada
+  filterFavorites(): void {
+    console.log("Categoría seleccionada:", this.selectedCategory);
+    console.log("Favoritos antes del filtrado:", this.favorites);
+
+    // Verifica si la categoría está vacía para mostrar todos los favoritos
+    if (this.selectedCategory === '') {
+      this.filteredFavorites = this.favorites;
+    } else {
+      // Cambié "strCategory" por "category" porque esa es la propiedad en tu JSON
+      this.filteredFavorites = this.favorites.filter(
+        fav => fav.category === this.selectedCategory
+      );
+    }
+
+    console.log("Recetas filtradas:", this.filteredFavorites);
+  }
+
+  // Eliminar un favorito
+  removeFavorite(id: string): void {
+    this.favoriteService.removeFavorite(id).subscribe(() => {
+      this.favorites = this.favorites.filter(fav => fav.idMeal !== id);
+      this.filterFavorites();  // Refiltrar después de eliminar
+    });
+  }
+
+  // Navegar a la página de detalles de la receta
+  viewRecipeDetails(id: string): void {
+    this.router.navigate(['/recipe-details', id]); // Redirige a la ruta de detalles
+  }
+}
