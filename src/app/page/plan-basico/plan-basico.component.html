@@ -1,12 +1,19 @@
 <div class="navbar">
-    <a routerLink="/profile">Profile</a>
-    <a routerLink="/recipes">Recipes</a>
-    <a routerLink="/comments">Recipe Comments</a>
+  <a routerLink="profile">Perfil</a>
+  <a routerLink="recipes">Recetas</a>
+  <a routerLink="comments">Comentarios</a>
+  <button (click)="logout()">Cerrar sesión</button>
+</div>
+
+<div class="content">
+  <router-outlet></router-outlet> 
+
+  <div *ngIf="showWelcomeMessage">
+    <h1>Bienvenido al Plan Básico</h1>
+    <p>Explora recetas y lee comentarios.</p>
   </div>
+</div>
+
   
-  <div class="content">
-    <h1>Welcome to the Basic Plan</h1>
-    <p>Explore recipes and access your comments and profile.</p>
-  </div>
   
   

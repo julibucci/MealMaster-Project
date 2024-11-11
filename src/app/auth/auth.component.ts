@@ -44,8 +44,14 @@ export class AuthComponent {
       this.authService.login(credentials).subscribe({
         next: (response) => {
           console.log('Logged in', response);
-          // Redirigimos al Plan Básico después del login
-          this.router.navigate(['/plan-basico']);
+          const userPlan = response.user.userPlan;  // Obtenemos el plan del usuario
+
+          // Redirige segun el plan del usuario
+          if (userPlan === 'premium') {
+            this.router.navigate(['/plan-premium']);
+          } else {
+            this.router.navigate(['/plan-basico']);
+          }
         },
         error: (error) => {
           console.error('Login error:', error);
@@ -57,8 +63,14 @@ export class AuthComponent {
       this.authService.register(userData).subscribe({
         next: (response) => {
           console.log('Registered', response);
-          // Redirigimos al Plan Básico después del registro
-          this.router.navigate(['/plan-basico']);
+          const userPlan = response.user.userPlan;  // Obtenemos el plan del usuario
+
+          
+          if (userPlan === 'premium') {
+            this.router.navigate(['/plan-premium']);
+          } else {
+            this.router.navigate(['/plan-basico']);
+          }
         },
         error: (error) => {
           console.error('Registration error:', error);
@@ -72,4 +84,5 @@ export class AuthComponent {
     this.isLoginMode = !this.isLoginMode;
   }
 }
+
 

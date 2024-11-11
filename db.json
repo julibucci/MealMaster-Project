@@ -1,18 +1,27 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "John Doe",
       "email": "john.doe@example.com",
       "profileImage": "https://example.com/image.jpg",
-      "bio": "A short bio",
-      "password": "123"
+      "bio": "I'm a professional chef",
+      "password": "123",
+      "userPlan": "premium"
     },
     {
       "id": "08ec",
-      "name": "luis",
+      "name": "Luis",
       "email": "luis@gmail.com",
-      "password": "147"
+      "password": "147",
+      "userPlan": "basic"
+    },
+    {
+      "id": "9478",
+      "name": "Ana",
+      "email": "ana@example.com",
+      "password": "321",
+      "userPlan": "premium"
     }
   ]
 }

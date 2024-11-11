@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../interfaces/user.interface';
-import { FormsModule } from '@angular/forms'; // Importar FormsModule
+import { FormsModule } from '@angular/forms'; 
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [FormsModule, CommonModule], // Agregar FormsModule aquí
+  imports: [FormsModule, CommonModule], 
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })

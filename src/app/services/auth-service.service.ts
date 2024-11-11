@@ -44,6 +44,14 @@ export class AuthService {
       catchError((error) => throwError(() => new Error(error.message || 'Registration failed')))
     );
   }
+
+  logout(): void {
+    
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('userPlan');
+    
+  }
+
 }
 
 

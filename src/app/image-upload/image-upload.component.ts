@@ -34,7 +34,7 @@ export class ImageUploadComponent {
       this.http.post('/api/upload-recipe-image', formData).subscribe({
         next: (response) => {
           console.log('Imagen subida exitosamente:', response);
-          // Puedes actualizar la URL o mostrar un mensaje de éxito
+          
         },
         error: (error) => {
           console.error('Error al subir la imagen:', error);
