@@ -76,6 +76,6 @@ export class FavoritesComponent implements OnInit {
 
   // Navegar a la página de detalles de la receta
   viewRecipeDetails(id: string): void {
-    this.router.navigate(['/recipe-details', id]); // Redirige a la ruta de detalles
+    this.router.navigate(['/plan-premium/recipe-details', id]); // Redirige a la ruta de detalles
   }
 }

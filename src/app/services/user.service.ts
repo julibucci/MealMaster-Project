@@ -15,7 +15,7 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   getUserProfile(): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/1`).pipe( 
+    return this.http.get<User>(`${this.apiUrl}/1`).pipe(
       catchError(this.handleError)
     );
   }

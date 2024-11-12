@@ -9,7 +9,7 @@ import { catchError, Observable, of, tap } from 'rxjs';
 })
 
 export class FavoriteService {
-  private apiUrl = 'http://localhost:3000/favorites';  // URL del servidor donde están los favoritos
+  private apiUrl = 'http://localhost:5000/favorites';  // URL del servidor donde están los favoritos
 
 
   private http = inject(HttpClient);
