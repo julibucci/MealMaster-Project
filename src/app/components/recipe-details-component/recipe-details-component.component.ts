@@ -5,11 +5,13 @@ import { CommonModule } from '@angular/common';
 import { FavoriteService } from '../../services/favorite.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommentService } from '../../services/comment-service.service';
+import { UserService } from '../../services/user.service';
+import { CommentComponent } from '../comment/comment.component';
 
 @Component({
   selector: 'app-recipe-details-component',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule,CommentComponent],
   templateUrl: './recipe-details-component.component.html',
   styleUrl: './recipe-details-component.component.css'
 })
@@ -20,7 +22,8 @@ export class RecipeDetailsComponent implements OnInit {
   isFavorite: boolean = false;
   comments: any[] = [];
   commentForm: FormGroup;
-  userId: number = 1;
+  userId: number = 0;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -28,7 +31,8 @@ export class RecipeDetailsComponent implements OnInit {
     private mealService: MealService,
     private favoriteService: FavoriteService,
     private commentService: CommentService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private userService: UserService,
   ) {
     // Inicializar commentForm en el constructor
     this.commentForm = this.fb.group({
@@ -37,11 +41,13 @@ export class RecipeDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // Obtener el userId del usuario actual
+    this.userId = this.userService.getCurrentUserId() || 0;
     // Obtener el ID de la receta de los parámetros de la ruta
     this.recipeId = this.route.snapshot.paramMap.get('id') || '';
-
     // Llamar al servicio para obtener los detalles de la receta
     this.getRecipeDetails(this.recipeId);
+    this.getComments(this.recipeId);
   }
 
   getRecipeDetails(id: string): void {
@@ -77,7 +83,7 @@ export class RecipeDetailsComponent implements OnInit {
   // Agregar receta a favoritos
   addToFavorites(): void {
     const favorite = {
-      userId: 1,  // Asumiendo que el usuario es el 1
+      userId: this.userId,
       idMeal: this.recipeDetails.idMeal,
       strMeal: this.recipeDetails.strMeal,
       strMealThumb: this.recipeDetails.strMealThumb,
@@ -104,7 +110,7 @@ export class RecipeDetailsComponent implements OnInit {
     }
 
     const newComment = {
-      userId: 1,  // Asumiendo que el usuario es el 1
+      userId: this.userId,
       idMeal: this.recipeDetails.idMeal,
       comment: this.commentForm.value.comment,
       date: new Date().toISOString()  // Fecha y hora actuales
@@ -121,17 +127,5 @@ export class RecipeDetailsComponent implements OnInit {
     this.commentService.getCommentsByRecipe(id).subscribe(comments => {
       this.comments = comments;
     });
-  }
-
-  // Eliminar comentario
-  deleteComment(commentId: string): void {
-    this.commentService.deleteComment(commentId).subscribe(() => {
-      this.comments = this.comments.filter(comment => comment.id !== commentId);  // Eliminar el comentario de la lista
-    });
-  }
-
-  // Verificar si el comentario pertenece al usuario actual
-  canDeleteComment(comment: any): boolean {
-    return comment.userId === this.userId;
   }
 }

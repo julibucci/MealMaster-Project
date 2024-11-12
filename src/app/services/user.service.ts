@@ -13,7 +13,13 @@ export class UserService {
   private currentUserId: number | null = null;
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.loadCurrentUser();
+  }
+
+  private loadCurrentUser(): void {
+    this.getUserProfile().subscribe(); // Actualiza el `currentUserId` internamente
+  }
 
   getUserProfile(): Observable<User> {
     return this.http.get<User>(`${this.apiUrl}/1`).pipe(
