@@ -4,6 +4,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
+  { path: '', redirectTo: '/favorites', pathMatch: 'full' },
   { path: 'favorites', component: FavoritesComponent },
   { path: 'recipe-details/:id', component: RecipeDetailsComponent }
 ];

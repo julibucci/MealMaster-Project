@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MealService } from '../../services/meal.service';
 import { CommonModule } from '@angular/common';
 
@@ -10,11 +10,12 @@ import { CommonModule } from '@angular/common';
   templateUrl: './recipe-details-component.component.html',
   styleUrl: './recipe-details-component.component.css'
 })
+
 export class RecipeDetailsComponent implements OnInit {
   recipeId: string = '';
   recipeDetails: any = {};
 
-  constructor(private route: ActivatedRoute, private mealService: MealService) { }
+  constructor(private route: ActivatedRoute, private mealService: MealService, private router: Router) { }
 
   ngOnInit(): void {
     // Obtener el ID de la receta de los parámetros de la ruta
@@ -40,5 +41,9 @@ export class RecipeDetailsComponent implements OnInit {
       }
     }
     return ingredients;
+  }
+
+  goBack(): void {
+    this.router.navigate(['/favorites']); // Redirige a la ruta de favoritos
   }
 }

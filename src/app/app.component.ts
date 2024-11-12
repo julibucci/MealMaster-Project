@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';    // Importar FormsModule
 import { HttpClientModule } from '@angular/common/http';  // Importar HttpClientModule para peticiones HTTP
 import { routes } from './app.routes';  // Importar las rutas definidas
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { RecipeDetailsComponent } from './components/recipe-details-component/recipe-details-component.component';
+
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
     FormsModule,
     HttpClientModule,
     RouterOutlet,
-    FavoritesComponent
+    FavoritesComponent,RecipeDetailsComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

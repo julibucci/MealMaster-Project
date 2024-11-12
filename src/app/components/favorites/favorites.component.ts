@@ -26,10 +26,9 @@ export class FavoritesComponent implements OnInit {
 
   constructor(
     private favoriteService: FavoriteService,
-    private mealService: MealService
+    private mealService: MealService,
+    private router: Router  // Inyectamos Router aquí
   ) {}
-
-  private router = inject(Router);
 
   ngOnInit(): void {
     // Obtener categorías de la API
@@ -39,6 +38,7 @@ export class FavoritesComponent implements OnInit {
 
     // Obtener favoritos del servicio
     this.favoriteService.getFavorites().subscribe(favorites => {
+      console.log("Favoritos obtenidos:", favorites);  // Verifica que recibes más de un favorito
       this.favorites = favorites;
       this.filteredFavorites = favorites;  // Mostrar todos al inicio
     });
@@ -63,11 +63,15 @@ export class FavoritesComponent implements OnInit {
   }
 
   // Eliminar un favorito
-  removeFavorite(id: string): void {
-    this.favoriteService.removeFavorite(id).subscribe(() => {
-      this.favorites = this.favorites.filter(fav => fav.idMeal !== id);
-      this.filterFavorites();  // Refiltrar después de eliminar
-    });
+  removeFavorite(idMeal: string): void {
+    // Encontrar el id correspondiente
+    const favorite = this.favorites.find(fav => fav.idMeal === idMeal);
+    if (favorite) {
+      this.favoriteService.removeFavorite(favorite.id).subscribe(() => {
+        this.favorites = this.favorites.filter(fav => fav.idMeal !== idMeal);
+        this.filterFavorites();
+      });
+    }
   }
 
   // Navegar a la página de detalles de la receta

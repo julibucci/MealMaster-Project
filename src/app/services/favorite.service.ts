@@ -2,7 +2,7 @@ import { Recipe } from '../models/recipe';
 import { Favorite } from '../models/favorite';
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -24,11 +24,10 @@ export class FavoriteService {
     return this.http.get<string[]>('http://localhost:3000/categories');
   }
 
-  // Eliminar un favorito por ID
-  removeFavorite(idMeal: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${idMeal}`);
+  removeFavorite(id: number): Observable<void> {
+    console.log(`Eliminando favorito con ID: ${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
-
   // Agregar un favorito
   addFavorite(favorite: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, favorite);
