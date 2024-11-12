@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 
 @Component({
@@ -27,20 +28,22 @@ export class FavoritesComponent implements OnInit {
   constructor(
     private favoriteService: FavoriteService,
     private mealService: MealService,
-    private router: Router
+    private router: Router,
+    private userservice: UserService
   ) {}
 
   ngOnInit(): void {
-    // Obtener categorías de la API
-    this.mealService.getCategories().subscribe(categories => {
-      this.categories = categories.map(cat => cat.strCategory);
-    });
+    // Obtener el perfil del usuario y luego cargar los favoritos y las categorías
+    this.favoriteService.getUserProfile().subscribe(() => {
+      this.mealService.getCategories().subscribe(categories => {
+        this.categories = categories.map(cat => cat.strCategory);
+      });
 
-    // Obtener favoritos del servicio
-    this.favoriteService.getFavorites().subscribe(favorites => {
-      console.log("Favoritos obtenidos:", favorites);
-      this.favorites = favorites;
-      this.filteredFavorites = favorites;
+      this.favoriteService.getFavorites().subscribe(favorites => {
+        console.log("Favoritos obtenidos:", favorites);
+        this.favorites = favorites;
+        this.filteredFavorites = favorites;
+      });
     });
   }
 

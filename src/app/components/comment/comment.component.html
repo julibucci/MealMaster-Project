@@ -1,0 +1,14 @@
+<div class="comments-section">
+  <h3>Comment section:</h3>
+  <div *ngIf="comments.length > 0">
+    <ul class="comment-list">
+      <li *ngFor="let comment of comments" class="comment-item">
+        <strong></strong> {{ comment.comment }} <br>
+        <small>{{ comment.date | date: 'short' }}</small>
+
+        <!-- Opción de borrar el comentario solo si es del usuario actual -->
+        <button *ngIf="canDeleteComment(comment)" (click)="deleteComment(comment.id)">Eliminar</button>
+      </li>
+    </ul>
+  </div>
+</div>

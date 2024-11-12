@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { User } from '../interfaces/user.interface';
 
 @Injectable({
@@ -10,12 +10,20 @@ import { User } from '../interfaces/user.interface';
 })
 export class UserService {
   private apiUrl = 'http://localhost:3000/users';
+  private currentUserId: number | null = null;
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.loadCurrentUser();
+  }
+
+  private loadCurrentUser(): void {
+    this.getUserProfile().subscribe(); // Actualiza el `currentUserId` internamente
+  }
 
   getUserProfile(): Observable<User> {
     return this.http.get<User>(`${this.apiUrl}/1`).pipe(
+      tap(user => this.currentUserId = user.id),
       catchError(this.handleError)
     );
   }
@@ -36,4 +44,10 @@ export class UserService {
     console.error('Error en la solicitud:', error);
     return throwError('Hubo un problema con la solicitud. Inténtalo de nuevo más tarde.');
   }
+
+  getCurrentUserId(): number | null {
+    return this.currentUserId;
+  }
+
+
 }
