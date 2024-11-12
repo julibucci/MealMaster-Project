@@ -1,10 +1,22 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { routes } from './app.routes';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { RecipeDetailsComponent } from './components/recipe-details-component/recipe-details-component.component';
 import { Router, NavigationEnd, RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    RouterOutlet,
+    FavoritesComponent,RecipeDetailsComponent, RouterOutlet, RouterModule
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
