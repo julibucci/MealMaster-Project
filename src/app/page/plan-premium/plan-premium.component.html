@@ -1,4 +1,5 @@
 <div class="navbar">
+    <a routerLink="home">Home</a>
     <a routerLink="profile">Perfil</a>
     <a routerLink="recipes">Recetas</a>
     <a routerLink="comments">Comentarios</a>
@@ -7,11 +8,9 @@
   
   <div class="content">
     <router-outlet></router-outlet> 
-  
-    <div *ngIf="showWelcomeMessage">
-      <h1>Bienvenido al Plan Premium</h1>
-      <p>Tienes acceso completo para gestionar recetas, filtrar por ingredientes y ver comentarios.</p>
-    </div>
+
+
+
   </div>
   
   

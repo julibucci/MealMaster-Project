@@ -32,8 +32,13 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
   }
-  
-  .food-image:hover {
-    transform: scale(1.05);
-  }
+  .food-image {
+    width: 250px; /* Aumenta el ancho */
+    height: 250px; /* Aumenta la altura */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
   

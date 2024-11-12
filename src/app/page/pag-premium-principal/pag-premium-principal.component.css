@@ -1,0 +1,45 @@
+/* Contenedor principal */
+.home-container {
+    width: 80%; /* O usa un valor fijo como 1200px */
+    max-width: 1200px; /* Limita el ancho máximo en pantallas grandes */
+    text-align: center;
+    padding: 50px;
+    margin: auto; /* Centra el contenedor */
+  }
+  
+
+  /* Contenedor de imágenes en una fila horizontal */
+  .side-images {
+    display: flex;
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    gap: 10px; /* Espacio de 10px entre cada imagen */
+    margin-top: 20px;
+  }
+  
+  /* Estilo para las imágenes */
+  .food-image {
+    width: 250px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+/* Estilo para el h1 */
+h1 {
+    font-family: 'Playfair Display', serif; 
+    font-size: 36px; 
+    color: #2c3e50; 
+    font-weight: bold; 
+    text-align: center; 
+  }
+  
+  .inspirational-text {
+    font-family: 'Playfair Display', serif; 
+    font-size: 18px; 
+    color: #2c3e50; 
+    font-weight: normal; 
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  
+  
