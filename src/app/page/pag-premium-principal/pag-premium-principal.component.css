@@ -1,0 +1,43 @@
+/* Contenedor principal */
+.home-container {
+    width: 80%; 
+    max-width: 1200px; 
+    text-align: center;
+    padding: 50px;
+    margin: auto; 
+  }
+  
+  .side-images {
+    display: flex;
+    justify-content: center; 
+    gap: 10px; 
+    margin-top: 20px;
+  }
+  
+  /* Estilo para las imagenes */
+.food-image {
+    width: 300px; 
+    height: auto; 
+    border-radius: 8px;
+}
+
+
+h1 {
+    font-family: 'Playfair Display', serif; 
+    font-size: 36px; 
+    color: #01390f; 
+    font-weight: bold; 
+    text-align: center; 
+  }
+  
+  .inspirational-text {
+    font-family: 'Playfair Display', serif; 
+    font-size: 18px; 
+    color: #01390f; 
+    font-weight: normal; 
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  
+  
