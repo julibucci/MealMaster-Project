@@ -17,6 +17,12 @@
       "bio": "I'm an aspiring home cook",
       "password": "456",
       "userPlan": "basic"
+    },
+    {
+      "id": "85ac",
+      "name": "Julieta",
+      "email": "julieta@example.com",
+      "password": "123"
     }
   ]
 }

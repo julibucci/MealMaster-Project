@@ -1,19 +1,17 @@
 <div class="navbar">
-  <a routerLink="profile">Perfil</a>
-  <a routerLink="recipes">Recetas</a>
-  <a routerLink="comments">Comentarios</a>
-  <button (click)="logout()">Cerrar sesión</button>
+  <a routerLink="home">Home</a>
+  <a routerLink="profile">My profile</a>
+  <a routerLink="recipes">Recipes</a>
+  <a routerLink="comments">Comments</a>
+  <a routerLink="changePremium">Change Premium</a>
+  <button (click)="logout()">Log out</button>
 </div>
 
-<div class="content">
-  <router-outlet></router-outlet> 
+  <div class="content">
+    <router-outlet></router-outlet> 
 
-  <div *ngIf="showWelcomeMessage">
-    <h1>Bienvenido al Plan Básico</h1>
-    <p>Explora recetas y lee comentarios.</p>
+
   </div>
-</div>
-
   
   
   

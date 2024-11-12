@@ -7,6 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { RecipeListComponent } from './recipe/recipe-list/recipe-list.component';
 import { PaginaPrincipalComponent } from './page/pagina-principal/pagina-principal.component';
 import { PagPremiumPrincipalComponent } from './page/pag-premium-principal/pag-premium-principal.component';
+import { PagBasicoPrincipalComponent } from './page/pag-basico-principal/pag-basico-principal.component';
 
 
 export const routes: Routes = [
@@ -23,6 +24,8 @@ export const routes: Routes = [
     path: 'plan-basico', 
     component: PlanBasicoComponent,
     children: [
+      {path: '',component: PagBasicoPrincipalComponent},
+      {path: 'home',component: PagBasicoPrincipalComponent},
       { path: 'profile', component: ProfileComponent },
       { path: 'recipes', component: RecipeListComponent },
     ]
