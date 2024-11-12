@@ -18,4 +18,7 @@
 </ul>
 
   <button (click)="goBack()">Back to favorites</button>
+  <!-- Botón para agregar a favoritos -->
+  <button *ngIf="!isFavorite" (click)="addToFavorites()">Add to favorites</button>
+  <button *ngIf="isFavorite" disabled>This recipe is already in your favorites list </button>
 </div>

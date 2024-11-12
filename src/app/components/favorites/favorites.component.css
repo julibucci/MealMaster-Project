@@ -93,7 +93,7 @@ button {
 
 button:hover {
   background-color: #007bff;
-  color: white;
+  color: rgb(247, 237, 237);
 }
 
 button:focus {

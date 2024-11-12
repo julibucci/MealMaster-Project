@@ -28,8 +28,11 @@ export class FavoriteService {
     console.log(`Eliminando favorito con ID: ${id}`);
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
   // Agregar un favorito
   addFavorite(favorite: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, favorite);
   }
+
+
 }

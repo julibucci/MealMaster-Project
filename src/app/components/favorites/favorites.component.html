@@ -16,13 +16,12 @@
       <!-- Muestra el nombre, la imagen y una descripción o receta -->
       <h3>{{ favorite.strMeal }}</h3>
       <img [src]="favorite.strMealThumb" alt="{{ favorite.strMeal }}" width="200" />
-      <p>{{ favorite.strInstructions || 'Recipe is not available.' }}</p>
 
       <!-- Botón para eliminar favorito -->
-      <button (click)="removeFavorite(favorite.idMeal)">Delete</button>
+      <button (click)="removeFavorite(favorite.idMeal)">Delete from favorites</button>
 
       <!-- Botón para ver los detalles -->
-      <button (click)="viewRecipeDetails(favorite.idMeal)">Ver Detalles</button>
+      <button (click)="viewRecipeDetails(favorite.idMeal)">Recipe details </button>
     </li>
   </ul>
 </div>
