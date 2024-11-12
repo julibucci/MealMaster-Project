@@ -2,14 +2,6 @@
   "favorites": [
     {
       "userId": 1,
-      "idMeal": "53076",
-      "strMeal": "Bread omelette",
-      "strMealThumb": "https://www.themealdb.com/images/media/meals/hqaejl1695738653.jpg",
-      "category": "Seafood",
-      "id": "2bc1"
-    },
-    {
-      "userId": 1,
       "idMeal": "52895",
       "strMeal": "English Breakfast",
       "strMealThumb": "https://www.themealdb.com/images/media/meals/utxryw1511721587.jpg",

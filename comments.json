@@ -1,0 +1,16 @@
+{
+  "comments": [
+    {
+      "userId": 1,
+      "idMeal": "52895",
+      "comment": "Esta receta está deliciosa, la volveré a hacer.",
+      "date": "2024-11-12T10:00:00Z"
+    },
+    {
+      "userId": 2,
+      "idMeal": "52895",
+      "comment": "Muy fácil de preparar, y el sabor es excelente.",
+      "date": "2024-11-12T12:00:00Z"
+    }
+  ]
+}

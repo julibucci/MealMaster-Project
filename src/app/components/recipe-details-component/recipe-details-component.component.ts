@@ -3,11 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MealService } from '../../services/meal.service';
 import { CommonModule } from '@angular/common';
 import { FavoriteService } from '../../services/favorite.service';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommentService } from '../../services/comment-service.service';
 
 @Component({
   selector: 'app-recipe-details-component',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './recipe-details-component.component.html',
   styleUrl: './recipe-details-component.component.css'
 })
@@ -16,9 +18,23 @@ export class RecipeDetailsComponent implements OnInit {
   recipeId: string = '';
   recipeDetails: any = {};
   isFavorite: boolean = false;
+  comments: any[] = [];
+  commentForm: FormGroup;
+  userId: number = 1;
 
-
-  constructor(private route: ActivatedRoute, private mealService: MealService, private router: Router,private favoriteService: FavoriteService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private mealService: MealService,
+    private favoriteService: FavoriteService,
+    private commentService: CommentService,
+    private fb: FormBuilder
+  ) {
+    // Inicializar commentForm en el constructor
+    this.commentForm = this.fb.group({
+      comment: ['', [Validators.required, Validators.maxLength(500)]]
+    });
+  }
 
   ngOnInit(): void {
     // Obtener el ID de la receta de los parámetros de la ruta
@@ -78,5 +94,44 @@ export class RecipeDetailsComponent implements OnInit {
   // Método para generar un ID único (simple ejemplo)
   generateId(): string {
     return Math.random().toString(36).substr(2, 9);  // Genera un ID aleatorio
+  }
+
+
+  // Agregar un comentario
+  addComment(): void {
+    if (this.commentForm.invalid) {
+      return;
+    }
+
+    const newComment = {
+      userId: 1,  // Asumiendo que el usuario es el 1
+      idMeal: this.recipeDetails.idMeal,
+      comment: this.commentForm.value.comment,
+      date: new Date().toISOString()  // Fecha y hora actuales
+    };
+
+    this.commentService.addComment(newComment).subscribe(comment => {
+      this.comments.push(comment);  // Agregar el comentario a la lista de comentarios
+      this.commentForm.reset();  // Limpiar el formulario
+    });
+  }
+
+  // Obtener comentarios para la receta
+  getComments(id: string): void {
+    this.commentService.getCommentsByRecipe(id).subscribe(comments => {
+      this.comments = comments;
+    });
+  }
+
+  // Eliminar comentario
+  deleteComment(commentId: string): void {
+    this.commentService.deleteComment(commentId).subscribe(() => {
+      this.comments = this.comments.filter(comment => comment.id !== commentId);  // Eliminar el comentario de la lista
+    });
+  }
+
+  // Verificar si el comentario pertenece al usuario actual
+  canDeleteComment(comment: any): boolean {
+    return comment.userId === this.userId;
   }
 }

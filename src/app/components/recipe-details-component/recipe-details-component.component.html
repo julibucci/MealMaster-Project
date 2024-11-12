@@ -22,3 +22,38 @@
   <button *ngIf="!isFavorite" (click)="addToFavorites()">Add to favorites</button>
   <button *ngIf="isFavorite" disabled>This recipe is already in your favorites list </button>
 </div>
+
+<!-- Sección de comentarios -->
+<div class="comments-section">
+  <h3>Comment section:</h3>
+  <div *ngIf="comments.length > 0">
+    <ul class="comment-list">
+      <li *ngFor="let comment of comments" class="comment-item">
+        <strong>User {{ comment.userId }}:</strong> {{ comment.comment }} <br>
+        <small>{{ comment.date | date: 'short' }}</small>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Formulario de nuevo comentario -->
+<div *ngIf="true">
+  <h3>Deja un comentario:</h3>
+  <form [formGroup]="commentForm" (ngSubmit)="addComment()">
+    <textarea formControlName="comment" rows="4" cols="50" placeholder="Escribe tu comentario..." required></textarea>
+    <br>
+    <button type="submit" [disabled]="commentForm.invalid">Enviar comentario</button>
+  </form>
+</div>
+
+<!-- Mostrar comentarios existentes -->
+<div *ngIf="comments.length > 0">
+  <h3>Comentarios:</h3>
+  <div *ngFor="let comment of comments">
+    <p>{{ comment.comment }}</p>
+    <small>De: Usuario {{ comment.userId }} - {{ comment.date | date }}</small>
+
+    <!-- Opción de borrar el comentario solo si es del usuario actual -->
+    <button *ngIf="canDeleteComment(comment)" (click)="deleteComment(comment.id)">Eliminar</button>
+  </div>
+</div>
