@@ -5,8 +5,8 @@ import { MealService } from '../../services/meal.service';
 import { FavoriteService } from '../../services/favorite.service';
 import { FormsModule } from '@angular/forms';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; // Importar HttpClient
-import { Observable } from 'rxjs'; // Importar Observable
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 
@@ -22,12 +22,12 @@ export class FavoritesComponent implements OnInit {
   favorites: any[] = [];
   filteredFavorites: any[] = [];
   categories: string[] = [];
-  selectedCategory: string = '';  // Categoría seleccionada
+  selectedCategory: string = '';
 
   constructor(
     private favoriteService: FavoriteService,
     private mealService: MealService,
-    private router: Router  // Inyectamos Router aquí
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -38,9 +38,9 @@ export class FavoritesComponent implements OnInit {
 
     // Obtener favoritos del servicio
     this.favoriteService.getFavorites().subscribe(favorites => {
-      console.log("Favoritos obtenidos:", favorites);  // Verifica que recibes más de un favorito
+      console.log("Favoritos obtenidos:", favorites);
       this.favorites = favorites;
-      this.filteredFavorites = favorites;  // Mostrar todos al inicio
+      this.filteredFavorites = favorites;
     });
   }
 

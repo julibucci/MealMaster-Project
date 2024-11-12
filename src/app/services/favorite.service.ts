@@ -11,7 +11,7 @@ import { catchError, Observable, of, tap } from 'rxjs';
 export class FavoriteService {
   private apiUrl = 'http://localhost:3000/favorites';  // URL del servidor donde están los favoritos
 
-  // Usamos 'inject' para inyectar HttpClient
+
   private http = inject(HttpClient);
 
   // Obtener favoritos del usuario 1

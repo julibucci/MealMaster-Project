@@ -9,7 +9,7 @@ body {
 
 /* Encabezado */
 h2 {
-  color: #FF7043; /* Naranja oscuro */
+  color: #FF7043;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 20px;
@@ -37,7 +37,7 @@ select {
 }
 
 select:hover {
-  border-color: #FF5722; /* Naranja más intenso */
+  border-color: #FF5722;
 }
 
 /* Estilo de los favoritos */
@@ -50,7 +50,7 @@ ul {
 }
 
 li {
-  background-color: #FFEBEE; /* Fondo muy suave para cada favorito */
+  background-color: #FFEBEE;
   margin: 10px;
   padding: 20px;
   border-radius: 10px;
@@ -82,22 +82,22 @@ p {
 }
 
 button {
-  margin: 5px; /* Espacio alrededor de los botones */
-  padding: 10px 20px; /* Relleno para que los botones sean más grandes y visibles */
-  font-size: 14px; /* Tamaño de fuente para que el texto sea legible */
-  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-  border: none; /* Elimina el borde predeterminado */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: background-color 0.3s ease; /* Transición suave cuando se pasa el ratón */
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #007bff; /* Cambia el color de fondo cuando se pasa el ratón */
-  color: white; /* Cambia el color del texto a blanco */
+  background-color: #007bff;
+  color: white;
 }
 
 button:focus {
-  outline: none; /* Elimina el contorno del foco cuando se hace clic en el botón */
+  outline: none;
 }
 
 button:hover {

@@ -1,72 +1,71 @@
 /* Estilos generales para la página de detalles de la receta */
 .recipe-details-container {
   font-family: Arial, sans-serif;
-  background-color: #fff; /* Fondo blanco para el contenedor */
-  color: #0a0909; /* Texto oscuro para contraste */
+  background-color: #fff;
+  color: #0a0909;
   padding: 20px;
   border-radius: 15px;
   max-width: 800px;
   margin: 30px auto;
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  background-image: linear-gradient(135deg, #be664c, #ffcc80); /* Fondo degradado en naranja */
-  border: 2px solid #ff5722; /* Borde de color naranja */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(135deg, #be664c, #ffcc80);
+  border: 2px solid #ff5722;
   text-align: justify;
 }
 
 h2 {
   font-size: 2.5rem;
-  color: #0b0b0b; /* Naranja fuerte para el título */
+  color: #0b0b0b;
   text-align: center;
   margin-bottom: 20px;
 }
 
 .recipe-details-container img {
   display: block;
-  margin: 0 auto 20px; /* Centrar la imagen */
+  margin: 0 auto 20px;
   width: 100%;
   max-width: 400px;
   height: auto;
-  border-radius: 12px; /* Bordes redondeados */
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 h3 {
   font-size: 1.8rem;
-  color: #080808; /* Naranja más oscuro para los subtítulos */
+  color: #080808;
   margin-top: 30px;
   text-align: center;
 }
 
 /* Estilo para la lista de ingredientes */
 .ingredients-list {
-  list-style: none; /* Quitar los puntos de la lista */
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .ingredient-item {
-  background-color: #ff7043; /* Un tono naranja suave */
-  color: white; /* Color de texto blanco */
+  background-color: #ff7043;
+  color: white;
   text-align: center;
   padding: 10px;
-  margin: 5px 0; /* Espaciado entre los ingredientes */
-  border-radius: 8px; /* Bordes redondeados */
+  margin: 5px 0;
+  border-radius: 8px;
   display: flex;
-  justify-content: space-between; /* Espacio entre el nombre y la cantidad (si se desea) */
-  align-items: center; /* Centra el texto verticalmente */
+  justify-content: space-between;
+  align-items: center;
   font-size: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave para los elementos */
-  transition: background-color 0.3s; /* Efecto al pasar el ratón */
-
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s;
 }
 
 .ingredient-item:hover {
-  background-color: #e64a19; /* Un tono más oscuro de naranja cuando se pasa el ratón */
+  background-color: #e64a19;
 }
 
 /* Estilo para las instrucciones */
 .instructions {
-  background-color: #ffcc80; /* Fondo naranja suave para instrucciones */
+  background-color: #ffcc80;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -75,13 +74,13 @@ h3 {
 
 .instructions p {
   font-size: 1.2rem;
-  color: #262323; /* Texto oscuro para mayor legibilidad */
+  color: #262323;
   margin-bottom: 20px;
 }
 
 /* Estilo para los botones */
 button {
-  background-color: #ff5722; /* Naranja fuerte */
+  background-color: #ff5722;
   color: white;
   border: none;
   padding: 12px 25px;
@@ -94,12 +93,12 @@ button {
 }
 
 button:hover {
-  background-color: #e64a19; /* Naranja más oscuro al pasar el cursor */
+  background-color: #e64a19;
 }
 
 /* Estilo para enlaces */
 a {
-  color: #ff7043; /* Naranja más oscuro para enlaces */
+  color: #ff7043;
   text-decoration: none;
   font-weight: bold;
 }

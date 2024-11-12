@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { Favorite } from '../models/favorite'; // Import the Favorite interface
+import { Favorite } from '../models/favorite';
 import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
@@ -11,7 +11,7 @@ import { catchError, map } from 'rxjs/operators';
 export class MealService {
   private apiUrl = 'https://www.themealdb.com/api/json/v1/1/';
 
-  // Usamos 'inject' para inyectar HttpClient
+
   private http = inject(HttpClient);
 
   getCategories(): Observable<any[]> {
