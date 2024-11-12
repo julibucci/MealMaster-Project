@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
 /* Estilo general */
 :host {
     display: flex;
@@ -15,14 +17,15 @@
     width: 100%;
     justify-content: center;
     gap: 1.5rem;
-    background-color: rgb(65, 168, 172);
+    background-color: rgb(247, 150, 4);
     padding: 1rem;
     font-size: 1.1rem;
     margin-bottom: 20px;
   }
   
   .navbar a {
-    color: white;
+    font-family: 'Playfair Display', serif;
+    color: #01390f;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
@@ -50,7 +53,7 @@
   /* Contenido principal */
   .content {
     text-align: center;
-    background-color: #fff;
+    background-color: #edaa44;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -60,7 +63,7 @@
   }
   
   .content h1 {
-    color: #42b92a; 
+    color: #ffffff; 
     font-size: 28px;
     margin-bottom: 10px;
   }
