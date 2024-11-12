@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+/* Estilo general */
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    color: #de3838;
+    background-color: rgb(248, 220, 174);
+    padding: 20px;
+  }
+  
+
+.navbar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: rgb(247, 150, 4);
+    padding: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  .navbar a {
+    font-family: 'Playfair Display', serif;
+    color: #01390f;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: black;
+  }
+
+  button {
+    background-color: #ff6666; 
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #e04a4a; 
+  }
+  
+  /* Contenido principal */
+  .content {
+    text-align: center;
+    background-color: #edaa44;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 100%;
+
+  }
+  
+  .content h1 {
+    color: #ffffff; 
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .content p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 0;
+  }
+

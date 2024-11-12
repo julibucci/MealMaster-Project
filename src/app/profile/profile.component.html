@@ -1,0 +1,26 @@
+<div *ngIf="errorMessage" class="error-message">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="user; else loading">
+  <h2>User Profile</h2>
+  <label>Name:
+    <input [(ngModel)]="user.name" placeholder="Name" />
+  </label>
+  <label>Email:
+    <input [(ngModel)]="user.email" placeholder="Email" />
+  </label>
+  <label>Profile Image:
+    <input [(ngModel)]="user.profileImage" placeholder="Profile Image URL" />
+  </label>
+  <label>Bio:
+    <textarea [(ngModel)]="user.bio" placeholder="Write a brief bio"></textarea>
+  </label>
+  <button (click)="saveProfile()">Save</button>
+  <button (click)="deleteProfile()" class="delete-button">Delete Profile</button>
+</div>
+
+<ng-template #loading>
+  <p>Loading profile...</p>
+</ng-template>
+
