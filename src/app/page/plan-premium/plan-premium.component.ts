@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth-service.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-plan-premium',
@@ -16,7 +17,8 @@ export class PlanPremiumComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private authService: AuthService
+    private authService: AuthService,
+    public userService: UserService
   ) {}
 
   ngOnInit(): void {

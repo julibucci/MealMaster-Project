@@ -11,6 +11,8 @@ import { User } from '../interfaces/user.interface';
 export class UserService {
   private apiUrl = 'http://localhost:3000/users';
   private currentUserId: number | null = null;
+  private currentUser: any;
+
 
 
   constructor(private http: HttpClient) {
@@ -50,4 +52,8 @@ export class UserService {
   }
 
 
+  // Método para verificar si el usuario es premium
+  isPremiumUser(): boolean {
+    return this.currentUser && this.currentUser.userPlan === 'premium';
+  }
 }
