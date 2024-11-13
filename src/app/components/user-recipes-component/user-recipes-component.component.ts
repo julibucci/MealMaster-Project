@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../../services/recipe-service.service';
 import { UserService } from '../../services/user.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-recipes-component',
@@ -15,7 +16,8 @@ export class UserRecipesComponentComponent implements OnInit {
 
   constructor(
     private recipeService: RecipeService,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -31,5 +33,10 @@ export class UserRecipesComponentComponent implements OnInit {
     this.recipeService.deleteRecipe(recipeId).subscribe(() => {
       this.recipes = this.recipes.filter(recipe => recipe.idMeal !== recipeId);
     });
+  }
+
+  // Método para ver los detalles de la receta
+  viewRecipeDetails(recipeId: string): void {
+    this.router.navigate(['/receta', recipeId]);
   }
 }

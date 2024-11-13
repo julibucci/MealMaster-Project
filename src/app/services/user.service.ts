@@ -48,7 +48,7 @@ export class UserService {
   }
 
   getCurrentUserId(): number | null {
-    return this.currentUser ? this.currentUser.id : null;
+    return this.currentUserId;
   }
 
 

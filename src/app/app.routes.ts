@@ -1,5 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { HomeComponent } from './page/home/home.component';
 import { AuthComponent } from './auth/auth.component';
 import { PlanBasicoComponent } from './page/plan-basico/plan-basico.component';
@@ -13,6 +13,8 @@ import { RecipeDetailsComponent } from './components/recipe-details-component/re
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { UserRecipesComponentComponent } from './components/user-recipes-component/user-recipes-component.component';
 import { CreateRecipeComponentComponent } from './components/create-recipe-component/create-recipe-component.component';
+import { RecipeFilterComponent } from './components/recipe-filter-component/recipe-filter/recipe-filter.component';
+
 
 
 export const routes: Routes = [
@@ -47,8 +49,8 @@ export const routes: Routes = [
       { path: 'favorites', component: FavoritesComponent },
       { path: 'recipe-details/:id', component: RecipeDetailsComponent },
       { path: 'create-recipe', component: CreateRecipeComponentComponent },
-      { path: 'your-recipes', component: UserRecipesComponentComponent }
-
+      { path: 'your-recipes', component: UserRecipesComponentComponent },
+      {path: 'ingredientes', component:RecipeFilterComponent}
     ]
   },
   { path: '**', redirectTo: '' },

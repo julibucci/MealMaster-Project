@@ -4,6 +4,7 @@
     <li *ngFor="let recipe of recipes">
       <strong>{{ recipe.strMeal }}</strong> - {{ recipe.strCategory }}
       <button (click)="deleteRecipe(recipe.idMeal)">Delete</button>
+      <button (click)="viewRecipeDetails(recipe.idMeal)">View Details</button> <!-- Botón para ver detalles -->
     </li>
   </ul>
 </div>
