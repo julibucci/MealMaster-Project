@@ -56,4 +56,11 @@ export class UserService {
   isPremiumUser(): boolean {
     return this.currentUser && this.currentUser.userPlan === 'premium';
   }
+
+  getUserProfileById(userId: string): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${userId}`).pipe(
+      catchError((error) => throwError(() => new Error(error.message || 'Failed to load user')))
+    );
+  }
+  
 }

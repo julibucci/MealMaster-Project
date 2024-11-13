@@ -22,12 +22,18 @@ export class ProfileComponent implements OnInit {
   }
 
   loadUserProfile(): void {
-    this.userService.getUserProfile().subscribe({
-      next: (userData) => (this.user = userData),
-      error: (error) =>
-        (this.errorMessage = 'Failed to load profile. Please try again later.'),
-    });
+    const userId = localStorage.getItem('authUserId'); // Recupera el ID del usuario autenticado
+    if (userId) {
+      this.userService.getUserProfileById(userId).subscribe({
+        next: (userData) => (this.user = userData),
+        error: (error) =>
+          (this.errorMessage = 'Failed to load profile. Please try again later.'),
+      });
+    } else {
+      this.errorMessage = 'User is not logged in';
+    }
   }
+  
 
   saveProfile(): void {
     if (this.user) {
@@ -39,6 +45,19 @@ export class ProfileComponent implements OnInit {
       });
     }
   }
+  
+  upgradeToPremium(): void {
+    if (this.user && this.user.userPlan !== 'premium') {
+      this.user.userPlan = 'premium'; // Cambiar el plan a premium
+      this.userService.updateUserProfile(this.user).subscribe({
+        next: () => alert('You have been upgraded to the Premium plan!'),
+        error: () =>
+          (this.errorMessage =
+            'Failed to upgrade profile. Please try again later.'),
+      });
+    }
+  }
+  
 
   deleteProfile(): void {
     if (
