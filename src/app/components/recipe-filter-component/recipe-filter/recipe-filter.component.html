@@ -1,21 +1,20 @@
-<p>recipe-filter works!</p>
 <div class="recipe-filter-container">
-    <h2>Filtrar recetas por ingrediente</h2>
+    <h2>Filter Recipes by Ingredient</h2>
   
     <form (ngSubmit)="searchRecipes()">
       <div>
-        <label for="ingredient">Ingrediente principal:</label>
+        <label for="ingredient">Main Ingredient:</label>
         <input
           type="text"
           id="ingredient"
           [(ngModel)]="ingredients"
           name="ingredient"
           required
-          placeholder="Ingresa un ingrediente (ej. pollo, tomate)"
+          placeholder="Enter an ingredient (e.g., chicken, tomato)"
         />
       </div>
   
-      <button type="submit" [disabled]="!ingredients.trim()">Buscar recetas</button>
+      <button type="submit" [disabled]="!ingredients.trim()">Search Recipes</button>
     </form>
   
     <div *ngIf="errorMessage" class="error-message">
@@ -23,14 +22,14 @@
     </div>
   
     <div *ngIf="recipes.length > 0">
-      <h3>Recetas encontradas:</h3>
+      <h3>Recipes Found:</h3>
       <ul>
         <li *ngFor="let recipe of recipes">
           <div>
             <h4>{{ recipe.strMeal }}</h4>
             <img [src]="recipe.strMealThumb" alt="{{ recipe.strMeal }}" />
             <p>{{ recipe.strInstructions | slice:0:100 }}...</p>
-            <button (click)="viewRecipeDetails(recipe.idMeal)">Ver detalles</button>
+            <button (click)="viewRecipeDetails(recipe.idMeal)">View Details</button>
           </div>
         </li>
       </ul>
