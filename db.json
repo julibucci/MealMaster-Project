@@ -23,6 +23,27 @@
       "name": "Julieta",
       "email": "julieta@example.com",
       "password": "123"
+    },
+    {
+      "id": "de56",
+      "name": "marta",
+      "email": "marta@example.com",
+      "password": "123",
+      "userPlan": "basic"
+    },
+    {
+      "id": "dc2f",
+      "name": "juan",
+      "email": "juan@example.com",
+      "password": "123",
+      "userPlan": "basic"
+    },
+    {
+      "id": "366c",
+      "name": "luis",
+      "email": "luis@example.com",
+      "password": "123",
+      "userPlan": "basic"
     }
   ]
 }
