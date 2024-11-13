@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { routes } from './app.routes';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { RecipeDetailsComponent } from './components/recipe-details-component/recipe-details-component.component';
-import { Router, NavigationEnd, RouterModule, RouterOutlet } from '@angular/router';
+import { Router, NavigationEnd, RouterModule, RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +15,7 @@ import { Router, NavigationEnd, RouterModule, RouterOutlet } from '@angular/rout
     FormsModule,
     HttpClientModule,
     RouterOutlet,
+    RouterLink,
     FavoritesComponent,RecipeDetailsComponent, RouterOutlet, RouterModule
   ],
   templateUrl: './app.component.html',

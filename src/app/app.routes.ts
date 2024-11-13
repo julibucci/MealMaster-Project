@@ -11,8 +11,8 @@ import { PagPremiumPrincipalComponent } from './page/pag-premium-principal/pag-p
 import { PagBasicoPrincipalComponent } from './page/pag-basico-principal/pag-basico-principal.component';
 import { RecipeDetailsComponent } from './components/recipe-details-component/recipe-details-component.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
-
-
+import { FilterByCategoryComponent } from './recipe/filter-by-category/filter-by-category.component';
+import { CategoryListComponent } from './recipe/category-list/category-list.component';
 export const routes: Routes = [
   {
     path: '',
@@ -20,7 +20,8 @@ export const routes: Routes = [
     children: [
       { path: '', component: PaginaPrincipalComponent },
       { path: 'recipes', component: RecipeListComponent },
-      { path: 'auth', component: AuthComponent }
+      { path: 'auth', component: AuthComponent },
+
     ]
   },
   {
@@ -31,7 +32,8 @@ export const routes: Routes = [
       {path: 'home',component: PagBasicoPrincipalComponent},
       { path: 'profile', component: ProfileComponent },
       { path: 'recipes', component: RecipeListComponent },
-      { path: 'recipe-details/:id', component: RecipeDetailsComponent }
+      { path: 'recipe-details/:id', component: RecipeDetailsComponent },
+
     ]
   },
   {
@@ -43,7 +45,8 @@ export const routes: Routes = [
       { path: 'profile', component: ProfileComponent },
       { path: 'recipes', component: RecipeListComponent },
       { path: 'favorites', component: FavoritesComponent },
-      { path: 'recipe-details/:id', component: RecipeDetailsComponent }
+      { path: 'recipe-details/:id', component: RecipeDetailsComponent },
+      {path: 'Categories', component: FilterByCategoryComponent }
     ]
   },
   { path: '**', redirectTo: '' },
