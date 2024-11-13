@@ -11,6 +11,8 @@ import { PagPremiumPrincipalComponent } from './page/pag-premium-principal/pag-p
 import { PagBasicoPrincipalComponent } from './page/pag-basico-principal/pag-basico-principal.component';
 import { RecipeDetailsComponent } from './components/recipe-details-component/recipe-details-component.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { UserRecipesComponentComponent } from './components/user-recipes-component/user-recipes-component.component';
+import { CreateRecipeComponentComponent } from './components/create-recipe-component/create-recipe-component.component';
 
 
 export const routes: Routes = [
@@ -43,7 +45,10 @@ export const routes: Routes = [
       { path: 'profile', component: ProfileComponent },
       { path: 'recipes', component: RecipeListComponent },
       { path: 'favorites', component: FavoritesComponent },
-      { path: 'recipe-details/:id', component: RecipeDetailsComponent }
+      { path: 'recipe-details/:id', component: RecipeDetailsComponent },
+      { path: 'create-recipe', component: CreateRecipeComponentComponent },
+      { path: 'your-recipes', component: UserRecipesComponentComponent }
+
     ]
   },
   { path: '**', redirectTo: '' },

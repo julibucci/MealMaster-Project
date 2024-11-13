@@ -10,13 +10,13 @@ import {Recipe} from '../interfaces/recipe.interface';
 })
 
 export class RecipeService {
-  private apiUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s='; 
+  private apiUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
   constructor(private http: HttpClient) {}
 
   getRecipes(): Observable<Recipe[]> {
     return this.http.get<{ meals: Recipe[] }>(this.apiUrl).pipe(
-      map(response => response.meals || []) // Maneja el caso en que `meals` sea null
+      map(response => response.meals || [])
     );
   }
 }

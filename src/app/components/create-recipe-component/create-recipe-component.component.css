@@ -1,0 +1,143 @@
+div {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background-color: #4b4747;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h3 {
+  font-size: 24px;
+  color: #f6f0f0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #e3dddd;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 150px;
+}
+
+h4 {
+  font-size: 20px;
+  color: #f6eeee;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button + button {
+  margin-top: 10px;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Estilos para las etiquetas */
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #eee4e4;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Estilo para el área de texto (instrucciones) */
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+/* Estilo para los ingredientes */
+div *ngFor {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+input[placeholder="Ingredient"],
+input[placeholder="Measure"] {
+  width: calc(50% - 10px);
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Estilo para el botón "Add Ingredient" */
+button:nth-of-type(1) {
+  margin-top: 10px;
+  width: auto;
+  background-color: #e18b13;
+}
+
+button:nth-of-type(1):hover {
+  background-color: #f9b519;
+}
+
+/* Estilo para el botón "Save Recipe" */
+button:nth-of-type(2) {
+  width: 100%;
+  background-color: #000000;
+}
+
+button:nth-of-type(2):hover {
+  background-color: #138496;
+}

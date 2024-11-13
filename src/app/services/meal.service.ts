@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { Favorite } from '../models/favorite';
+import { Favorite } from '../interfaces/favorite';
 import { catchError, map } from 'rxjs/operators';
 
 @Injectable({
