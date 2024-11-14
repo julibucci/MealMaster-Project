@@ -1,5 +1,5 @@
+import { Category } from './../../models/category';
 import { Component } from '@angular/core';
-import { Category } from '../../models/category';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
@@ -18,6 +18,10 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./filter-by-category.component.css']
 })
 export class FilterByCategoryComponent {
+
+  categoryRecipesFromJson: Recipe[] = [];
+
+
   // Listas que almacenan resultados de las peticiones HTTP:
   categoryList: Category[] = [];
   recipeFromCategoryList: Recipe[] = [];
@@ -52,5 +56,9 @@ getRecipeFromCategory(){
     this.recipe = data;
   })
 
+}
+
+addRecipesToCategoryFromJson(){
+this.categoryRecipesFromJson = this.categoryRecipesFromJson.filter((recipe)=> recipe.strMeal === this.selectedCategory )
 }
 }

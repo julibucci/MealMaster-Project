@@ -16,7 +16,7 @@ export class RecipeService {
 
   getRecipes(): Observable<Recipe[]> {
     return this.http.get<{ meals: Recipe[] }>(this.apiUrl).pipe(
-      map(response => response.meals || []) // Maneja el caso en que `meals` sea null
+      map(response => response.meals || [])
     );
   }
 

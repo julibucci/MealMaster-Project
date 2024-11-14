@@ -1,5 +1,5 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
-import { Favorite } from '../../models/favorite';
+import { Favorite } from '../../interfaces/favorite';
 import { CommonModule } from '@angular/common';
 import { MealService } from '../../services/meal.service';
 import { FavoriteService } from '../../services/favorite.service';

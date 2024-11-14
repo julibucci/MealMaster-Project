@@ -1,5 +1,5 @@
-import { Recipe } from '../models/recipe';
-import { Favorite } from '../models/favorite';
+import { Recipe } from '../interfaces/recipe';
+import { Favorite } from '../interfaces/favorite';
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, of, tap } from 'rxjs';
@@ -17,7 +17,6 @@ export class FavoriteService {
   private http = inject(HttpClient);
   private userService= inject (UserService);
 
-  // Obtener categorías (asumimos que puedes tener una lista de categorías estática o desde el servidor)
   getCategories(): Observable<string[]> {
     return this.http.get<string[]>('http://localhost:3000/categories');
   }
