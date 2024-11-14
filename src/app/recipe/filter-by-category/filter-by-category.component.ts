@@ -1,8 +1,8 @@
-import { Category } from './../../models/category';
+import { Category } from '../../interfaces/category';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { Recipe } from '../../interfaces/recipe.interface';
 import { FilterByCategoryService } from '../../services/filter-by-category.service';
 import { RecipeService } from '../../services/recipes.service';
@@ -31,7 +31,7 @@ export class FilterByCategoryComponent {
   selectedCategory:string ="";
   selectedIdFromRecipe: string ="";
 
-  constructor(private filterByCategoryService: FilterByCategoryService){}
+  constructor(private filterByCategoryService: FilterByCategoryService,  private router: Router,){}
 
   ngOnInit() {
     // Cargar todas las categorias al renderizar la plantilla
@@ -60,5 +60,9 @@ getRecipeFromCategory(){
 
 addRecipesToCategoryFromJson(){
 this.categoryRecipesFromJson = this.categoryRecipesFromJson.filter((recipe)=> recipe.strMeal === this.selectedCategory )
+}
+
+viewRecipeDetails(id: string): void {
+  this.router.navigate(['/plan-premium/recipe-details', id]); // Redirige a la ruta de detalles
 }
 }

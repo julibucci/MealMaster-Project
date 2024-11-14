@@ -37,6 +37,6 @@ export class UserRecipesComponentComponent implements OnInit {
 
   // Método para ver los detalles de la receta
   viewRecipeDetails(recipeId: string): void {
-    this.router.navigate(['/receta', recipeId]);
+    this.router.navigate(['/plan-premium//recipe-details', recipeId]);
   }
 }

@@ -1,7 +1,7 @@
 
 <div>
   <!-- Selector de categorías -->
-  <label for="categorySelect">Select a category</label>
+  <label for="categorySelect">Select a category:  </label>
   <select id="categorySelect" [(ngModel)]="selectedCategory" (change)="getRecipesFromCategory()">
     <option value="">All categories</option>
     <option *ngFor="let category of categoryList" [value]="category.strCategory">
@@ -16,6 +16,8 @@
     <li *ngFor="let recipe of recipeFromCategoryList" (click)="this.getRecipesFromCategory()">
       <h3>{{ recipe.strMeal }}</h3>
       <img [src]="recipe.strMealThumb" alt="{{ recipe.strMeal }}" width="200" />
+      <!-- Botón para ver detalles de la receta -->
+      <button (click)="viewRecipeDetails(recipe.idMeal)">View Details</button>
     </li>
   </ul>
 </div>

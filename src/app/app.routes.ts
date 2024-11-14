@@ -11,17 +11,13 @@ import { PagPremiumPrincipalComponent } from './page/pag-premium-principal/pag-p
 import { PagBasicoPrincipalComponent } from './page/pag-basico-principal/pag-basico-principal.component';
 import { RecipeDetailsComponent } from './components/recipe-details-component/recipe-details-component.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
-<<<<<<< HEAD
 import { FilterByCategoryComponent } from './recipe/filter-by-category/filter-by-category.component';
 import { CategoryListComponent } from './recipe/category-list/category-list.component';
-=======
 import { UserRecipesComponentComponent } from './components/user-recipes-component/user-recipes-component.component';
 import { CreateRecipeComponentComponent } from './components/create-recipe-component/create-recipe-component.component';
 import { RecipeFilterComponent } from './components/recipe-filter-component/recipe-filter/recipe-filter.component';
 
 
-
->>>>>>> e5dbaef0a3c50d737d374a3c9b926447da2bfa38
 export const routes: Routes = [
   {
     path: '',
@@ -55,16 +51,12 @@ export const routes: Routes = [
       { path: 'recipes', component: RecipeListComponent },
       { path: 'favorites', component: FavoritesComponent },
       { path: 'recipe-details/:id', component: RecipeDetailsComponent },
-<<<<<<< HEAD
-      {path: 'Categories', component: FilterByCategoryComponent }
-=======
+      {path: 'Categories', component: FilterByCategoryComponent },
       { path: 'create-recipe', component: CreateRecipeComponentComponent },
       { path: 'your-recipes', component: UserRecipesComponentComponent },
       {path: 'ingredientes', component:RecipeFilterComponent}
->>>>>>> e5dbaef0a3c50d737d374a3c9b926447da2bfa38
     ]
   },
   { path: '**', redirectTo: '' },
-  { path: 'recipe-details/:id', component: RecipeDetailsComponent }
 ];
 
