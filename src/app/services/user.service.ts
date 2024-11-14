@@ -1,4 +1,3 @@
-// src/app/services/user.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
@@ -62,15 +61,15 @@ export class UserService {
     );
   }
   
-  upgradeToPremium(userId: number): Observable<User> {
-    const updatedData = { userPlan: 'premium' };
-    return this.http.patch<User>(`${this.apiUrl}/${userId}`, updatedData).pipe(
-      map((user) => {
-        localStorage.setItem('userPlan', user.userPlan); // Actualiza el plan en localStorage
-        return user;
-      }),
-      catchError((error) => throwError(() => new Error(error.message || 'Failed to upgrade plan')))
+  upgradeToPremium(userId: string): Observable<any> {
+    // Actualiza el plan del usuario a "premium"
+    return this.http.patch(`${this.apiUrl}/${userId}`, { userPlan: 'premium' }).pipe(
+      catchError((error) => {
+        console.error('Error upgrading to premium:', error);
+        return throwError(() => new Error('Hubo un problema con el cambio de plan. Inténtalo de nuevo.'));
+      })
     );
   }
-  
+ 
+
 }

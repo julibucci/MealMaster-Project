@@ -3,11 +3,12 @@ import { RecipeService } from '../../services/recipe-service.service';
 import { UserService } from '../../services/user.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ImageUploadComponent } from '../../image-upload/image-upload.component';
 
 @Component({
   selector: 'app-create-recipe-component',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule,ImageUploadComponent],
   templateUrl: './create-recipe-component.component.html',
   styleUrl: './create-recipe-component.component.css'
 })
@@ -19,12 +20,14 @@ export class CreateRecipeComponentComponent implements OnInit {
     strCategory: '',
     strInstructions: '',
     ingredients: [] as { ingredient: string, measure: string }[],
-    userId: null as number | null
+    userId: null as number | null,
+    imageUrl: ''
   };
 
   constructor(
     private recipeService: RecipeService,
-    private userService: UserService
+    private userService: UserService,
+  
   ) {}
 
   ngOnInit(): void {
@@ -46,15 +49,19 @@ export class CreateRecipeComponentComponent implements OnInit {
     this.recipe.ingredients.splice(index, 1);
   }
 
+  onImageUploaded(imageUrl: string) {
+    this.recipe.imageUrl = imageUrl; // Guardar la URL de la imagen en la receta
+  }
+
   saveRecipe(): void {
-    console.log('Saving recipe:', this.recipe); // Verifica los datos antes de enviarlos
     this.recipeService.createRecipe(this.recipe).subscribe({
       next: () => {
         alert('Recipe saved successfully!');
       },
       error: (err) => {
-        console.error('Error saving recipe:', err); // Verifica si hay algún error
+        console.error('Error saving recipe:', err);
       }
     });
   }
+  
 }

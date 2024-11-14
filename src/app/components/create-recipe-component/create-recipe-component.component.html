@@ -25,5 +25,9 @@
   </div>
   <button (click)="addIngredient()">Add Ingredient</button>
 
+  <div class="image-upload-section">
+    <app-image-upload [recipeId]="recipe.idMeal"></app-image-upload>
+  </div>
+
   <button (click)="saveRecipe()">Save Recipe</button>
 </div>

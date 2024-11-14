@@ -14,7 +14,8 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { UserRecipesComponentComponent } from './components/user-recipes-component/user-recipes-component.component';
 import { CreateRecipeComponentComponent } from './components/create-recipe-component/create-recipe-component.component';
 import { RecipeFilterComponent } from './components/recipe-filter-component/recipe-filter/recipe-filter.component';
-
+import { BenefitsComponent } from '../app/benefits/benefits.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 export const routes: Routes = [
@@ -35,7 +36,9 @@ export const routes: Routes = [
       {path: 'home',component: PagBasicoPrincipalComponent},
       { path: 'profile', component: ProfileComponent },
       { path: 'recipes', component: RecipeListComponent },
-      { path: 'recipe-details/:id', component: RecipeDetailsComponent }
+      { path: 'recipe-details/:id', component: RecipeDetailsComponent },
+      { path: 'benefits', component: BenefitsComponent },
+      { path: 'payment', component: PaymentComponent }
     ]
   },
   {

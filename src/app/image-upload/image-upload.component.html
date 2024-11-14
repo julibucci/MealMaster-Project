@@ -1,9 +1,15 @@
-<div>
+<div class="image-upload-container">
+  <label class="file-upload">
     <input type="file" (change)="onFileSelected($event)" />
-    <button (click)="uploadImage()" [disabled]="!selectedFile">Subir Imagen a la Receta</button>
-    <div *ngIf="imageUrl">
-      <h3>Vista Previa:</h3>
-      <img [src]="imageUrl" alt="Vista previa de la imagen" style="max-width: 100%; height: auto;">
-    </div>
+    <span>Seleccionar Imagen</span>
+  </label>
+  <button (click)="uploadImage()" [disabled]="!selectedFile" class="upload-button">
+    Subir Imagen a la Receta
+  </button>
+  
+  <div *ngIf="imageUrl" class="image-preview">
+    <h3>Vista Previa:</h3>
+    <img [src]="imageUrl" alt="Vista previa de la imagen" />
   </div>
+</div>
   

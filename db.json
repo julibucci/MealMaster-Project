@@ -19,12 +19,6 @@
       "userPlan": "basic"
     },
     {
-      "id": "85ac",
-      "name": "Julieta",
-      "email": "julieta@example.com",
-      "password": "123"
-    },
-    {
       "id": "de56",
       "name": "marta",
       "email": "marta@example.com",
@@ -36,7 +30,7 @@
       "name": "juan",
       "email": "juan@example.com",
       "password": "123",
-      "userPlan": "basic"
+      "userPlan": "premium"
     },
     {
       "id": "366c",
