@@ -54,6 +54,5 @@ export const routes: Routes = [
     ]
   },
   { path: '**', redirectTo: '' },
-  { path: 'recipe-details/:id', component: RecipeDetailsComponent }
 ];
 

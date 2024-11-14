@@ -35,4 +35,26 @@ export class RecipeService {
     return this.http.get<any>('https://www.themealdb.com/api/json/v1/1/categories.php')
       .pipe(map(response => response.categories || []));
   }
+
+  // Método para obtener todas las recetas (sin filtrar por userId)
+  getAllRecipes(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl); // Devuelve todas las recetas sin filtrar
+  }
+
+
+  // Método para obtener detalles de una receta específica
+  getRecipeDetails(recipeId: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${recipeId}`);
+  }
+
+// Método para obtener receta específica por id
+getRecipeById(id: string): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}/${id}`);
+}
+
+// Método para obtener los detalles de una receta por idMeal
+getRecipeDetailsByIdMeal(idMeal: string): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}?idMeal=${idMeal}`);
+}
+
 }

@@ -5,7 +5,7 @@
       "idMeal": "52895",
       "strMeal": "English Breakfast",
       "strMealThumb": "https://www.themealdb.com/images/media/meals/utxryw1511721587.jpg",
-      "category": "Seafood",
+      "category": "Breakfast",
       "id": "e832"
     },
     {
@@ -13,7 +13,7 @@
       "idMeal": "52957",
       "strMeal": "Fruit and Cream Cheese Breakfast Pastries",
       "strMealThumb": "https://www.themealdb.com/images/media/meals/1543774956.jpg",
-      "category": "Seafood",
+      "category": "Breakfast",
       "id": "4e47"
     },
     {
@@ -29,7 +29,7 @@
       "idMeal": "52967",
       "strMeal": "Home-made Mandazi",
       "strMealThumb": "https://www.themealdb.com/images/media/meals/thazgm1555350962.jpg",
-      "category": "Seafood",
+      "category": "Breakfast",
       "id": "40f3"
     },
     {
@@ -47,6 +47,13 @@
       "strMealThumb": "https://www.themealdb.com/images/media/meals/1550441275.jpg",
       "category": "Seafood",
       "id": "7602"
+    },
+    {
+      "id": "ywxrquwej",
+      "userId": "1",
+      "idMeal": "5306",
+      "strMeal": "Chick-Fil-A Sandwich",
+      "category": "Chicken"
     }
   ]
 }

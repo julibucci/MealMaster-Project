@@ -7,6 +7,8 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { CommentService } from '../../services/comment-service.service';
 import { UserService } from '../../services/user.service';
 import { CommentComponent } from '../comment/comment.component';
+import { RecipeService } from '../../services/recipe-service.service';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-recipe-details-component',
@@ -33,6 +35,7 @@ export class RecipeDetailsComponent implements OnInit {
     private commentService: CommentService,
     private fb: FormBuilder,
     private userService: UserService,
+    private recipeService: RecipeService,
   ) {
     // Inicializar commentForm en el constructor
     this.commentForm = this.fb.group({
@@ -51,8 +54,20 @@ export class RecipeDetailsComponent implements OnInit {
   }
 
   getRecipeDetails(id: string): void {
-    this.mealService.getRecipeDetails(id).subscribe(details => {
-      this.recipeDetails = details.meals[0]; // Obtener la receta de la respuesta
+    forkJoin([
+      this.recipeService.getRecipesByUser(this.userId), // Obtener recetas del JSON Server
+      this.mealService.getRecipeDetails(id) // Obtener receta de la API externa
+    ]).subscribe(([localRecipes, apiRecipe]) => {
+      // Almacena las recetas locales en recipeDetails
+      if (localRecipes && localRecipes.length > 0) {
+        this.recipeDetails = localRecipes.find(recipe => recipe.idMeal === id) || {};  // Buscar receta específica en local
+      }
+
+      // Si hay resultados de la API, actualizamos recipeDetails con la receta de la API
+      if (apiRecipe && apiRecipe.meals && apiRecipe.meals.length > 0) {
+        this.recipeDetails = apiRecipe.meals[0];  // Tomar la receta de la API
+      }
+
       this.checkIfFavorite();
     });
   }
