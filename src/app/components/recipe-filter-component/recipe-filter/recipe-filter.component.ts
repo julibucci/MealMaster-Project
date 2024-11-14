@@ -13,7 +13,7 @@ import { Recipe } from '../../../interfaces/recipe.interface';
   styleUrls: ['./recipe-filter.component.css']
 })
 export class RecipeFilterComponent {
-  ingredients: string = ''; 
+  ingredients: string = '';
   recipes: Recipe[] = [];
   errorMessage: string = '';
 
@@ -21,7 +21,7 @@ export class RecipeFilterComponent {
 
   searchRecipes(): void {
     if (!this.ingredients.trim()) {
-      this.errorMessage = 'Por favor, ingresa un ingrediente.';
+      this.errorMessage = 'Please enter an ingredient.';
       return;
     }
 
@@ -32,17 +32,18 @@ export class RecipeFilterComponent {
       (recipes: Recipe[]) => {
         this.recipes = recipes;
         if (this.recipes.length === 0) {
-          this.errorMessage = 'No se encontraron recetas con ese ingrediente.';
+          this.errorMessage = 'No recipes were found with that ingredient.';
         }
       },
       (error: any) => {
         console.error('Error al buscar recetas:', error);
-        this.errorMessage = 'Hubo un error al buscar recetas. Inténtalo nuevamente.';
+        this.errorMessage = 'There was an error searching for recipes. Please try again.';
       }
     );
   }
 
+  // Navegar a la página de detalles de la receta
   viewRecipeDetails(id: string): void {
-    this.router.navigate(['/receta', id]);
+    this.router.navigate(['/plan-premium/recipe-details', id]); // Redirige a la ruta de detalles
   }
 }

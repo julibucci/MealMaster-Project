@@ -11,13 +11,13 @@
   </div>
 
   <h3>Ingredients:</h3>
-<ul class="ingredients-list">
-  <li *ngFor="let ingredient of getIngredients()" class="ingredient-item">
-    {{ ingredient }}
-  </li>
-</ul>
+  <ul class="ingredients-list">
+    <li *ngFor="let ingredient of getIngredients()" class="ingredient-item">
+      {{ ingredient }}
+    </li>
+  </ul>
 
-  <button (click)="goBack()">Back to favorites</button>
+  <!--button (click)="goBack()">Back to favorites</!--button-->
   <!-- Botón para agregar a favoritos -->
   <button *ngIf="!isFavorite" (click)="addToFavorites()">Add to favorites</button>
   <button *ngIf="isFavorite" disabled>This recipe is already in your favorites list </button>

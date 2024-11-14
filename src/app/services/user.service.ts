@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { User } from '../interfaces/user.interface';
 
 @Injectable({
@@ -12,7 +12,6 @@ export class UserService {
   private apiUrl = 'http://localhost:3000/users';
   private currentUserId: number | null = null;
   private currentUser: any;
-
 
 
   constructor(private http: HttpClient) {
@@ -56,4 +55,22 @@ export class UserService {
   isPremiumUser(): boolean {
     return this.currentUser && this.currentUser.userPlan === 'premium';
   }
+
+  getUserProfileById(userId: string): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${userId}`).pipe(
+      catchError((error) => throwError(() => new Error(error.message || 'Failed to load user')))
+    );
+  }
+  
+  upgradeToPremium(userId: number): Observable<User> {
+    const updatedData = { userPlan: 'premium' };
+    return this.http.patch<User>(`${this.apiUrl}/${userId}`, updatedData).pipe(
+      map((user) => {
+        localStorage.setItem('userPlan', user.userPlan); // Actualiza el plan en localStorage
+        return user;
+      }),
+      catchError((error) => throwError(() => new Error(error.message || 'Failed to upgrade plan')))
+    );
+  }
+  
 }
