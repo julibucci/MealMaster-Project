@@ -19,7 +19,7 @@ export class AuthService {
       map((users) => {
         if (users.length > 0) {
           const user = users[0];
-          localStorage.setItem('authUserId', user.id); // Guardamos el ID del usuario
+          localStorage.setItem('authUserId', user.id.toString()); // Guardamos el ID del usuario como cadena
           return { message: 'Login successful', user: user };
         } else {
           throw new Error('Invalid email or password');
