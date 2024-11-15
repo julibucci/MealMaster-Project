@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Recipe } from '../../../interfaces/recipe.interface';
+import { UserService } from '../../../services/user.service';
+import { UserTryService } from '../../../services/user-try.service';
 
 @Component({
   selector: 'app-recipe-filter',
@@ -17,7 +19,7 @@ export class RecipeFilterComponent {
   recipes: Recipe[] = [];
   errorMessage: string = '';
 
-  constructor(private RecipeFilterService: RecipeFilterService, private router: Router) {}
+  constructor(private RecipeFilterService: RecipeFilterService, private router: Router,private userService: UserTryService) {}
 
   searchRecipes(): void {
     if (!this.ingredients.trim()) {
@@ -44,6 +46,20 @@ export class RecipeFilterComponent {
 
   // Navegar a la página de detalles de la receta
   viewRecipeDetails(id: string): void {
-    this.router.navigate(['/plan-premium/recipe-details', id]); // Redirige a la ruta de detalles
+    // Si el usuario ya está cargado, verifica el plan directamente
+    if (this.userService.isPremiumUser()) {
+      this.router.navigate(['/plan-premium/recipe-details', id]); // Ruta para usuarios premium
+    } else if (this.userService.getUserProfile('1')) {
+      // Si el usuario no está cargado, llama al servicio y verifica el plan
+      this.userService.getUserProfile('1').subscribe(user => {
+        if (user.userPlan === 'premium') {
+          this.router.navigate(['/plan-premium/recipe-details', id]);
+        } else {
+          this.router.navigate(['/plan-basico/recipe-details', id]);
+        }
+      });
+    } else {
+      this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta por defecto
+    }
   }
 }

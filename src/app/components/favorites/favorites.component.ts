@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
+import { UserTryService } from '../../services/user-try.service';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class FavoritesComponent implements OnInit {
     private favoriteService: FavoriteService,
     private mealService: MealService,
     private router: Router,
-    private userservice: UserService
+    private userService: UserTryService
   ) {}
 
   ngOnInit(): void {
@@ -79,6 +80,20 @@ export class FavoritesComponent implements OnInit {
 
   // Navegar a la página de detalles de la receta
   viewRecipeDetails(id: string): void {
-    this.router.navigate(['/plan-premium/recipe-details', id]); // Redirige a la ruta de detalles
+    // Si el usuario ya está cargado, verifica el plan directamente
+    if (this.userService.isPremiumUser()) {
+      this.router.navigate(['/plan-premium/recipe-details', id]); // Ruta para usuarios premium
+    } else if (this.userService.getUserProfile('1')) {
+      // Si el usuario no está cargado, llama al servicio y verifica el plan
+      this.userService.getUserProfile('1').subscribe(user => {
+        if (user.userPlan === 'premium') {
+          this.router.navigate(['/plan-premium/recipe-details', id]);
+        } else {
+          this.router.navigate(['/plan-basico/recipe-details', id]);
+        }
+      });
+    } else {
+      this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta por defecto
+    }
   }
 }
