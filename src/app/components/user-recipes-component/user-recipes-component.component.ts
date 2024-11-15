@@ -31,7 +31,7 @@ export class UserRecipesComponentComponent implements OnInit {
 
   deleteRecipe(recipeId: string): void {
     this.recipeService.deleteRecipe(recipeId).subscribe(() => {
-      this.recipes = this.recipes.filter(recipe => recipe.idMeal !== recipeId);
+      this.recipes = this.recipes.filter(recipe => recipe.id !== recipeId);
     });
   }
 

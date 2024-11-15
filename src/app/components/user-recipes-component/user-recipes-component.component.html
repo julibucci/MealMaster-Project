@@ -6,7 +6,7 @@
         <strong class="recipe-name">{{ recipe.strMeal }}</strong> - <span class="recipe-category">{{ recipe.strCategory }}</span>
       </div>
       <div class="recipe-actions">
-        <button (click)="deleteRecipe(recipe.idMeal)" class="delete-btn">Delete</button>
+        <button (click)="deleteRecipe(recipe.id)" class="delete-btn">Delete</button>
         <button (click)="viewRecipeDetails(recipe.idMeal)" class="view-btn">View Details</button>
       </div>
     </li>
