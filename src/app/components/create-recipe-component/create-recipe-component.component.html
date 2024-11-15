@@ -13,6 +13,13 @@
   </label>
 
   <label>
+    Area:
+    <select [(ngModel)]="recipe.strArea">
+      <option *ngFor="let area of areas" [value]="area">{{ area }}</option>
+    </select>
+  </label>
+
+  <label>
     Instructions:
     <textarea [(ngModel)]="recipe.strInstructions"></textarea>
   </label>

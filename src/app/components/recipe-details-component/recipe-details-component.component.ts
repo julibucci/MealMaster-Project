@@ -73,15 +73,23 @@ export class RecipeDetailsComponent implements OnInit {
   }
 
   getIngredients(): string[] {
-    const ingredients = [];
-    for (let i = 1; i <= 20; i++) {
-      const ingredient = this.recipeDetails[`strIngredient${i}`];
-      const measure = this.recipeDetails[`strMeasure${i}`];
-      if (ingredient) {
-        ingredients.push(`${ingredient} (${measure})`);
+    if (this.recipeDetails.ingredients && Array.isArray(this.recipeDetails.ingredients)) {
+      // Para las recetas del JSON local, devuelve el array de ingredientes formateado
+      return this.recipeDetails.ingredients.map(
+        (item: { ingredient: string; measure: string }) => `${item.ingredient} (${item.measure})`
+      );
+    } else {
+      // Para recetas de la API externa, usa el formato original
+      const ingredients = [];
+      for (let i = 1; i <= 20; i++) {
+        const ingredient = this.recipeDetails[`strIngredient${i}`];
+        const measure = this.recipeDetails[`strMeasure${i}`];
+        if (ingredient) {
+          ingredients.push(`${ingredient} (${measure})`);
+        }
       }
+      return ingredients;
     }
-    return ingredients;
   }
 
   goBack(): void {
@@ -108,7 +116,7 @@ export class RecipeDetailsComponent implements OnInit {
 
     this.favoriteService.addFavorite(favorite).subscribe(() => {
       this.isFavorite = true;  // Marcar como favorito
-      alert('Receta agregada a favoritos');
+      alert('Recipe added to favorites');
     });
   }
 

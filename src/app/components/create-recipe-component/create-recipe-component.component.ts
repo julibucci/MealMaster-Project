@@ -17,10 +17,18 @@ export class CreateRecipeComponentComponent implements OnInit {
     idMeal: '',
     strMeal: '',
     strCategory: '',
+    strArea: '',
     strInstructions: '',
     ingredients: [] as { ingredient: string, measure: string }[],
     userId: null as number | null
   };
+
+  areas = [
+    'American', 'British', 'Canadian', 'Chinese', 'Croatian', 'Dutch', 'Egyptian',
+    'Filipino', 'French', 'Greek', 'Indian', 'Irish', 'Italian', 'Jamaican', 'Japanese',
+    'Kenyan', 'Malaysian', 'Mexican', 'Moroccan', 'Polish', 'Portuguese', 'Russian',
+    'Spanish', 'Thai', 'Tunisian', 'Turkish', 'Ukrainian', 'Unknown', 'Vietnamese'
+  ];
 
   constructor(
     private recipeService: RecipeService,
@@ -47,6 +55,9 @@ export class CreateRecipeComponentComponent implements OnInit {
   }
 
   saveRecipe(): void {
+    if (!this.recipe.idMeal) {
+      this.recipe.idMeal = this.generateId();
+    }
     console.log('Saving recipe:', this.recipe); // Verifica los datos antes de enviarlos
     this.recipeService.createRecipe(this.recipe).subscribe({
       next: () => {
@@ -56,5 +67,9 @@ export class CreateRecipeComponentComponent implements OnInit {
         console.error('Error saving recipe:', err); // Verifica si hay algún error
       }
     });
+  }
+
+  generateId(): string {
+    return Math.floor(100000000 + Math.random() * 900000000).toString(); // Genera un número de 9 dígitos
   }
 }
