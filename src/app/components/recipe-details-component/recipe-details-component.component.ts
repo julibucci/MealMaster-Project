@@ -116,7 +116,7 @@ export class RecipeDetailsComponent implements OnInit {
 
     this.favoriteService.addFavorite(favorite).subscribe(() => {
       this.isFavorite = true;  // Marcar como favorito
-      alert('Receta agregada a favoritos');
+      alert('Recipe added to favorites');
     });
   }
 

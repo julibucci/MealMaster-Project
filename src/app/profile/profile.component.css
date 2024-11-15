@@ -1,114 +1,103 @@
-/* Fuente global para todos los elementos del componente */
+/* Fuentes y colores */
 * {
-  font-family: Arial, sans-serif;
-  font-size: 1rem;
-  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Contenedor principal centrado */
 .profile-container {
-  max-width: 600px;
+  max-width: 500px;
   margin: 2rem auto;
   padding: 2rem;
-  background-color: #f9f9f9;
+  background-color: #fff8e1;
   border-radius: 10px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Centrar texto en todo el contenedor */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  color: #4e342e;
 }
 
-/* Mensaje de error */
-.error-message {
-  color: #e63946;
-  background-color: #ffe6e6;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-/* Título en color naranja */
 h2 {
-  color: #121211; /* Naranja */
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  font-weight: bold;
+  font-size: 2.2rem;
   text-align: center;
+  color: #6d4c41;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
-/* Etiquetas y campos de entrada centrados */
+.profile-field {
+  margin-bottom: 1.2rem;
+}
+
 label {
   display: block;
-  font-weight: 600;
-  color: #0e0d0d;
-  margin-bottom: 1rem;
-  text-align: left;
+  font-weight: bold;
+  color: #5d4037;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
+input, textarea {
   width: 100%;
   padding: 0.7rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
   font-size: 1rem;
-  background-color: #fff;
-  margin-top: 0.3rem;
-  transition: border-color 0.3s;
+  border: 1px solid #bcaaa4;
+  border-radius: 6px;
+  background-color: #fbe9e7;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-  border-color: #2a9d8f;
+input:focus, textarea:focus {
+  border-color: #f8f5f4;
   outline: none;
+  background-color: #fff3e0;
 }
 
-/* Contenedor de botones centrado */
-.button-group {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1.5rem;
+textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
-/* Botón Save en verde */
 button {
-  padding: 0.6em 1.2em;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
-  font-family: inherit;
-}
-
-button.save-button {
-  background-color: #2a9d8f;
-  color: white;
-}
-
-button.save-button:hover {
-  background-color: #21867a;
-}
-
-/* Botón Delete en rojo */
-button.delete-button {
-  background-color: #e63946;
-  color: white;
-}
-
-button.delete-button:hover {
-  background-color: #d62839;
-}
-
-/* Mensaje de carga */
-p {
-  color: #666;
-  font-size: 1.1rem;
-  font-style: italic;
+  width: 100%;
+  padding: 0.9rem;
   margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.save-button {
+  background-color: #ff7043;
+  color: #39f400;
+}
+
+.save-button:hover {
+  background-color: #00f310;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.delete-button {
+  background-color: #e53935;
+  color: #ffffff;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.error-message {
+  color: #d32f2f;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.loading-message {
+  text-align: center;
+  color: #5d4037;
+  font-style: italic;
+  font-size: 1.1rem;
 }
 
 
