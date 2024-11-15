@@ -60,7 +60,7 @@ export class UserService {
       catchError((error) => throwError(() => new Error(error.message || 'Failed to load user')))
     );
   }
-  
+
   upgradeToPremium(userId: string): Observable<any> {
     // Actualiza el plan del usuario a "premium"
     return this.http.patch(`${this.apiUrl}/${userId}`, { userPlan: 'premium' }).pipe(
@@ -70,6 +70,9 @@ export class UserService {
       })
     );
   }
- 
+
+  isPremiumUser1(): boolean {
+    return this.currentUser?.userPlan === 'premium';
+  }
 
 }

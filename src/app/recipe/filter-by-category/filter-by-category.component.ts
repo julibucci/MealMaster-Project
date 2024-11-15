@@ -9,6 +9,8 @@ import { RecipeService } from '../../services/recipes.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { UserService } from '../../services/user.service';
+import { UserTryService } from '../../services/user-try.service';
 
 @Component({
   selector: 'app-filter-by-category',
@@ -31,7 +33,7 @@ export class FilterByCategoryComponent {
   selectedCategory:string ="";
   selectedIdFromRecipe: string ="";
 
-  constructor(private filterByCategoryService: FilterByCategoryService,  private router: Router,){}
+  constructor(private filterByCategoryService: FilterByCategoryService,  private router: Router,private userService: UserTryService){}
 
   ngOnInit() {
     // Cargar todas las categorias al renderizar la plantilla
@@ -63,6 +65,20 @@ this.categoryRecipesFromJson = this.categoryRecipesFromJson.filter((recipe)=> re
 }
 
 viewRecipeDetails(id: string): void {
-  this.router.navigate(['/plan-premium/recipe-details', id]); // Redirige a la ruta de detalles
+  // Si el usuario ya está cargado, verifica el plan directamente
+  if (this.userService.isPremiumUser()) {
+    this.router.navigate(['/plan-premium/recipe-details', id]); // Ruta para usuarios premium
+  } else if (this.userService.getUserProfile('1')) {
+    // Si el usuario no está cargado, llama al servicio y verifica el plan
+    this.userService.getUserProfile('1').subscribe(user => {
+      if (user.userPlan === 'premium') {
+        this.router.navigate(['/plan-premium/recipe-details', id]);
+      } else {
+        this.router.navigate(['/plan-basico/recipe-details', id]);
+      }
+    });
+  } else {
+    this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta por defecto
+  }
 }
 }
