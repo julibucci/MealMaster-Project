@@ -4,6 +4,7 @@ Descripción del Proyecto
 
 Meal Master es un sistema que permite a los usuarios gestionar su perfil, recetas, comentarios y listas de favoritos, así como acceder a funcionalidades premium mediante un modelo de pago. Está diseñado para simplificar la búsqueda y gestión de recetas y mejorar la experiencia del usuario a través de una interfaz intuitiva.
 
+
 Características:
 - Gestión de recetas, favoritos y comentarios.
 - Suscripción Premium para acceder a funcionalidades avanzadas.
@@ -23,6 +24,7 @@ Plan Premium:
 - Gestión de recetas propias (ABM) por parte del usuario premium.
 - Filtrado y visualización de recetas por ingredientes.
 - Acceso completo a funcionalidades avanzadas.
+  
 
 Herramientas Utilizadas
 
@@ -30,6 +32,8 @@ Herramientas Utilizadas
 - Frameworks: Angular
 - API externas:
 - MealDB: Para recetas, ingredientes y categorías.
+
+  
 
 Puertos y Configuración de Backend
 
@@ -40,6 +44,7 @@ json-server --watch db.json --port 3000
 
 Inicia el servidor en el puerto 3002:
 json-server --watch db2.json --port 3002
+
 
 Instrucciones para el Desarrollo:
 Clonar el repositorio:
@@ -55,7 +60,9 @@ ng serve
 
 Esto iniciará la aplicación en http://localhost:4200/.
 
+
 Iniciar el servidor JSON (para simular las bases de datos): Asegurate de ejecutar ambos servidores JSON en puertos separados, como se explicó arriba.
+
 
 
 
