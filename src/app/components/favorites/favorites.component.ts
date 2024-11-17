@@ -9,7 +9,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
-import { UserTryService } from '../../services/user-try.service';
 
 
 @Component({
