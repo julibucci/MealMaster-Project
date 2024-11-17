@@ -56,3 +56,19 @@ ng serve
 Esto iniciará la aplicación en http://localhost:4200/.
 
 Iniciar el servidor JSON (para simular las bases de datos): Asegurate de ejecutar ambos servidores JSON en puertos separados, como se explicó arriba.
+
+
+
+Para probar las funcionalidades del usuario básico pueden usar este perfil:
+Email: jane.smith@example.com
+Password: 456
+
+
+
+Para probar las funcionalidades del usuario premium pueden usar este perfil:
+Email: john.doe@example.com
+Password: 123
+
+
+O también pueden crear su propio perfil que se inicializará con el plan básico y al simular el pago pasará a ser Premium.
+
