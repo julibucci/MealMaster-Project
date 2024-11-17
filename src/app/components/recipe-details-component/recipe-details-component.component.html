@@ -28,11 +28,11 @@
 <app-comment [comments]="comments" [recipeId]="recipeId"></app-comment>
 
 <!-- Formulario de nuevo comentario -->
-<div *ngIf="true">
-  <h3>Deja un comentario:</h3>
+<div class="comment-form">
+  <h3>Leave a Comment:</h3>
   <form [formGroup]="commentForm" (ngSubmit)="addComment()">
-    <textarea formControlName="comment" rows="4" cols="50" placeholder="Escribe tu comentario..." required></textarea>
-    <br>
-    <button type="submit" [disabled]="commentForm.invalid">Enviar comentario</button>
+    <textarea formControlName="comment" rows="4" placeholder="Write your comment..." required></textarea>
+    <br />
+    <button type="submit" [disabled]="commentForm.invalid">Submit</button>
   </form>
 </div>
