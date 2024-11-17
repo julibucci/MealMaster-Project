@@ -23,7 +23,10 @@ export class FavoriteService {
 
    // Obtener favoritos del usuario logueado
    getFavorites(): Observable<any[]> {
-    const userId = this.userService.getCurrentUserId();
+    const userId = this.userService.getCurrentUserId()?.toString();  // Asegúrate de convertirlo a string si es necesario
+    if (!userId) {
+      throw new Error('No hay usuario logueado');
+    }
     return this.http.get<any[]>(`${this.apiUrl}?userId=${userId}`);
   }
 

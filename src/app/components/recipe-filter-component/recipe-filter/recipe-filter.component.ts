@@ -19,7 +19,7 @@ export class RecipeFilterComponent {
   recipes: Recipe[] = [];
   errorMessage: string = '';
 
-  constructor(private RecipeFilterService: RecipeFilterService, private router: Router,private userService: UserTryService) {}
+  constructor(private RecipeFilterService: RecipeFilterService, private router: Router,private userService: UserService) {}
 
   searchRecipes(): void {
     if (!this.ingredients.trim()) {
@@ -29,7 +29,7 @@ export class RecipeFilterComponent {
 
     this.errorMessage = ''; // Limpiar el mensaje de error
 
-    // Pasamos un solo ingrediente al servicio
+    // Usamos el servicio para obtener recetas por ingrediente
     this.RecipeFilterService.getRecipesByIngredient(this.ingredients.trim()).subscribe(
       (recipes: Recipe[]) => {
         this.recipes = recipes;
@@ -44,22 +44,35 @@ export class RecipeFilterComponent {
     );
   }
 
+  getAllRecipes(): void {
+    this.RecipeFilterService.getAllRecipes().subscribe(
+      (recipes: Recipe[]) => {
+        this.recipes = recipes;
+        if (this.recipes.length === 0) {
+          this.errorMessage = 'No recipes found.';
+        }
+      },
+      (error: any) => {
+        console.error('Error al obtener todas las recetas:', error);
+        this.errorMessage = 'There was an error fetching all recipes.';
+      }
+    );
+  }
+
   // Navegar a la página de detalles de la receta
   viewRecipeDetails(id: string): void {
-    // Si el usuario ya está cargado, verifica el plan directamente
-    if (this.userService.isPremiumUser()) {
-      this.router.navigate(['/plan-premium/recipe-details', id]); // Ruta para usuarios premium
-    } else if (this.userService.getUserProfile('1')) {
-      // Si el usuario no está cargado, llama al servicio y verifica el plan
-      this.userService.getUserProfile('1').subscribe(user => {
-        if (user.userPlan === 'premium') {
-          this.router.navigate(['/plan-premium/recipe-details', id]);
-        } else {
-          this.router.navigate(['/plan-basico/recipe-details', id]);
-        }
-      });
-    } else {
-      this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta por defecto
-    }
+    // Verifica si el usuario ya está cargado
+    this.userService.getUserProfile().subscribe(user => {
+      // Verifica el plan del usuario y navega según corresponda
+      if (user.userPlan === 'premium') {
+        this.router.navigate(['/plan-premium/recipe-details', id]); // Ruta para usuarios premium
+      } else {
+        this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios básicos
+      }
+    }, error => {
+      console.error('Error al obtener el perfil del usuario:', error);
+      // Si hay un error al cargar el perfil, puedes redirigir a una ruta predeterminada
+      this.router.navigate(['/plan-basico/recipe-details', id]);
+    });
   }
 }

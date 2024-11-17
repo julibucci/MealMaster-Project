@@ -62,6 +62,30 @@
       "strMeal": "Apple & Blackberry Crumble",
       "strMealThumb": "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg",
       "category": "Dessert"
+    },
+    {
+      "id": "daljjwif5",
+      "userId": "2",
+      "idMeal": "52939",
+      "strMeal": "Callaloo Jamaican Style",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/ussyxw1515364536.jpg",
+      "category": "Miscellaneous"
+    },
+    {
+      "id": "kzjvck5tc",
+      "userId": "2",
+      "idMeal": "52775",
+      "strMeal": "Vegan Lasagna",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/rvxxuy1468312893.jpg",
+      "category": "Vegan"
+    },
+    {
+      "id": "nvj69x3kr",
+      "userId": "2",
+      "idMeal": "53060",
+      "strMeal": "Burek",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/tkxquw1628771028.jpg",
+      "category": "Side"
     }
   ]
 }

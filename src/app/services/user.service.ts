@@ -18,11 +18,15 @@ export class UserService {
   }
 
   private loadCurrentUser(): void {
-    this.getUserProfile().subscribe(); // Actualiza el `currentUserId` internamente
+    const userIdFromStorage = localStorage.getItem('authUserId');
+    console.log('User ID from storage:', userIdFromStorage); // Verificar si existe un valor en localStorage
+    if (userIdFromStorage) {
+      this.currentUserId = parseInt(userIdFromStorage, 10);
+    }
   }
 
   getUserProfile(): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/1`).pipe(
+    return this.http.get<User>(`${this.apiUrl}/${this.currentUserId}`).pipe(
       tap(user => this.currentUserId = user.id),
       catchError(this.handleError)
     );
