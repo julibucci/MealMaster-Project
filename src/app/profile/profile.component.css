@@ -56,19 +56,12 @@ body {
   width: 350px; /* Aumenta el tamaño del contenedor derecho */
   padding: 30px; /* Espacio adicional alrededor de la imagen */
 }
-
-/* Tamaño específico para la imagen izquierda */
-.left-side .chef-image {
-  width: 320px; /* Tamaño de la imagen izquierda */
+/* Tamaño y estilo del borde de las imágenes */
+.chef-image {
+  width: 320px;
   height: auto;
   border-radius: 8px;
-}
-
-/* Tamaño aumentado para la imagen derecha */
-.right-side .chef-image {
-  width: 320px; /* Aumenta el tamaño de la imagen derecha */
-  height: auto;
-  border-radius: 8px;
+  border: 5px solid #6d4c41; /* Color marrón para el borde */
 }
 
 
