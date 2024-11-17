@@ -110,3 +110,59 @@ ng-template {
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+/* Fondo general y espaciado */
+body {
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Encabezado */
+h2 {
+  color: #0c0b0a;
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Contenedor del selector de categoría */
+.category-select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para el label y selector de categoría */
+.category-select-container label {
+  font-weight: bold;
+  color: #6d4b3f;
+  font-size: 1.1rem;
+  margin-right: 10px; /* Espacio entre el label y el select */
+}
+
+.category-select-container select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #FF7043;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.category-select-container select:hover {
+  border-color: #FF5722;
+}

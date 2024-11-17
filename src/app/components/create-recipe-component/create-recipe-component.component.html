@@ -24,7 +24,7 @@
     <textarea [(ngModel)]="recipe.strInstructions"></textarea>
   </label>
 
-  <h4>Ingredients</h4>
+  <h4>Ingredients:</h4>
   <div *ngFor="let ingredient of recipe.ingredients; let i = index">
     <input [(ngModel)]="ingredient.ingredient" placeholder="Ingredient" />
     <input [(ngModel)]="ingredient.measure" placeholder="Measure" />

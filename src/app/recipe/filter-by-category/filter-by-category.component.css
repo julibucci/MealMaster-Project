@@ -24,21 +24,40 @@ h2 {
   text-align: center;
 }
 
-/* Estilo para el selector de categoría */
-select {
+/* Centrar el contenedor de selector de categoría */
+.category-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  gap: 10px; 
+  margin-top: 30px; 
+  margin-bottom: 20px;
+}
+
+/* Estilo de la etiqueta */
+.category-container label {
+  font-weight: bold;
+  color: #6d4b3f; 
+  font-size: 1.1rem;
+}
+
+/* Estilo del selector de categoría */
+.category-container select {
   padding: 10px;
   font-size: 1rem;
+  width: 200px;
   border: 2px solid #FF7043;
   border-radius: 5px;
   background-color: #fff;
   color: #333;
-  margin-bottom: 20px;
+  font-weight: bold;
   transition: all 0.3s ease;
 }
 
-select:hover {
+.category-container select:hover {
   border-color: #FF5722;
 }
+
 
 /* Estilo de los favoritos */
 ul {
@@ -92,16 +111,12 @@ button {
 }
 
 button:hover {
-  background-color: #007bff;
-  color: rgb(247, 237, 237);
+  background-color: #FF5722;
+  color: #f7eded;
 }
 
 button:focus {
   outline: none;
-}
-
-button:hover {
-  background-color: #FF5722;
 }
 
 /* Mensaje de no favoritos */
