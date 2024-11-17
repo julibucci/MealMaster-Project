@@ -60,12 +60,14 @@ Iniciar el servidor JSON (para simular las bases de datos): Asegurate de ejecuta
 
 
 Para probar las funcionalidades del usuario básico pueden usar este perfil:
+
 Email: jane.smith@example.com
 Password: 456
 
 
 
 Para probar las funcionalidades del usuario premium pueden usar este perfil:
+
 Email: john.doe@example.com
 Password: 123
 
