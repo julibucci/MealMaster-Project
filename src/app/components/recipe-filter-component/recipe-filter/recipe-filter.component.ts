@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Recipe } from '../../../interfaces/recipe.interface';
 import { UserService } from '../../../services/user.service';
-import { UserTryService } from '../../../services/user-try.service';
+
 
 @Component({
   selector: 'app-recipe-filter',

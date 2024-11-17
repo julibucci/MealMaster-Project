@@ -10,7 +10,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../services/user.service';
-import { UserTryService } from '../../services/user-try.service';
 
 @Component({
   selector: 'app-filter-by-category',
