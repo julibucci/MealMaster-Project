@@ -6,8 +6,8 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Cormorant', serif;
-    color: #4E342E; /* Marrón oscuro para el texto */
-    background-color: #D2A679; /* Beige oscuro y cálido */
+    color: #78564e; /* Marrón oscuro para el texto */
+    background-color: #e6c3a0; /* Beige oscuro y cálido */
     padding: 20px;
     min-height: 100vh;
     width: 100%;
@@ -29,7 +29,7 @@
 
 .navbar a {
     font-family: 'Playfair Display', serif;
-    color: #6D4C41; /* Marrón cálido */
+    color: #45352f; /* Marrón cálido */
     text-decoration: none;
     transition: color 0.3s, transform 0.3s;
     padding: 5px 10px;
