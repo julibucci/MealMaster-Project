@@ -53,7 +53,6 @@ export class UserService {
     return this.currentUserId;
   }
 
-
   // Método para verificar si el usuario es premium
   isPremiumUser(): boolean {
     return this.currentUser && this.currentUser.userPlan === 'premium';

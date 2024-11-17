@@ -92,7 +92,7 @@ textarea {
 }
 
 /* Estilo para los ingredientes */
-div *ngFor {
+div[ngFor] {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;

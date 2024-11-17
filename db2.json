@@ -1,4 +1,129 @@
 {
+  "comments": [
+    {
+      "id": "a8bbb",
+      "userId": 1,
+      "idMeal": "52895",
+      "comment": "Esta receta está deliciosa, la volveré a hacer.",
+      "date": "2024-11-12T10:00:00Z"
+    },
+    {
+      "id": "aa8bb",
+      "userId": 2,
+      "idMeal": "52895",
+      "comment": "Muy fácil de preparar, y el sabor es excelente.",
+      "date": "2024-11-12T12:00:00Z"
+    },
+    {
+      "id": "a8bb",
+      "userId": 0,
+      "idMeal": "52895",
+      "comment": "Very good",
+      "date": "2024-11-12T22:28:56.143Z"
+    },
+    {
+      "id": "c730",
+      "userId": "1",
+      "idMeal": "52896",
+      "comment": "Very good!",
+      "date": "2024-11-12T23:20:44.351Z"
+    },
+    {
+      "id": "5b28",
+      "userId": "1",
+      "idMeal": "52969",
+      "comment": "hola\n",
+      "date": "2024-11-15T06:26:25.668Z"
+    },
+    {
+      "id": "3f12",
+      "userId": "2",
+      "idMeal": "52775",
+      "comment": "Excellent recipe!",
+      "date": "2024-11-17T03:54:03.522Z"
+    }
+  ],
+  "favorites": [
+    {
+      "userId": 1,
+      "idMeal": "52895",
+      "strMeal": "English Breakfast",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/utxryw1511721587.jpg",
+      "category": "Breakfast",
+      "id": "e832"
+    },
+    {
+      "userId": 1,
+      "idMeal": "52957",
+      "strMeal": "Fruit and Cream Cheese Breakfast Pastries",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/1543774956.jpg",
+      "category": "Breakfast",
+      "id": "4e47"
+    },
+    {
+      "userId": 1,
+      "idMeal": "52896",
+      "strMeal": "Full English Breakfast",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/sqrtwu1511721265.jpg",
+      "category": "Seafood",
+      "id": "c424"
+    },
+    {
+      "userId": 1,
+      "idMeal": "52967",
+      "strMeal": "Home-made Mandazi",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/thazgm1555350962.jpg",
+      "category": "Breakfast",
+      "id": "40f3"
+    },
+    {
+      "userId": 1,
+      "idMeal": "52962",
+      "strMeal": "Salmon Eggs Eggs Benedict",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/1550440197.jpg",
+      "category": "Seafood",
+      "id": "d338"
+    },
+    {
+      "id": "ywxrquwej",
+      "userId": "1",
+      "idMeal": "5306",
+      "strMeal": "Chick-Fil-A Sandwich",
+      "category": "Chicken"
+    },
+    {
+      "id": "txwbsctxs",
+      "userId": "1",
+      "idMeal": "52893",
+      "strMeal": "Apple & Blackberry Crumble",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg",
+      "category": "Dessert"
+    },
+    {
+      "id": "daljjwif5",
+      "userId": "2",
+      "idMeal": "52939",
+      "strMeal": "Callaloo Jamaican Style",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/ussyxw1515364536.jpg",
+      "category": "Miscellaneous"
+    },
+    {
+      "id": "kzjvck5tc",
+      "userId": "2",
+      "idMeal": "52775",
+      "strMeal": "Vegan Lasagna",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/rvxxuy1468312893.jpg",
+      "category": "Vegan"
+    },
+    {
+      "id": "nvj69x3kr",
+      "userId": "2",
+      "idMeal": "53060",
+      "strMeal": "Burek",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/tkxquw1628771028.jpg",
+      "category": "Side"
+    }
+  ],
   "meals": [
     {
       "idMeal": "5306",

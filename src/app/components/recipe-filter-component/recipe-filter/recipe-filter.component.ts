@@ -53,7 +53,7 @@ export class RecipeFilterComponent {
         }
       },
       (error: any) => {
-        console.error('Error al obtener todas las recetas:', error);
+        console.error('Error getting all recipes:', error);
         this.errorMessage = 'There was an error fetching all recipes.';
       }
     );
@@ -70,7 +70,7 @@ export class RecipeFilterComponent {
         this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios básicos
       }
     }, error => {
-      console.error('Error al obtener el perfil del usuario:', error);
+      console.error('Error getting user profile:', error);
       // Si hay un error al cargar el perfil, puedes redirigir a una ruta predeterminada
       this.router.navigate(['/plan-basico/recipe-details', id]);
     });

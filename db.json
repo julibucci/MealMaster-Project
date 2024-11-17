@@ -30,7 +30,7 @@
       "name": "marta",
       "email": "marta@example.com",
       "password": "123",
-      "userPlan": "basic"
+      "userPlan": "premium"
     },
     {
       "id": "dc2f",

@@ -36,14 +36,14 @@ export class RecipeFilterService {
 
   // Método para obtener todas las recetas creadas por cualquier usuario
   getAllRecipes(): Observable<Recipe[]> {
-    return this.http.get<any>('http://localhost:3001/meals').pipe(
+    return this.http.get<any>('http://localhost:3002/meals').pipe(
       map(response => {
         return response.meals ? response.meals.map((meal: any) => ({
           idMeal: meal.idMeal,
           strMeal: meal.strMeal,
           strInstructions: meal.strInstructions,
           strMealThumb: meal.strMealThumb,
-          userId: meal.userId // Include userId in each recipe
+          userId: meal.userId
         })) : [];
       }),
       catchError(error => {

@@ -42,7 +42,7 @@ export class FilterByCategoryComponent {
 
   getAllCategories(): void {
     this.filterByCategoryService.getAllCategorys().subscribe((data: Category[]) =>{
-      console.log("Categorías recibidas:", data);
+      console.log("Categories received:", data);
       this.categoryList = data;
     })
   }
@@ -74,7 +74,7 @@ viewRecipeDetails(id: string): void {
       this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios básicos
     }
   }, error => {
-    console.error('Error al obtener el perfil del usuario:', error);
+    console.error('Error getting user profile:', error);
     // Si hay un error al cargar el perfil, puedes redirigir a una ruta predeterminada
     this.router.navigate(['/plan-basico/recipe-details', id]);
   });

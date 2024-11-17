@@ -42,7 +42,7 @@ export class FavoritesComponent implements OnInit {
         });
 
         this.favoriteService.getFavorites().subscribe(favorites => {
-          console.log("Favoritos obtenidos:", favorites);
+          console.log("Favorites obtained:", favorites);
           this.favorites = favorites;
           this.filteredFavorites = favorites;
         });
@@ -52,20 +52,19 @@ export class FavoritesComponent implements OnInit {
 
   // Filtrar favoritos basados en la categoría seleccionada
   filterFavorites(): void {
-    console.log("Categoría seleccionada:", this.selectedCategory);
-    console.log("Favoritos antes del filtrado:", this.favorites);
+    console.log("Selected category:", this.selectedCategory);
+    console.log("Favorites before filtering:", this.favorites);
 
     // Verifica si la categoría está vacía para mostrar todos los favoritos
     if (this.selectedCategory === '') {
       this.filteredFavorites = this.favorites;
     } else {
-      // Cambié "strCategory" por "category" porque esa es la propiedad en tu JSON
       this.filteredFavorites = this.favorites.filter(
         fav => fav.category === this.selectedCategory
       );
     }
 
-    console.log("Recetas filtradas:", this.filteredFavorites);
+    console.log("Filtered recipes:", this.filteredFavorites);
   }
 
   // Eliminar un favorito
@@ -91,8 +90,8 @@ export class FavoritesComponent implements OnInit {
         this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios básicos
       }
     }, error => {
-      console.error('Error al obtener el perfil del usuario:', error);
-      // Si hay un error al cargar el perfil, puedes redirigir a una ruta predeterminada
+      console.error('Error getting user profile:', error);
+
       this.router.navigate(['/plan-basico/recipe-details', id]);
     });
   }

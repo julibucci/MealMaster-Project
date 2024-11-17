@@ -11,7 +11,7 @@ import { User } from '../interfaces/user.interface';
 })
 
 export class FavoriteService {
-  private apiUrl = 'http://localhost:5000/favorites';  // URL del servidor donde están los favoritos
+  private apiUrl = 'http://localhost:3002/favorites';  // URL del servidor donde están los favoritos
 
 
   private http = inject(HttpClient);
@@ -23,7 +23,7 @@ export class FavoriteService {
 
    // Obtener favoritos del usuario logueado
    getFavorites(): Observable<any[]> {
-    const userId = this.userService.getCurrentUserId()?.toString();  // Asegúrate de convertirlo a string si es necesario
+    const userId = this.userService.getCurrentUserId()?.toString();
     if (!userId) {
       throw new Error('No hay usuario logueado');
     }

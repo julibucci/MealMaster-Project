@@ -23,7 +23,7 @@ export class UserTryService {
 
   getUserProfile(userId: string): Observable<User> {
     return this.http.get<User>(`${this.apiUrl}/${userId}`).pipe(
-      tap(user => this.currentUser = user), // Actualiza `currentUser`
+      tap(user => this.currentUser = user),
       catchError(this.handleError)
     );
   }
