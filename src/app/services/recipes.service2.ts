@@ -9,7 +9,7 @@ import {Recipe} from '../interfaces/recipe.interface';
   providedIn: 'root'
 })
 
-export class RecipeService {
+export class RecipeService2 {
   private apiUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
   constructor(private http: HttpClient) {}

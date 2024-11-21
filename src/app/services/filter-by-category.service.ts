@@ -4,7 +4,7 @@ import { catchError, Observable } from 'rxjs';
 import { Category } from '../interfaces/category';
 import { Inject } from '@angular/core';
 import { Recipe } from '../interfaces/recipe.interface';
-import { RecipeService } from './recipes.service';
+import { RecipeService } from './recipes.service2';
 import { map } from 'rxjs';
 @Injectable({
   providedIn: 'root'

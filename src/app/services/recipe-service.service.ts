@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable } from 'rxjs';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,15 @@ export class RecipeService {
     return this.http.get<any[]>(this.apiUrl); // Devuelve todas las recetas sin filtrar
   }
 
+  getRecipesByCategory(category :string): Observable<any | null> {
+    return this.http.get<any[]>(this.apiUrl).pipe(
+      map((recipes)=> recipes.filter((r)=> r.strCategory === category)),
+      catchError(error=> {
+        console.error("Error fetching meals", error);
+        return of([])
+      })
+    )
+  }
 
   // Método para obtener detalles de una receta específica
   getRecipeDetails(recipeId: string): Observable<any> {

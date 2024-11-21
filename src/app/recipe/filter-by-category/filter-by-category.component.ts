@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { Recipe } from '../../interfaces/recipe.interface';
 import { FilterByCategoryService } from '../../services/filter-by-category.service';
-import { RecipeService } from '../../services/recipes.service';
+import { RecipeService } from '../../services/recipe-service.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
@@ -21,19 +21,17 @@ import { UserTryService } from '../../services/user-try.service';
 })
 export class FilterByCategoryComponent {
 
-  categoryRecipesFromJson: Recipe[] = [];
-
-
-  // Listas que almacenan resultados de las peticiones HTTP:
   categoryList: Category[] = [];
   recipeFromCategoryList: Recipe[] = [];
-  //la propiedad recipe puede ser un objeto Recipe o null, y comienza con null.
   recipe: Recipe | null = null;
 
   selectedCategory:string ="";
   selectedIdFromRecipe: string ="";
 
-  constructor(private filterByCategoryService: FilterByCategoryService,  private router: Router,private userService: UserService){}
+  constructor(private filterByCategoryService: FilterByCategoryService,
+    private router: Router,
+    private userService: UserService,
+  private recipeService: RecipeService){}
 
   ngOnInit() {
     // Cargar todas las categorias al renderizar la plantilla
@@ -47,11 +45,7 @@ export class FilterByCategoryComponent {
     })
   }
 
-getRecipesFromCategory(){
-  this.filterByCategoryService.getAllRecipesFromCategory(this.selectedCategory).subscribe((data: Recipe[]) =>{
-    this.recipeFromCategoryList = data;
-  })
-}
+
 
 getRecipeFromCategory(){
   this.filterByCategoryService.getRecipeFromCategory(this.selectedIdFromRecipe).subscribe((data: Recipe | null)=>{
@@ -60,8 +54,24 @@ getRecipeFromCategory(){
 
 }
 
-addRecipesToCategoryFromJson(){
-this.categoryRecipesFromJson = this.categoryRecipesFromJson.filter((recipe)=> recipe.strMeal === this.selectedCategory )
+addRecipesToCategoryFromJsonAndApi(category: string){
+ this.recipeService.getRecipesByCategory(category).subscribe(
+  (data: Recipe[] | null) => {
+    if(data){
+      this.recipeFromCategoryList = data;
+
+    // Llamamos a la segunda funcion para que concatene los datos de la API
+    this.getRecipeFromCategory();
+    }
+  }
+)
+}
+
+getRecipesFromCategory(){
+  this.filterByCategoryService.getAllRecipesFromCategory(this.selectedCategory).subscribe((data: Recipe[]) =>{
+    // Combinamos los datos del Json con la APi
+    this.recipeFromCategoryList = [...this.recipeFromCategoryList, ...data]
+  })
 }
 
 viewRecipeDetails(id: string): void {

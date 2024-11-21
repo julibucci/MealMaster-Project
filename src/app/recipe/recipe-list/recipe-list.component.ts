@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { RecipeService } from '../../services/recipes.service';
+import { RecipeService } from '../../services/recipes.service2';
 import { Recipe } from '../../interfaces/recipe.interface';
 
 @Component({
