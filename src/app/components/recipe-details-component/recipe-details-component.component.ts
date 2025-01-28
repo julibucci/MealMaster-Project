@@ -24,7 +24,7 @@ export class RecipeDetailsComponent implements OnInit {
   isFavorite: boolean = false;
   comments: any[] = [];
   commentForm: FormGroup;
-  userId: number = 0;
+  userId: string = '';
 
 
   constructor(
@@ -45,7 +45,7 @@ export class RecipeDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     // Obtener el userId del usuario actual
-    this.userId = this.userService.getCurrentUserId() || 0;
+    this.userId = this.userService.getCurrentUserId() || '';
     // Obtener el ID de la receta de los parámetros de la ruta
     this.recipeId = this.route.snapshot.paramMap.get('id') || '';
     // Llamar al servicio para obtener los detalles de la receta

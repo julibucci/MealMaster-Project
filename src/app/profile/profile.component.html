@@ -11,7 +11,10 @@
     <input [(ngModel)]="user.email" placeholder="Email" />
   </label>
   <label>Profile Image:
-    <input [(ngModel)]="user.profileImage" placeholder="Profile Image URL" />
+    <div>
+      <img [src]="user.profileImage || 'assets/default-profile.png'" alt="Profile Image" width="100" />
+    </div>
+    <input type="file" (change)="onFileSelected($event)" />
   </label>
   <label>Bio:
     <textarea [(ngModel)]="user.bio" placeholder="Write a brief bio"></textarea>

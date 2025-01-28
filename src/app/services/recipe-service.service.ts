@@ -6,12 +6,12 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RecipeService {
-  private apiUrl = 'http://localhost:3001/meals';
+  private apiUrl = 'http://localhost:3002/meals';
 
   constructor(private http: HttpClient) {}
 
   // Método para obtener recetas por usuario
-  getRecipesByUser(userId: number): Observable<any[]> {
+  getRecipesByUser(userId: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}?userId=${userId}`);
   }
 

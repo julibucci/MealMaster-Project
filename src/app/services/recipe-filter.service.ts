@@ -21,13 +21,13 @@ export class RecipeFilterService {
         return response.meals ? response.meals.map((meal: any) => ({
           idMeal: meal.idMeal,
           strMeal: meal.strMeal,
-          strInstructions: meal.strInstructions, 
+          strInstructions: meal.strInstructions,
           strMealThumb: meal.strMealThumb
         })) : [];
       }),
       catchError(error => {
         console.error('Error al obtener recetas por ingrediente', error);
-        return of([]); 
+        return of([]);
       })
     );
   }

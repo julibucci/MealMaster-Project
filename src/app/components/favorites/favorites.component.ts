@@ -34,16 +34,17 @@ export class FavoritesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Obtener el perfil del usuario y luego cargar los favoritos y las categorías
+    // Cargar el perfil del usuario y luego cargar favoritos y categorías
     this.favoriteService.getUserProfile().subscribe(() => {
       this.mealService.getCategories().subscribe(categories => {
         this.categories = categories.map(cat => cat.strCategory);
       });
 
+      // Obtener los favoritos del usuario autenticado
       this.favoriteService.getFavorites().subscribe(favorites => {
         console.log("Favoritos obtenidos:", favorites);
         this.favorites = favorites;
-        this.filteredFavorites = favorites;
+        this.filteredFavorites = favorites; // Mostrar favoritos filtrados por defecto
       });
     });
   }
@@ -80,20 +81,22 @@ export class FavoritesComponent implements OnInit {
 
   // Navegar a la página de detalles de la receta
   viewRecipeDetails(id: string): void {
-    // Si el usuario ya está cargado, verifica el plan directamente
-    if (this.userService.isPremiumUser()) {
-      this.router.navigate(['/plan-premium/recipe-details', id]); // Ruta para usuarios premium
-    } else if (this.userService.getUserProfile('1')) {
-      // Si el usuario no está cargado, llama al servicio y verifica el plan
-      this.userService.getUserProfile('1').subscribe(user => {
-        if (user.userPlan === 'premium') {
-          this.router.navigate(['/plan-premium/recipe-details', id]);
+    const currentUserId = this.userService.getCurrentUserId(); // Obtén el ID del usuario actual
+
+    if (currentUserId) {
+
+      this.userService.getUserById(currentUserId).subscribe(currentUser => {
+        if (currentUser.userPlan === 'premium') {
+          this.router.navigate(['/plan-premium/recipe-details', id]); // Ruta para usuarios premium
         } else {
-          this.router.navigate(['/plan-basico/recipe-details', id]);
+          this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios básicos
         }
       });
+
     } else {
-      this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta por defecto
+      console.error('No hay un usuario autenticado');
+      // Manejo de errores: redirigir al login o mostrar un mensaje
+      this.router.navigate(['/login']);
     }
   }
 }

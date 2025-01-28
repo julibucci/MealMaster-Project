@@ -20,7 +20,7 @@ export class CreateRecipeComponentComponent implements OnInit {
     strArea: '',
     strInstructions: '',
     ingredients: [] as { ingredient: string, measure: string }[],
-    userId: null as number | null
+    userId: null as string | null
   };
 
   areas = [

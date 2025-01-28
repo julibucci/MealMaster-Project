@@ -1,10 +1,9 @@
 export interface User {
-  id: number;
+  id: string;
   name: string;
   email: string;
   profileImage?: string;
   bio?: string;
-  userPlan: 'basic' | 'premium';  
+  userPlan: 'basic' | 'premium';
 }
 
-  
