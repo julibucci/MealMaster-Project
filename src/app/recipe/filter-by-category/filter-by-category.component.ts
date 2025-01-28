@@ -10,7 +10,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { UserService } from '../../services/user.service';
-import { UserTryService } from '../../services/user-try.service';
 
 @Component({
   selector: 'app-filter-by-category',
@@ -33,7 +32,7 @@ export class FilterByCategoryComponent {
   selectedCategory:string ="";
   selectedIdFromRecipe: string ="";
 
-  constructor(private filterByCategoryService: FilterByCategoryService,  private router: Router,private userService: UserTryService){}
+  constructor(private filterByCategoryService: FilterByCategoryService,  private router: Router,private userService: UserService){}
 
   ngOnInit() {
     // Cargar todas las categorias al renderizar la plantilla
@@ -42,7 +41,7 @@ export class FilterByCategoryComponent {
 
   getAllCategories(): void {
     this.filterByCategoryService.getAllCategorys().subscribe((data: Category[]) =>{
-      console.log("Categorías recibidas:", data);
+      console.log("Categories received:", data);
       this.categoryList = data;
     })
   }
@@ -66,22 +65,18 @@ this.categoryRecipesFromJson = this.categoryRecipesFromJson.filter((recipe)=> re
 
 // Navegar a la página de detalles de la receta
 viewRecipeDetails(id: string): void {
-  const currentUserId = this.userService.getCurrentUserId(); // Obtén el ID del usuario actual
-
-  if (currentUserId) {
-
-    this.userService.getUserById(currentUserId).subscribe(currentUser => {
-      if (currentUser.userPlan === 'premium') {
-        this.router.navigate(['/plan-premium/recipe-details', id]); // Ruta para usuarios premium
-      } else {
-        this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios básicos
-      }
-    });
-
-  } else {
-    console.error('No hay un usuario autenticado');
-    // Manejo de errores: redirigir al login o mostrar un mensaje
-    this.router.navigate(['/login']);
-  }
+  // Verifica si el usuario ya está cargado
+  this.userService.getUserProfile().subscribe(user => {
+    // Verifica el plan del usuario y navega según corresponda
+    if (user.userPlan === 'premium') {
+      this.router.navigate(['/plan-premium/recipe-details', id]); // Ruta para usuarios premium
+    } else {
+      this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios básicos
+    }
+  }, error => {
+    console.error('Error getting user profile:', error);
+    // Si hay un error al cargar el perfil, puedes redirigir a una ruta predeterminada
+    this.router.navigate(['/plan-basico/recipe-details', id]);
+  });
 }
 }

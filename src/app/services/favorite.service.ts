@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, map, Observable, of, tap } from 'rxjs';
 import { UserService } from './user.service';
 import { User } from '../interfaces/user.interface';
-import { UserTryService } from './user-try.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +15,9 @@ export class FavoriteService {
   private apiUrl = 'http://localhost:3002/favorites';  // URL del servidor donde están los favoritos
 
 
+
   private http = inject(HttpClient);
-  private userService= inject (UserTryService);
+  private userService= inject (UserService);
 
   getCategories(): Observable<string[]> {
     return this.http.get<string[]>('http://localhost:3000/categories');

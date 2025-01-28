@@ -1,9 +1,8 @@
-
-<div>
-  <!-- Selector de categorías -->
-  <label for="categorySelect">Select a category:  </label>
+<div class="category-container">
+  <!-- Selector de categorias -->
+  <label for="categorySelect"></label>
   <select id="categorySelect" [(ngModel)]="selectedCategory" (change)="getRecipesFromCategory()">
-    <option value="">All categories</option>
+    <option value="">Choose a category</option>
     <option *ngFor="let category of categoryList" [value]="category.strCategory">
       {{ category.strCategory }}
     </option>

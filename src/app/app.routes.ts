@@ -12,7 +12,6 @@ import { PagBasicoPrincipalComponent } from './page/pag-basico-principal/pag-bas
 import { RecipeDetailsComponent } from './components/recipe-details-component/recipe-details-component.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { FilterByCategoryComponent } from './recipe/filter-by-category/filter-by-category.component';
-import { CategoryListComponent } from './recipe/category-list/category-list.component';
 import { UserRecipesComponentComponent } from './components/user-recipes-component/user-recipes-component.component';
 import { CreateRecipeComponentComponent } from './components/create-recipe-component/create-recipe-component.component';
 import { RecipeFilterComponent } from './components/recipe-filter-component/recipe-filter/recipe-filter.component';

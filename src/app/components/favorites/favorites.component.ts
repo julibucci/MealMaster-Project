@@ -9,7 +9,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
-import { UserTryService } from '../../services/user-try.service';
 
 
 @Component({
@@ -30,41 +29,41 @@ export class FavoritesComponent implements OnInit {
     private favoriteService: FavoriteService,
     private mealService: MealService,
     private router: Router,
-    private userService: UserTryService
+    private userService: UserService
   ) {}
 
   ngOnInit(): void {
-    // Cargar el perfil del usuario y luego cargar favoritos y categorías
-    this.favoriteService.getUserProfile().subscribe(() => {
-      this.mealService.getCategories().subscribe(categories => {
-        this.categories = categories.map(cat => cat.strCategory);
-      });
+    // Obtener el perfil del usuario y luego cargar los favoritos y las categorías
+    this.favoriteService.getUserProfile().subscribe(user => {
+      this.userService.getUserProfile().subscribe(() => {
+        this.mealService.getCategories().subscribe(categories => {
+          this.categories = categories.map(cat => cat.strCategory);
+        });
 
-      // Obtener los favoritos del usuario autenticado
-      this.favoriteService.getFavorites().subscribe(favorites => {
-        console.log("Favoritos obtenidos:", favorites);
-        this.favorites = favorites;
-        this.filteredFavorites = favorites; // Mostrar favoritos filtrados por defecto
+        this.favoriteService.getFavorites().subscribe(favorites => {
+          console.log("Favorites obtained:", favorites);
+          this.favorites = favorites;
+          this.filteredFavorites = favorites;
+        });
       });
     });
   }
 
   // Filtrar favoritos basados en la categoría seleccionada
   filterFavorites(): void {
-    console.log("Categoría seleccionada:", this.selectedCategory);
-    console.log("Favoritos antes del filtrado:", this.favorites);
+    console.log("Selected category:", this.selectedCategory);
+    console.log("Favorites before filtering:", this.favorites);
 
     // Verifica si la categoría está vacía para mostrar todos los favoritos
     if (this.selectedCategory === '') {
       this.filteredFavorites = this.favorites;
     } else {
-      // Cambié "strCategory" por "category" porque esa es la propiedad en tu JSON
       this.filteredFavorites = this.favorites.filter(
         fav => fav.category === this.selectedCategory
       );
     }
 
-    console.log("Recetas filtradas:", this.filteredFavorites);
+    console.log("Filtered recipes:", this.filteredFavorites);
   }
 
   // Eliminar un favorito
@@ -81,22 +80,18 @@ export class FavoritesComponent implements OnInit {
 
   // Navegar a la página de detalles de la receta
   viewRecipeDetails(id: string): void {
-    const currentUserId = this.userService.getCurrentUserId(); // Obtén el ID del usuario actual
+    // Verifica si el usuario ya está cargado
+    this.userService.getUserProfile().subscribe(user => {
+      // Verifica el plan del usuario y navega según corresponda
+      if (user.userPlan === 'premium') {
+        this.router.navigate(['/plan-premium/recipe-details', id]); // Ruta para usuarios premium
+      } else {
+        this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios básicos
+      }
+    }, error => {
+      console.error('Error getting user profile:', error);
 
-    if (currentUserId) {
-
-      this.userService.getUserById(currentUserId).subscribe(currentUser => {
-        if (currentUser.userPlan === 'premium') {
-          this.router.navigate(['/plan-premium/recipe-details', id]); // Ruta para usuarios premium
-        } else {
-          this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios básicos
-        }
-      });
-
-    } else {
-      console.error('No hay un usuario autenticado');
-      // Manejo de errores: redirigir al login o mostrar un mensaje
-      this.router.navigate(['/login']);
-    }
+      this.router.navigate(['/plan-basico/recipe-details', id]);
+    });
   }
 }

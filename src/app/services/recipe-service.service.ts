@@ -36,7 +36,7 @@ export class RecipeService {
       .pipe(map(response => response.categories || []));
   }
 
-  // Método para obtener todas las recetas (sin filtrar por userId)
+  // Método para obtener todas las recetas
   getAllRecipes(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl); // Devuelve todas las recetas sin filtrar
   }
