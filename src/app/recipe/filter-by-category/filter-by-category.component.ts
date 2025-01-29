@@ -63,6 +63,7 @@ addRecipesToCategoryFromJson(){
 this.categoryRecipesFromJson = this.categoryRecipesFromJson.filter((recipe)=> recipe.strMeal === this.selectedCategory )
 }
 
+// Navegar a la página de detalles de la receta
 viewRecipeDetails(id: string): void {
   // Verifica si el usuario ya está cargado
   this.userService.getUserProfile().subscribe(user => {

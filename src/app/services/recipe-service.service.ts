@@ -11,7 +11,7 @@ export class RecipeService {
   constructor(private http: HttpClient) {}
 
   // Método para obtener recetas por usuario
-  getRecipesByUser(userId: number): Observable<any[]> {
+  getRecipesByUser(userId: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}?userId=${userId}`);
   }
 

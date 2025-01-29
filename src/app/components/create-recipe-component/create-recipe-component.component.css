@@ -59,7 +59,7 @@ h4 {
 }
 
 /* Estilo para los ingredientes */
-div[ngFor] {
+div {
   display: flex;
   gap: 10px;
   margin-bottom: 10px;

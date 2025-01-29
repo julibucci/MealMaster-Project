@@ -204,3 +204,9 @@ a:hover {
 .comment-form button:hover {
   background-color: #e64a19;
 }
+
+.error-messages {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}

@@ -2,9 +2,10 @@ import { Recipe } from '../interfaces/recipe';
 import { Favorite } from '../interfaces/favorite';
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, Observable, of, tap } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
 import { UserService } from './user.service';
 import { User } from '../interfaces/user.interface';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ import { User } from '../interfaces/user.interface';
 
 export class FavoriteService {
   private apiUrl = 'http://localhost:3002/favorites';  // URL del servidor donde están los favoritos
+
 
 
   private http = inject(HttpClient);
@@ -23,13 +25,20 @@ export class FavoriteService {
 
    // Obtener favoritos del usuario logueado
    getFavorites(): Observable<any[]> {
-    const userId = this.userService.getCurrentUserId()?.toString();
+    const userId = this.userService.getCurrentUserId(); // Obtén el ID del usuario actual
     if (!userId) {
-      throw new Error('No hay usuario logueado');
+      console.error('El ID del usuario no está disponible.');
+      return of([]); // Devuelve una lista vacía si no hay usuario autenticado
     }
-    return this.http.get<any[]>(`${this.apiUrl}?userId=${userId}`);
+    // Filtra los favoritos por userId
+    return this.http.get<any[]>(`${this.apiUrl}?userId=${userId}`).pipe(
+      tap(favorites => console.log(`Favoritos obtenidos para el usuario ${userId}:`, favorites)),
+      catchError(error => {
+        console.error('Error obteniendo favoritos:', error);
+        return of([]); // Devuelve una lista vacía si ocurre un error
+      })
+    );
   }
-
   removeFavorite(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
@@ -40,6 +49,18 @@ export class FavoriteService {
 
 
   getUserProfile(): Observable<User> {
-    return this.userService.getUserProfile();
+    return this.userService.getUserProfile().pipe(
+      // Aquí verificamos si el usuario es null y si es así, lanzamos un error o un usuario vacío
+      map(user => {
+        if (user === null) {
+          throw new Error('No hay un usuario autenticado');
+        }
+        return user;
+      }),
+      catchError(error => {
+        console.error(error);
+        return of({} as User); // O devuelve un objeto vacío si no hay usuario
+      })
+    );
   }
 }

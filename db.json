@@ -4,7 +4,7 @@
       "id": "1",
       "name": "John Doe",
       "email": "john.doe@example.com",
-      "profileImage": "https://example.com/image.jpg",
+      "profileImage": "http://localhost:3001/uploads/1737411511527-descarga.png",
       "bio": "I'm a professional chef",
       "password": "123",
       "userPlan": "premium"

@@ -9,7 +9,7 @@ import { User } from '../interfaces/user.interface';
 })
 export class UserService {
   private apiUrl = 'http://localhost:3000/users';
-  private currentUserId: number | null = null;
+  private currentUserId: string | null = null;
   private currentUser: any;
 
 
@@ -21,7 +21,7 @@ export class UserService {
     const userIdFromStorage = localStorage.getItem('authUserId');
     console.log('User ID from storage:', userIdFromStorage); // Verificar si existe un valor en localStorage
     if (userIdFromStorage) {
-      this.currentUserId = parseInt(userIdFromStorage, 10);
+      this.currentUserId = parseInt(userIdFromStorage, 10).toString();
     }
   }
 
@@ -38,7 +38,7 @@ export class UserService {
     );
   }
 
-  deleteUserProfile(userId: number): Observable<void> {
+  deleteUserProfile(userId: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${userId}`).pipe(
       catchError(this.handleError)
     );
@@ -49,7 +49,7 @@ export class UserService {
     return throwError('Hubo un problema con la solicitud. Inténtalo de nuevo más tarde.');
   }
 
-  getCurrentUserId(): number | null {
+  getCurrentUserId(): string | null {
     return this.currentUserId;
   }
 
@@ -76,6 +76,14 @@ export class UserService {
 
   isPremiumUser1(): boolean {
     return this.currentUser?.userPlan === 'premium';
+  }
+
+  // Método para subir la imagen de perfil
+  uploadProfileImage(userId: string, formData: FormData): Observable<{ imageUrl: string }> {
+    return this.http.post<{ imageUrl: string }>(
+      `http://localhost:3001/api/upload-profile-image/${userId}`,
+      formData
+    );
   }
 
 }
