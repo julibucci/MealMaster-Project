@@ -13,7 +13,7 @@
       "id": "2",
       "name": "Jane Smith",
       "email": "jane.smith@example.com",
-      "profileImage": "https://example.com/image2.jpg",
+      "profileImage": "http://localhost:3001/uploads/1738122250036-4bdc66d9e8e8b3238177d08e4ccd702f.jpg",
       "bio": "I'm an aspiring home cook",
       "password": "456",
       "userPlan": "basic"
@@ -30,7 +30,8 @@
       "name": "marta",
       "email": "marta@example.com",
       "password": "123",
-      "userPlan": "basic"
+      "userPlan": "basic",
+      "profileImage": "http://localhost:3001/uploads/1738123060482-descarga.png"
     },
     {
       "id": "dc2f",

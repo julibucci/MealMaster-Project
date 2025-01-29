@@ -1,8 +1,5 @@
 <div class="profile-page">
   <!-- Imagen del lado izquierdo -->
-  <div class="side-image left-side">
-      <img src="https://www.shutterstock.com/image-photo/young-beautiful-asian-woman-chef-600nw-2317761803.jpg" alt="Female Chef" class="chef-image">
-  </div>
 
   <!-- Contenedor principal de perfil -->
   <div class="profile-container">
@@ -12,17 +9,17 @@
 
       <div *ngIf="user; else loading">
           <h2>My Profile</h2>
-          <label>Name:
-              <input [(ngModel)]="user.name" placeholder="Name" />
-          </label>
-          <label>Email:
-              <input [(ngModel)]="user.email" placeholder="Email" />
-          </label>
           <label>Profile Image:
             <div>
               <img [src]="user.profileImage || 'assets/default-profile.png'" alt="Profile Image" width="100" />
             </div>
             <input type="file" (change)="onFileSelected($event)" />
+          </label>
+          <label>Name:
+              <input [(ngModel)]="user.name" placeholder="Name" />
+          </label>
+          <label>Email:
+              <input [(ngModel)]="user.email" placeholder="Email" />
           </label>
           <label>Bio:
               <textarea [(ngModel)]="user.bio" placeholder="Write a brief bio"></textarea>
@@ -36,9 +33,4 @@
       </ng-template>
   </div>
 
-  <!-- Imagen del lado derecho -->
-  <div class="side-image right-side">
-      <img src="https://img.freepik.com/fotos-premium/retrato-chef-hombre-sonriente-pie-brazos-cruzados-cocina_507337-2106.jpg" alt="Male Chef" class="chef-image">
-  </div>
-</div>
 

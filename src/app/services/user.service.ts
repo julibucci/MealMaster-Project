@@ -21,7 +21,8 @@ export class UserService {
     const userIdFromStorage = localStorage.getItem('authUserId');
     console.log('User ID from storage:', userIdFromStorage); // Verificar si existe un valor en localStorage
     if (userIdFromStorage) {
-      this.currentUserId = parseInt(userIdFromStorage, 10).toString();
+      this.currentUserId = userIdFromStorage;
+
     }
   }
 

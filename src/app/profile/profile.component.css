@@ -29,6 +29,47 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   color: #5d4037;
   z-index: 1;
+  position: relative;
+  text-align: center;  /* Alineación central del contenido */
+}
+
+/* Botón "Seleccionar imagen" */
+input[type="file"] {
+  width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #66bb6a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Contenedor de perfil */
+.profile-container {
+  max-width: 500px;
+  padding: 2rem;
+  background-color: #fff7f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: #5d4037;
+  z-index: 1;
+}
+
+
+/* Estilo de la imagen de perfil */
+.side-image img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffa726;
+  margin-bottom: 10px;
 }
 
 /* Contenedores de imágenes laterales */
@@ -37,25 +78,37 @@ body {
   top: 50%;
   transform: translateY(-50%);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #ffe0b2;
+  width: 100%;
+  max-width: 140px; /* Asegura que no sea más ancho que necesario */
+  left: 50%;
+  transform: translateX(-50%); /* Centrado absoluto */
 }
 
+/* Ajuste del contenedor de imagen (izquierda y derecha) */
+.left-side, .right-side {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Ajuste de la posición del contenedor izquierdo */
 .left-side {
-  left: -400px; /* Ajusta la posición en el lado izquierdo */
-  width: 350px; /* Tamaño del contenedor izquierdo */
-  padding: 30px; /* Espacio adicional alrededor de la imagen */
+  left: -350px;
+  width: 300px;
 }
 
 .right-side {
-  right: -400px; /* Ajusta la posición en el lado derecho */
+  right: -400px; /* Ajuste la posición en el lado derecho */
   width: 350px; /* Aumenta el tamaño del contenedor derecho */
-  padding: 30px; /* Espacio adicional alrededor de la imagen */
+  padding: 30px;
 }
+
 /* Tamaño y estilo del borde de las imágenes */
 .chef-image {
   width: 320px;
