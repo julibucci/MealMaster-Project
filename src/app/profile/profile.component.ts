@@ -68,7 +68,7 @@ export class ProfileComponent implements OnInit {
         next: (response) => {
           console.log('Image uploaded:', response.imageUrl);
           if (this.user) {  // Comprobamos que user no es null
-            this.user.profileImage = response.imageUrl; // Aquí se actualiza la imagen del usuario en la interfaz
+            this.user.profileImage = response.imageUrl;
           }
         },
         error: (err) => {
@@ -85,7 +85,7 @@ export class ProfileComponent implements OnInit {
         this.user.profileImage = reader.result as string;
       }
     };
-    reader.readAsDataURL(file); // Convertir la imagen a una URL de datos para previsualizarla
+    reader.readAsDataURL(file);
   }
 
   saveProfile(): void {
