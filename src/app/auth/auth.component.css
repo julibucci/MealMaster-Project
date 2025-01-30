@@ -7,20 +7,26 @@
   max-width: 400px;
   margin: 5rem auto;
   padding: 2.5rem;
-  background-color: #fff3e0; /* Fondo naranja claro */
-  border: 2px solid #f4a261; /* Borde naranja suave */
+  background-color: #f1f1f1; 
+  border: 2px solid #d3d3d3; 
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s ease-in-out; /* Animación al hacer hover */
+}
+
+.auth-container:hover {
+  transform: translateY(-10px); /* Elevación suave al hacer hover */
 }
 
 /* Estilos del título */
 .auth-container h2 {
   font-size: 1.8rem;
-  color: #e76f51; /* Naranja oscuro */
-  margin-bottom: 1.5rem;
+  color: #2c3e50; /* Color oscuro más neutral */
+  margin-bottom: 2rem;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
 }
 
 /* Estilos del formulario */
@@ -36,34 +42,36 @@
 
 .form-group label {
   font-size: 1rem;
-  color: #e76f51; /* Naranja oscuro */
+  color: #34495e; /* Gris oscuro */
   font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 .form-group input {
   width: 100%;
   padding: 0.8rem;
-  border: 2px solid #f4a261; /* Borde naranja */
+  border: 2px solid #bdc3c7; /* Gris más suave */
   border-radius: 8px;
   font-size: 1rem;
-  background-color: #ffe8d6; /* Fondo naranja muy claro */
-  transition: border-color 0.3s;
+  background-color: #ecf0f1; /* Fondo gris claro */
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .form-group input:focus {
-  border-color: #f28b51; /* Naranja más intenso al enfocar */
+  border-color: #3498db; /* Azul más brillante al enfocar */
   outline: none;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.4); /* Resaltado de campo enfocado */
 }
 
 /* Botón de autenticación */
 .auth-button {
   width: 100%;
   padding: 0.8rem;
-  background-color: #f28b51; /* Naranja medio */
+  background-color: #3498db; /* Azul */
   color: white;
   font-size: 1.1rem;
   font-weight: bold;
-  border: 2px solid #f4a261; /* Borde que hace juego con el contenedor */
+  border: 2px solid #2980b9; /* Borde azul más oscuro */
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s;
@@ -71,28 +79,47 @@
 }
 
 .auth-button:hover {
-  background-color: #e76f51; /* Naranja oscuro en hover */
-  border-color: #f28b51; /* Borde naranja intenso en hover */
+  background-color: #2980b9; /* Azul más oscuro al hacer hover */
+  border-color: #3498db; /* Borde más claro al hacer hover */
 }
 
 /* Botón para alternar entre Login y Register */
 .toggle-button {
   margin-top: 1.5rem;
   background: none;
-  color: #e76f51; /* Naranja oscuro */
+  color: #3498db; /* Azul */
   border: none;
   cursor: pointer;
   font-size: 1rem;
   text-decoration: underline;
   font-weight: bold;
+  transition: color 0.3s;
+}
+
+.toggle-button:hover {
+  color: #2980b9; /* Azul más oscuro al hacer hover */
 }
 
 /* Estilo para el mensaje de error */
 .error-message {
-  color: #e63946; /* Rojo suave para errores */
+  color: #e74c3c; /* Rojo brillante para errores */
   font-size: 1rem;
   margin-top: 0.5rem;
   text-align: center;
 }
-  
-  
+
+/* Animación de entrada */
+.auth-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
