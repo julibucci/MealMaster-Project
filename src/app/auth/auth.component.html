@@ -1,5 +1,5 @@
 <div class="auth-container">
-  <h2>{{ isLoginMode ? 'Login' : 'Register' }}</h2>
+  <h2>{{ isLoginMode ? 'LOGIN' : 'REGISTER' }}</h2>
 
   <form [formGroup]="isLoginMode ? loginForm : registerForm" (ngSubmit)="onSubmit()" class="auth-form">
     
@@ -21,7 +21,7 @@
     </div>
 
    
-    <button type="submit" class="auth-button">{{ isLoginMode ? 'Login' : 'Register' }}</button>
+    <button type="submit" class="auth-button">{{ isLoginMode ? 'Login' : ' Register' }}</button>
 
     
     <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
@@ -29,9 +29,6 @@
 
  
   <button (click)="toggleMode()" class="toggle-button">
-    {{ isLoginMode ? 'Switch to Register' : 'Switch to Login' }}
+    {{ isLoginMode ? 'Register' : 'Switch to Login' }}
   </button>
 </div>
-
-  
-  

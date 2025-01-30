@@ -31,22 +31,26 @@ export class AuthComponent {
 
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.email, Validators.pattern(/^[a-zA-Z0-9._%+-]+@(gmail|yahoo)\.com$/)]],
       password: ['', Validators.required]
     });
   }
 
   onSubmit(): void {
     this.errorMessage = null;
-
+  
     if (this.isLoginMode) {
+      if (this.loginForm.invalid) {
+        this.errorMessage = 'Please fill in all fields correctly.';
+        return;
+      }
+  
       const credentials: LoginCredentials = this.loginForm.value;
       this.authService.login(credentials).subscribe({
         next: (response) => {
           console.log('Logged in', response);
-          const userPlan = response.user.userPlan;  // Obtenemos el plan del usuario
-
-          // Redirige segun el plan del usuario
+          const userPlan = response.user.userPlan;
+  
           if (userPlan === 'premium') {
             this.router.navigate(['/plan-premium']);
           } else {
@@ -59,13 +63,23 @@ export class AuthComponent {
         }
       });
     } else {
+      if (this.registerForm.invalid) {
+        if (this.registerForm.controls['name'].invalid) {
+          this.errorMessage = 'The name field is required.';
+        } else if (this.registerForm.controls['email'].invalid) {
+          this.errorMessage = 'Please provide a valid Gmail or Yahoo email address.';
+        } else if (this.registerForm.controls['password'].invalid) {
+          this.errorMessage = 'The password field is required.';
+        }
+        return;
+      }
+  
       const userData: RegisterData = this.registerForm.value;
       this.authService.register(userData).subscribe({
         next: (response) => {
           console.log('Registered', response);
-          const userPlan = response.user.userPlan;  // Obtenemos el plan del usuario
-
-          
+          const userPlan = response.user.userPlan;
+  
           if (userPlan === 'premium') {
             this.router.navigate(['/plan-premium']);
           } else {
@@ -82,6 +96,7 @@ export class AuthComponent {
 
   toggleMode(): void {
     this.isLoginMode = !this.isLoginMode;
+    this.errorMessage = null;
   }
 }
 
