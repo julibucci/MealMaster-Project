@@ -3,16 +3,20 @@ import { RecipeService } from '../../services/recipe-service.service';
 import { UserService } from '../../services/user.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { response } from 'express';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-create-recipe-component',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule,FormsModule, HttpClientModule],
   templateUrl: './create-recipe-component.component.html',
   styleUrl: './create-recipe-component.component.css'
 })
 export class CreateRecipeComponentComponent implements OnInit {
   categories: any[] = [];
+  selectedFile: File | null = null;
+  imagePreview: string | null = null;
   recipe = {
     idMeal: '',
     strMeal: '',
@@ -20,7 +24,8 @@ export class CreateRecipeComponentComponent implements OnInit {
     strArea: '',
     strInstructions: '',
     ingredients: [] as { ingredient: string, measure: string }[],
-    userId: null as string | null
+    userId: null as string | null,
+    imageUrl: ''
   };
 
   areas = [
@@ -32,7 +37,8 @@ export class CreateRecipeComponentComponent implements OnInit {
 
   constructor(
     private recipeService: RecipeService,
-    private userService: UserService
+    private userService: UserService,
+    private http: HttpClient,
   ) {}
 
   ngOnInit(): void {
@@ -55,18 +61,68 @@ export class CreateRecipeComponentComponent implements OnInit {
   }
 
   saveRecipe(): void {
+    if (!this.recipe.strMeal || !this.recipe.strCategory || !this.recipe.strArea || !this.recipe.strInstructions) {
+      alert('Please fill in all required fields before saving.');
+      return;
+    }
+
     if (!this.recipe.idMeal) {
       this.recipe.idMeal = this.generateId();
     }
-    console.log('Saving recipe:', this.recipe); // Verifica los datos antes de enviarlos
+
+    console.log('Saving recipe:', this.recipe);
+    alert('Saving recipe...');
+
     this.recipeService.createRecipe(this.recipe).subscribe({
-      next: () => {
+      next: (savedRecipe) => {
+        console.log('Recipe saved successfully:', savedRecipe);
         alert('Recipe saved successfully!');
+
+        if (this.selectedFile) {
+          // Usar el mismo ID que el backend devolvió
+          this.uploadImage(this.selectedFile, savedRecipe.idMeal ?? savedRecipe.id);
+        }
       },
       error: (err) => {
-        console.error('Error saving recipe:', err); // Verifica si hay algún error
+        console.error('Error saving recipe:', err);
+        alert('Error saving recipe. Please try again.');
       }
     });
+  }
+
+  uploadImage(file: File, idMeal: string): void {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    console.log(`Uploading image for recipe ID: ${idMeal}`);
+    alert(`Uploading image for recipe ID: ${idMeal}`);
+
+    this.http.post<{ imageUrl: string }>(`http://localhost:3001/api/upload-recipe-image/${idMeal}`, formData)
+      .subscribe({
+        next: (response) => {
+          console.log('Image uploaded successfully:', response.imageUrl);
+          alert('Image uploaded successfully!');
+          this.recipe.imageUrl = response.imageUrl;
+        },
+        error: (error) => {
+          console.error('Error uploading image:', error);
+          alert('Error uploading image. Please try again.');
+        }
+      });
+  }
+
+  onFileChange(event: any): void {
+    const file = event.target.files[0];
+    if (file) {
+      this.selectedFile = file;
+
+      // Crear previsualización de imagen
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.imagePreview = reader.result as string;
+      };
+      reader.readAsDataURL(file);
+    }
   }
 
   generateId(): string {
