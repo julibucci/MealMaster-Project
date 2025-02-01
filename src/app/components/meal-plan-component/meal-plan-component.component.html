@@ -1,0 +1,30 @@
+<div *ngFor="let meal of mealPlan">
+  <div class="meal-item">
+    <img *ngIf="meal.recipe?.strMealThumb" [src]="meal.recipe.strMealThumb" alt="Recipe Image" class="meal-image" />
+
+    <div class="meal-details">
+      <h3>{{ meal.recipe?.strMeal }}</h3>
+
+      <label for="day">Day of the week:</label>
+      <select [(ngModel)]="meal.selectedDay" name="day" id="day" (change)="updateMealDay(meal.id, $event)">
+        <option value="Select a day" [selected]="meal.selectedDay === 'Select a day'">Select a day</option>
+        <option *ngFor="let day of daysOfWeek" [value]="day">{{ day }}</option>
+      </select>
+
+      <label for="category">Category:</label>
+      <select [(ngModel)]="meal.selectedCategory" name="category" id="category" (change)="updateMealCategory(meal.id, $event)">
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+      </select>
+
+      <button (click)="removeMeal(meal.id)" class="remove-btn">Remove</button>
+
+       <button (click)="viewRecipeDetails(meal.recipe.idMeal)" class="view-details-btn">View Details</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #noMeals>
+  <p>No meals added yet.</p>
+</ng-template>

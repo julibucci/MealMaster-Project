@@ -1,36 +1,50 @@
 <div>
   <h3>Create a New Recipe</h3>
+
   <label>
     Recipe Name:
-    <input [(ngModel)]="recipe.strMeal" />
+    <input [(ngModel)]="recipe.strMeal" required />
   </label>
 
   <label>
+    Recipe Photo:
+    <input type="file" (change)="onFileChange($event)" accept="image/*" />
+  </label>
+
+  <img *ngIf="imagePreview" [src]="imagePreview" alt="Recipe Image" width="150" />
+
+  <label>
     Category:
-    <select [(ngModel)]="recipe.strCategory">
-      <option *ngFor="let category of categories" [value]="category.strCategory">{{ category.strCategory }}</option>
+    <select [(ngModel)]="recipe.strCategory" required>
+      <option *ngFor="let category of categories" [value]="category.strCategory">
+        {{ category.strCategory }}
+      </option>
     </select>
   </label>
 
   <label>
     Area:
-    <select [(ngModel)]="recipe.strArea">
-      <option *ngFor="let area of areas" [value]="area">{{ area }}</option>
+    <select [(ngModel)]="recipe.strArea" required>
+      <option *ngFor="let area of areas" [value]="area">
+        {{ area }}
+      </option>
     </select>
   </label>
 
   <label>
     Instructions:
-    <textarea [(ngModel)]="recipe.strInstructions"></textarea>
+    <textarea [(ngModel)]="recipe.strInstructions" required></textarea>
   </label>
 
   <h4>Ingredients:</h4>
   <div *ngFor="let ingredient of recipe.ingredients; let i = index">
-    <input [(ngModel)]="ingredient.ingredient" placeholder="Ingredient" />
-    <input [(ngModel)]="ingredient.measure" placeholder="Measure" />
+    <input [(ngModel)]="ingredient.ingredient" placeholder="Ingredient" required />
+    <input [(ngModel)]="ingredient.measure" placeholder="Measure" required />
     <button (click)="removeIngredient(i)">Remove</button>
   </div>
   <button (click)="addIngredient()">Add Ingredient</button>
 
-  <button (click)="saveRecipe()">Save Recipe</button>
+  <button (click)="saveRecipe()" [disabled]="!recipe.strMeal || !recipe.strCategory || !recipe.strArea || !recipe.strInstructions || recipe.ingredients.length === 0">
+    Save Recipe
+  </button>
 </div>

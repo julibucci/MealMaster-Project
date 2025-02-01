@@ -82,16 +82,12 @@ app.post('/paypal/plan', async (req, res) => {
   }
 });
 
-const PORT = 3001;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
-
 
 
 
 const multer = require('multer');
 const path = require('path');
+const fs = require('fs');
 
 
 // Configuración de Multer para guardar imágenes
@@ -106,7 +102,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Endpoint para subir la imagen
+// Endpoint para subir la imagen de perfil
 app.post('/api/upload-profile-image/:userId', upload.single('file'), (req, res) => {
   if (!req.file) {
     return res.status(400).send('No file uploaded.');
@@ -115,7 +111,7 @@ app.post('/api/upload-profile-image/:userId', upload.single('file'), (req, res) 
   const userId = req.params.userId;
   const imageUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
 
-  // Simula la actualización del usuario en la base de datos
+
   const users = require('./db.json').users;
   const userIndex = users.findIndex(user => user.id === userId);
 
@@ -126,36 +122,44 @@ app.post('/api/upload-profile-image/:userId', upload.single('file'), (req, res) 
   users[userIndex].profileImage = imageUrl;
 
   // Guardar los cambios en la base de datos
-  const fs = require('fs');
   fs.writeFileSync('./db.json', JSON.stringify({ users }, null, 2));
 
-  res.json({ imageUrl });  // Responder con la URL de la imagen
+  res.json({ imageUrl });
 });
-app.post('/api/upload-profile-image/:userId', upload.single('file'), (req, res) => {
+
+// Endpoint para subir la imagen de la receta
+app.post('/api/upload-recipe-image/:idMeal', upload.single('file'), (req, res) => {
+  console.log("📥 Recibiendo imagen para ID:", req.params.idMeal);
+
   if (!req.file) {
     return res.status(400).send('No file uploaded.');
   }
 
-  const userId = req.params.userId;
+  const recipeId = req.params.idMeal;
   const imageUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
 
-  // Simula la actualización del usuario en la base de datos
-  const users = require('./db.json').users;
-  const userIndex = users.findIndex(user => user.id === userId);
+  const dbPath = path.join(__dirname, '../db2.json');
+  const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
 
-  if (userIndex === -1) {
-    return res.status(404).send('User not found.');
+  // Buscar la receta en el archivo JSON
+  const recipeIndex = dbData.meals.findIndex(recipe => recipe.idMeal === recipeId);
+
+  if (recipeIndex === -1) {
+    return res.status(404).send('Recipe not found.');
   }
 
-  users[userIndex].profileImage = imageUrl;
+  dbData.meals[recipeIndex].imageUrl = imageUrl;
 
-  // Guardar los cambios en la base de datos
-  const fs = require('fs');
-  fs.writeFileSync('./db.json', JSON.stringify({ users }, null, 2));
+  fs.writeFileSync(dbPath, JSON.stringify(dbData, null, 2));
 
-  res.json({ imageUrl });  // Responder con la URL de la imagen
+  res.json({ imageUrl });
 });
 
 // Servir la carpeta de uploads como estática
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+// Iniciar el servidor en el puerto 3001
+const port = 3001;
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
