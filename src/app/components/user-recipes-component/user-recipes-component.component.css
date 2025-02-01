@@ -106,7 +106,7 @@
 }
 
 .go-to-recipes-btn {
-  background-color: #b19e3e;
+  background-color: #e78e12;
   color: white;
   border: none;
   padding: 15px 25px;
@@ -117,6 +117,6 @@
 }
 
 .go-to-recipes-btn:hover {
-  background-color: #a99830;
+  background-color: #e89d35;
   transform: scale(1.05);
 }

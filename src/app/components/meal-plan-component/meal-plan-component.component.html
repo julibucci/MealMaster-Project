@@ -28,6 +28,6 @@
 </ng-template>
 
 <div *ngIf="mealPlan.length === 0; else mealList" class="no-meals-message">
-  <p>No meals added yet.</p>
-  <button (click)="goToCategoryPage()" class="choose-recipe-btn">Choose a recipe for your weekly mealplan</button>
+  <p>You don´t have recipes on your weekly meal plan.</p>
+  <button (click)="goToCategoryPage()" class="choose-recipe-btn">Choose a recipe for your weekly meal plan</button>
 </div>
