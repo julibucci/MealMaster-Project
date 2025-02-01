@@ -1,3 +1,4 @@
+<ng-template #mealList>
 <div *ngFor="let meal of mealPlan">
   <div class="meal-item">
     <img *ngIf="meal.recipe?.strMealThumb" [src]="meal.recipe.strMealThumb" alt="Recipe Image" class="meal-image" />
@@ -24,7 +25,9 @@
     </div>
   </div>
 </div>
-
-<ng-template #noMeals>
-  <p>No meals added yet.</p>
 </ng-template>
+
+<div *ngIf="mealPlan.length === 0; else mealList" class="no-meals-message">
+  <p>No meals added yet.</p>
+  <button (click)="goToCategoryPage()" class="choose-recipe-btn">Choose a recipe for your weekly mealplan</button>
+</div>

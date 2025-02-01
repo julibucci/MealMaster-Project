@@ -121,4 +121,8 @@ export class MealPlanComponentComponent implements OnInit {
         this.router.navigate(['/plan-premium/recipe-details', id]);
   }
 
+  goToCategoryPage(): void {
+    this.router.navigate(['/plan-premium/Categories']);
+  }
+
 }
