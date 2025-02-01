@@ -25,7 +25,6 @@ export const routes: Routes = [
     component: HomeComponent,
     children: [
       { path: '', component: PaginaPrincipalComponent },
-      { path: 'recipes', component: RecipeListComponent },
       { path: 'auth', component: AuthComponent },
 
     ]

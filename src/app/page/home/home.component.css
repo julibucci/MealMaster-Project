@@ -1,19 +1,19 @@
 /* Barra de navegación */
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
   width: 100%;
   gap: 1.5rem;
   background-color: #333333;
-  padding: 1.5rem;
-  font-size: 1.1rem;
+  padding: 1rem;
+  font-size: 1rem;
   margin-bottom: 20px;
 }
 
 .navbar a {
   font-family: 'Cormorant';
-  color: #ff8c00;
+  color: #ffffff;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
@@ -32,6 +32,8 @@
     text-align: center;
     background-color: #f3f4f6;
     padding: 1rem;
+
+    
   }
 
   /* Título principal */

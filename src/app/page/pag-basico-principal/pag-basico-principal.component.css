@@ -8,10 +8,12 @@
   text-align: center;
   padding: 50px;
   margin: 40px auto; /* Añade espacio superior */
-  background-color: #f9f4ef; /* Fondo beige claro */
+  background-color: #FFE5CC; /* Fondo beige claro */
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #FF9F80;
 }
+
 
 /* Título Principal */
 .home-container h1 {
