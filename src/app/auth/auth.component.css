@@ -1,3 +1,19 @@
+/* Contenedor global con fondo */
+.global-container {
+  height: 100vh; 
+  min-height: 100vh;  /* 100% de la altura de la pantalla */
+  width: 100%;
+  background-image: url('../../../imagenes/15.avif'); /* Asegúrate de que la ruta sea correcta */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-top: -20px;
+}
+
 
 /* Contenedor principal */
 .auth-container {
@@ -5,17 +21,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 400px;
+  max-width: 750px; /* Ajustado a un tamaño intermedio */
+  width: 80%; /* Para mantener adaptabilidad */
   margin: 5rem auto;
-  padding: 2.5rem;
+  padding: 3rem;
   background-color: #f1f1f1; 
   border: 2px solid #d3d3d3; 
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease-in-out; /* Animacion al hacer hover */
- 
+  transition: transform 0.3s ease-in-out; 
 }
+
+
 
 
 .auth-container:hover {
