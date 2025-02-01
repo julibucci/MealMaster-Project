@@ -11,7 +11,6 @@
 
 <!-- Lista de todas las recetas cuando no hay categoría seleccionada -->
 <div *ngIf="selectedCategory === '' && categoryRecipesFromJson.length > 0">
-  <h2>All Recipes</h2>
   <ul>
     <li *ngFor="let recipe of categoryRecipesFromJson">
       <h3>{{ recipe.strMeal }}</h3>
