@@ -1,3 +1,9 @@
+<div *ngIf="recipes.length === 0; else recipesList" class="no-recipes-message">
+  <p>You haven't published any recipes yet.</p>
+  <button (click)="goToUserRecipesPage()" class="go-to-recipes-btn">Create your own recipes</button>
+</div>
+
+<ng-template #recipesList>
 <div *ngIf="recipes.length > 0" class="recipes-container">
   <h3 class="recipes-title">Your Published Recipes</h3>
   <ul class="recipes-list">
@@ -12,3 +18,4 @@
     </li>
   </ul>
 </div>
+</ng-template>
