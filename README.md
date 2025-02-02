@@ -1,4 +1,4 @@
-Proyecto Meal Master
+PROYECTO MEAL MASTER
 
 Descripción del Proyecto
 
