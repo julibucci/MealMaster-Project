@@ -1,11 +1,13 @@
 .benefits-container {
   text-align: center;
-  background-color: #fff3e0; /* Fondo beige claro */
+  background-color: hsl(34, 100%, 99%); 
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-  color: #000; /* Texto en color negro */
+  color: #000; 
   margin-top: 50px;
+  width: 100%;  
+  max-width: 1500px;  
 }
 
 .benefits-container h1 {

@@ -1,36 +1,52 @@
 <div class="profile-page">
-  <!-- Imagen del lado izquierdo -->
+    <div class="profile-container">
 
-  <!-- Contenedor principal de perfil -->
-  <div class="profile-container">
-      <div *ngIf="errorMessage" class="error-message">
-          {{ errorMessage }}
-      </div>
-
-      <div *ngIf="user; else loading">
-          <h2>My Profile</h2>
-          <label>Profile Image:
-            <div>
-              <img [src]="user.profileImage || 'assets/default-profile.png'" alt="Profile Image" width="100" />
+        <!-- Nuevo contenedor que agrupa las imágenes de los chefs -->
+        <div class="chef-container-wrapper">
+            <div class="chef-container">
+                <img src="https://www.shutterstock.com/image-photo/young-beautiful-asian-woman-chef-600nw-2317761803.jpg" 
+                     alt="Female Chef" class="chef-image">
             </div>
-            <input type="file" (change)="onFileSelected($event)" />
-          </label>
-          <label>Name:
-              <input [(ngModel)]="user.name" placeholder="Name" />
-          </label>
-          <label>Email:
-              <input [(ngModel)]="user.email" placeholder="Email" />
-          </label>
-          <label>Bio:
-              <textarea [(ngModel)]="user.bio" placeholder="Write a brief bio"></textarea>
-          </label>
-          <button (click)="saveProfile()" class="save-button">Save</button>
-          <button (click)="deleteProfile()" class="delete-button">Delete Profile</button>
-      </div>
+            <div class="chef-container">
+                <img src="https://img.freepik.com/fotos-premium/retrato-chef-hombre-sonriente-pie-brazos-cruzados-cocina_507337-2106.jpg" 
+                     alt="Male Chef" class="chef-image">
+            </div>
+        </div>
 
-      <ng-template #loading>
-          <p class="loading-message">Loading profile...</p>
-      </ng-template>
-  </div>
+        <!-- Contenedor del formulario -->
+        <div class="profile-content">
+            <div *ngIf="errorMessage" class="error-message">
+                {{ errorMessage }}
+            </div>
 
+            <div *ngIf="user; else loading">
+                <div class="profile-details">
+                    <h2 class="text-decoration-underline">MY PROFILE</h2>
 
+                    <label>Profile Image:
+                        <div class="profile-image">
+                            <img [src]="user.profileImage || 'assets/default-profile.png'" alt="Profile Image" />
+                        </div>
+                        <input type="file" (change)="onFileSelected($event)" />
+                    </label>
+                    <label>Name:
+                        <input [(ngModel)]="user.name" placeholder="Name" />
+                    </label>
+                    <label>Email:
+                        <input [(ngModel)]="user.email" placeholder="Email" />
+                    </label>
+                    <label>Tell us about yourself:
+                        <textarea [(ngModel)]="user.bio" placeholder="Write a brief bio"></textarea>
+                    </label>
+                    <button (click)="saveProfile()" class="btn btn-success">SAVE</button>
+                    <button (click)="deleteProfile()" class="btn btn-danger">DELETE</button>
+                </div>
+            </div>
+
+            <ng-template #loading>
+                <p class="loading-message">Loading profile...</p>
+            </ng-template>
+        </div>
+
+    </div>
+</div>
