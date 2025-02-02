@@ -19,10 +19,12 @@ export class UserService {
 
   private loadCurrentUser(): void {
     const userIdFromStorage = localStorage.getItem('authUserId');
-    console.log('User ID from storage:', userIdFromStorage); // Verificar si existe un valor en localStorage
     if (userIdFromStorage) {
       this.currentUserId = userIdFromStorage;
-
+      // Fetch user profile data asynchronously
+      this.getUserProfileById(this.currentUserId).subscribe(user => {
+        this.currentUser = user;
+      });
     }
   }
 
@@ -54,7 +56,7 @@ export class UserService {
     return this.currentUserId;
   }
 
-  // Método para verificar si el usuario es premium
+
   isPremiumUser(): boolean {
     return this.currentUser && this.currentUser.userPlan === 'premium';
   }
@@ -76,6 +78,7 @@ export class UserService {
   }
 
   isPremiumUser1(): boolean {
+    console.log('Current User:', this.currentUser);
     return this.currentUser?.userPlan === 'premium';
   }
 

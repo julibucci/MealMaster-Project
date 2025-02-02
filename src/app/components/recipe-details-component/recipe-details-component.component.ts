@@ -9,6 +9,7 @@ import { UserService } from '../../services/user.service';
 import { CommentComponent } from '../comment/comment.component';
 import { RecipeService } from '../../services/recipe-service.service';
 import { forkJoin } from 'rxjs';
+import { MealPlanService } from '../../services/meal-plan-service.service';
 
 @Component({
   selector: 'app-recipe-details-component',
@@ -25,6 +26,8 @@ export class RecipeDetailsComponent implements OnInit {
   comments: any[] = [];
   commentForm: FormGroup;
   userId: string = '';
+  isPremium: boolean = false;
+  isInMealPlan: boolean = false;
 
 
   constructor(
@@ -36,6 +39,7 @@ export class RecipeDetailsComponent implements OnInit {
     private fb: FormBuilder,
     private userService: UserService,
     private recipeService: RecipeService,
+    private mealPlanService: MealPlanService
   ) {
     // Inicializar commentForm en el constructor
     this.commentForm = this.fb.group({
@@ -51,6 +55,15 @@ export class RecipeDetailsComponent implements OnInit {
     // Llamar al servicio para obtener los detalles de la receta
     this.getRecipeDetails(this.recipeId);
     this.getComments(this.recipeId);
+
+    // Obtener el perfil del usuario
+  this.userService.getUserProfileById(this.userId).subscribe(user => {
+    this.isPremium = user.userPlan === 'premium'; // Establecer si el usuario es premium
+  });
+
+  this.mealPlanService.getMealPlan(this.userId).subscribe(mealPlans => {
+    this.isInMealPlan = mealPlans.some(meal => meal.recipe.idMeal === this.recipeId);
+  });
   }
 
   getRecipeDetails(id: string): void {
@@ -70,6 +83,11 @@ export class RecipeDetailsComponent implements OnInit {
 
       this.checkIfFavorite();
     });
+  }
+
+  getRecipeImage(): string {
+    // Comprobar si la receta tiene imagen en el JSON o en la API
+    return this.recipeDetails.imageUrl || this.recipeDetails.strMealThumb || '';
   }
 
   getIngredients(): string[] {
@@ -151,4 +169,17 @@ export class RecipeDetailsComponent implements OnInit {
       this.comments = comments;
     });
   }
+
+
+  addToMealPlan(): void {
+    console.log('Is premium user:', this.isPremium);
+    if (!this.isPremium) {
+      alert("Only premium users can add meals to the meal plan.");
+      return;
+    }
+    this.mealPlanService.addMealToPlan(this.userId, this.recipeDetails).subscribe(() => {
+      alert("Recipe added to meal plan!");
+    });
+  }
 }
+

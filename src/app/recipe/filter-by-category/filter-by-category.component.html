@@ -9,6 +9,17 @@
   </select>
 </div>
 
+<!-- Lista de todas las recetas cuando no hay categoría seleccionada -->
+<div *ngIf="selectedCategory === '' && categoryRecipesFromJson.length > 0">
+  <ul>
+    <li *ngFor="let recipe of categoryRecipesFromJson">
+      <h3>{{ recipe.strMeal }}</h3>
+      <img [src]="recipe.strMealThumb" alt="{{ recipe.strMeal }}" width="200" />
+      <button (click)="viewRecipeDetails(recipe.idMeal)">View Details</button>
+    </li>
+  </ul>
+</div>
+
 <!-- Lista de recetas de la categoría seleccionada -->
 <div *ngIf="recipeFromCategoryList.length > 0;">
   <ul>

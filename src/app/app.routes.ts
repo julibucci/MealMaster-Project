@@ -17,6 +17,7 @@ import { CreateRecipeComponentComponent } from './components/create-recipe-compo
 import { RecipeFilterComponent } from './components/recipe-filter-component/recipe-filter/recipe-filter.component';
 import { BenefitsComponent } from './benefits/benefits.component';
 import { PaymentComponent } from './payment/payment.component';
+import { MealPlanComponentComponent } from './components/meal-plan-component/meal-plan-component.component';
 
 
 export const routes: Routes = [
@@ -38,7 +39,7 @@ export const routes: Routes = [
       { path: 'profile', component: ProfileComponent },
       { path: 'Categories', component: FilterByCategoryComponent },
       { path: 'recipe-details/:id', component: RecipeDetailsComponent },
-      { path: 'benefits', component: BenefitsComponent }, 
+      { path: 'benefits', component: BenefitsComponent },
       { path: 'payment', component: PaymentComponent },
       { path: 'favorites', component: FavoritesComponent }
 
@@ -57,7 +58,8 @@ export const routes: Routes = [
       {path: 'Categories', component: FilterByCategoryComponent },
       { path: 'create-recipe', component: CreateRecipeComponentComponent },
       { path: 'your-recipes', component: UserRecipesComponentComponent },
-      {path: 'ingredientes', component:RecipeFilterComponent}
+      {path: 'ingredientes', component:RecipeFilterComponent},
+      {path: 'meal-plan',  component: MealPlanComponentComponent}
     ]
   },
   { path: '**', redirectTo: '' },

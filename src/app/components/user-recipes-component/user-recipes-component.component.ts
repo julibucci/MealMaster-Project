@@ -39,4 +39,8 @@ export class UserRecipesComponentComponent implements OnInit {
   viewRecipeDetails(recipeId: string): void {
     this.router.navigate(['/plan-premium/recipe-details', recipeId]);
   }
+
+  goToUserRecipesPage(): void {
+    this.router.navigate(['/plan-premium/create-recipe']);
+  }
 }

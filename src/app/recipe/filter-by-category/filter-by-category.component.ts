@@ -32,11 +32,12 @@ export class FilterByCategoryComponent {
   selectedCategory:string ="";
   selectedIdFromRecipe: string ="";
 
-  constructor(private filterByCategoryService: FilterByCategoryService,  private router: Router,private userService: UserService){}
+  constructor(private filterByCategoryService: FilterByCategoryService,  private router: Router,private userService: UserService, private recipeService: RecipeService,){}
 
   ngOnInit() {
     // Cargar todas las categorias al renderizar la plantilla
     this.getAllCategories();
+    this.getAllRecipes();
   }
 
   getAllCategories(): void {
@@ -44,6 +45,12 @@ export class FilterByCategoryComponent {
       console.log("Categories received:", data);
       this.categoryList = data;
     })
+  }
+
+  getAllRecipes(): void {
+    this.recipeService.getRecipes().subscribe((data: Recipe[]) => {
+      this.categoryRecipesFromJson = data;
+    });
   }
 
 getRecipesFromCategory(){
@@ -79,4 +86,6 @@ viewRecipeDetails(id: string): void {
     this.router.navigate(['/plan-basico/recipe-details', id]);
   });
 }
+
+
 }
