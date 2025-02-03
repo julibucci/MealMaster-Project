@@ -3,10 +3,10 @@
 
 /* Contenedor Principal */
 .home-container {
-  width: 100%; 
+  width: 100%;
   text-align: center;
   padding: 50px;
-  margin: 40px auto; 
+  margin: 40px auto;
   border-radius: 10px;
   margin-top: 60px;
 }
@@ -16,18 +16,18 @@
 .home-container h1 {
   font-family: 'Playfair Display', serif;
   font-size: 36px;
-  color: #d07a50; 
+  color: #d07a50;
   font-weight: bold;
   margin-top: -10px;
 }
 
-/* Texto Inspirador */
+
 .inspirational-text {
   font-family: 'Cormorant', serif;
   font-size: 18px;
-  color: #d07a50; 
-  font-weight: bold; 
-  font-style: italic; 
+  color: #d07a50;
+  font-weight: bold;
+  font-style: italic;
   text-align: center;
   margin-top: 15px;
 }
