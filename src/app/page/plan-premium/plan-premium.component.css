@@ -15,7 +15,7 @@
     background-image: url('../../../../imagenes/3.jpg');
     background-size: cover;  /* La imagen cubre toda el área sin deformarse */
     background-position: center;  /* Centra la imagen */
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
@@ -28,9 +28,15 @@
     background-color: rgba(255, 165, 85, 0.8); /* Naranja translúcido */
     padding: 1rem;
     font-size: 1.1rem;
-    width: 100vw;  
+    width: 100vw;
 }
 
+.home-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
 .navbar a {
     font-family: 'Playfair Display', serif;

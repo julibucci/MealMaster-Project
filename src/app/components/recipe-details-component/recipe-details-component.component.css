@@ -1,15 +1,15 @@
 /* Estilos generales para la página de detalles de la receta */
 .recipe-details-container {
   font-family: Arial, sans-serif;
-  background-color: #706b6b;
+  background-color: rgba(112, 107, 107, 0.8);
   color: #0a0909;
-  padding: 20px;
+  padding: 30px;
   border-radius: 15px;
   max-width: 800px;
   margin: 30px auto;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(135deg, #be664c, #ffcc80);
-  border: 2px solid #ff5722;
+  background-image: linear-gradient(135deg, rgba(231, 194, 172, 0.4), rgba(255, 204, 128, 0.4));
+  border: 2px solid #f3c884;
   text-align: justify;
 }
 
@@ -28,6 +28,7 @@ h2 {
   height: auto;
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  border: 2px solid #6e6d6c;
 }
 
 h3 {
@@ -45,8 +46,8 @@ h3 {
 }
 
 .ingredient-item {
-  background-color: #ff7043;
-  color: white;
+  background-color: #f1b677;
+  color: rgb(17, 17, 17);
   text-align: center;
   padding: 10px;
   margin: 5px 0;
@@ -57,15 +58,16 @@ h3 {
   font-size: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s;
+  border: 2px solid #6e6d6c;
 }
 
 .ingredient-item:hover {
-  background-color: #e64a19;
+  background-color: #f3852c;
 }
 
 /* Estilo para las instrucciones */
 .instructions {
-  background-color: #ffcc80;
+  background-color: rgba(246, 221, 188, 0.9);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -80,7 +82,7 @@ h3 {
 
 /* Estilo para los botones */
 button {
-  background-color: #ff5722;
+  background-color: #747271;
   color: white;
   border: none;
   padding: 12px 25px;
@@ -93,12 +95,12 @@ button {
 }
 
 button:hover {
-  background-color: #e64a19;
+  background-color: #6f6b69;
 }
 
 /* Estilo para enlaces */
 a {
-  color: #ff7043;
+  color: #c1a69e;
   text-decoration: none;
   font-weight: bold;
 }
@@ -109,11 +111,19 @@ a:hover {
 
 /* Estilo para la sección de comentarios */
 .comments-section {
-  background-color: #bd8c54;
+  background-color: #eeb472;
   padding: 20px;
   border-radius: 8px;
   margin-top: 20px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.category-area {
+  font-size: 1.5rem; /* Aumenta el tamaño de la fuente */
+  color: #0b0b0b;
+  text-align: center; /* Centra el texto */
+  margin-bottom: 15px;
+  font-weight: bold; /* Hace el texto más destacado */
 }
 
 .comments-section h3 {
@@ -141,18 +151,17 @@ a:hover {
 }
 
 .comment-item strong {
-  color: #ff5722;
+  color: #f8b852;
   font-size: 1.2rem;
 }
 
 .comment-item small {
   display: block;
   font-size: 0.9rem;
-  color: #777;
+  color: #312f2f;
   margin-top: 5px;
 }
 
-/* Contenedor completo para la sección de "Leave a Comment" */
 .comment-form {
   background-color: #dcd09d;
   padding: 20px;
@@ -160,22 +169,43 @@ a:hover {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
   text-align: center;
-  max-width: 600px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
 }
 
+.comment-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.comment-input-container textarea {
+  width: 90%;
+  max-width: 600px;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: 1px solid #797877;
+  box-sizing: border-box;
+  resize: vertical;
+  background-color: #f2dec1;
+  color: white;
+}
 /* Título dentro del contenedor */
 .comment-form h3 {
   font-size: 1.8rem;
-  color: #333;
+  color: #070707;
   margin-bottom: 15px;
 }
 
+
 /* Estilo para el campo de texto */
 .comment-form textarea {
-  width: 100%; /* Ocupa el 100% del ancho del contenedor */
-  max-width: 550px; /* Ancho máximo */
+  width: 100%;
+  max-width: 800px;
   padding: 12px;
   font-size: 1.1rem;
   border-radius: 8px;
@@ -184,12 +214,13 @@ a:hover {
   margin-bottom: 10px;
   resize: vertical;
   display: block;
-  margin: 0 auto; /* Centra el área de texto */
+  margin: 0 auto;
+  color: #070707;
 }
 
 /* Estilo para el botón de enviar comentario */
 .comment-form button {
-  background-color: #ff5722;
+  background-color: #71706e;
   color: white;
   border: none;
   padding: 12px 25px;
@@ -202,11 +233,17 @@ a:hover {
 }
 
 .comment-form button:hover {
-  background-color: #e64a19;
+  background-color: #ecc279;
 }
 
 .error-messages {
   color: red;
   font-size: 0.9em;
   margin-top: 5px;
+}
+
+
+.comment-input-container textarea::placeholder {
+  color: #000000;
+  opacity: 0.7;
 }

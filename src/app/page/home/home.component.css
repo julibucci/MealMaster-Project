@@ -17,6 +17,7 @@
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
+  margin-left: 1rem;
 }
 
 .navbar a:hover {
@@ -33,7 +34,7 @@
     background-color: #f3f4f6;
     padding: 1rem;
 
-    
+
   }
 
   /* Título principal */
@@ -75,4 +76,11 @@
 
   .food-image:hover {
     transform: scale(1.05);
+  }
+
+  .home-logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
   }

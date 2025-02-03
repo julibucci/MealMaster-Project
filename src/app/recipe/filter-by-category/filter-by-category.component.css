@@ -1,7 +1,7 @@
-/* Fondo general y espaciado */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant:wght@400&display=swap');
 body {
   background-color: #fff;
-  font-family: Arial, sans-serif;
+  font-family: 'Playfair';
   margin: 0;
   padding: 0;
   color: #333;
@@ -14,6 +14,7 @@ h2 {
   padding: 20px 0;
   margin-bottom: 20px;
   font-size: 2rem;
+  font-family: 'Playfair';
 }
 
 /* Contenedor principal */
@@ -22,23 +23,27 @@ h2 {
   margin: 0 auto;
   padding: 20px;
   text-align: center;
+  border: 2px solid #92776e;
+  font-family: 'Playfair';
 }
 
 /* Centrar el contenedor de selector de categoría */
 .category-container {
   display: flex;
-  justify-content: center; 
-  align-items: center; 
-  gap: 10px; 
-  margin-top: 30px; 
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
   margin-bottom: 20px;
+  font-family: 'Playfair';
 }
 
 /* Estilo de la etiqueta */
 .category-container label {
   font-weight: bold;
-  color: #6d4b3f; 
-  font-size: 1.1rem;
+  color: #6d4b3f;
+  font-size: 2rem;
+  font-family: 'Playfair';
 }
 
 /* Estilo del selector de categoría */
@@ -48,28 +53,28 @@ h2 {
   width: 200px;
   border: 2px solid #FF7043;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: #ffffff;
   color: #333;
   font-weight: bold;
   transition: all 0.3s ease;
+  font-family: 'Playfair';
 }
 
 .category-container select:hover {
   border-color: #FF5722;
 }
 
-
-/* Estilo de los favoritos */
 ul {
   list-style-type: none;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  font-family: 'Playfair';
 }
 
 li {
-  background-color: #FFEBEE;
+  background-color: #f2d8aa;
   margin: 10px;
   padding: 20px;
   border-radius: 10px;
@@ -77,6 +82,8 @@ li {
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  border: 2px solid #cdc0a6;
+  font-family: 'Playfair';
 }
 
 li:hover {
@@ -94,25 +101,28 @@ img {
 
 /* Títulos y texto */
 p {
-  font-size: 1.1rem;
+  font-size: 2rem;
   color: #333;
   font-weight: bold;
   margin-bottom: 10px;
+  font-family: 'Playfair';
 }
 
 button {
   margin: 5px;
   padding: 10px 20px;
-  font-size: 14px;
+  font-size:  1.5em;
   cursor: pointer;
   border: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  background-color: #aba39c;
+  font-family: 'Playfair';
 }
 
 button:hover {
-  background-color: #FF5722;
-  color: #f7eded;
+  background-color: #f79342;
+  color: #3c3c3b;
 }
 
 button:focus {

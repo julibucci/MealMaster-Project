@@ -1,22 +1,24 @@
-/* Estilos para el contenedor general */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant:wght@400&display=swap');
+
 .recipes-container {
   margin: 40px auto;
   margin: 40px auto;
   padding: 20px;
-  width: 1000px; /* Asegura que ocupe todo el ancho disponible */
-  max-width: 95vw;/* Ajusta el ancho máximo */
+  width: 1000px;
+  max-width: 95vw;
   border-radius: 10px;
- 
+  font-family: 'Playfair';
 }
 
 
 .recipes-title {
-  font-size: 1.8em;
-  margin-bottom: 20px;
+  font-size: 2em;
+  margin-bottom: 30px;
   text-align: center;
   color: #333;
   font-weight: bold;
-  margin-top: 20px; 
+  margin-top: 20px;
+  font-family: 'Playfair';
 }
 
 /* Estilos para la lista de recetas */
@@ -24,51 +26,58 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-top: 50px; 
+  margin-top: 50px;
+  font-family: 'Playfair';
 }
 
 .recipe-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px;
-  margin-bottom: 15px;
-  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(207, 182, 126, 0.8);
+  font-family: 'Playfair';
 }
 
 .recipe-info {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  font-family: 'Playfair';
 }
 
 .recipe-name {
-  font-size: 1.2em;
+  font-size:  1.5em;
   font-weight: bold;
-  color: #333;
+  color: #181818;
+  font-family: 'Playfair';
 }
 
 .recipe-category {
-  font-size: 1em;
-  color: #777;
+  font-size:  1.5em;
+  color: #201f1f;
+  font-family: 'Playfair';
 }
 
 /* Estilos para los botones de acción */
 .recipe-actions {
   display: flex;
   gap: 12px;
+  font-family: 'Playfair';
 }
 
 .delete-btn, .view-btn {
   padding: 10px 15px;
-  font-size: 1em;
+  font-size:  1.5em;
   cursor: pointer;
   border: none;
   border-radius: 6px;
   transition: background-color 0.3s ease;
+  font-family: 'Playfair';
 }
 
 /* Botón de Eliminar */
@@ -83,12 +92,12 @@
 
 /* Botón de Ver Detalles */
 .view-btn {
-  background-color: #333;
+  background-color: #aba39c;
   color: white;
 }
 
 .view-btn:hover {
-  background-color: #555;
+  background-color: #635e5e;
 }
 
 .no-recipes-message {
@@ -98,7 +107,7 @@
   align-items: center;
   text-align: center;
   margin-top: 100px;
-  font-size: 2.5rem;
+  font-size: 6rem;
   font-weight: bold;
   color: #333;
   height: 70vh;

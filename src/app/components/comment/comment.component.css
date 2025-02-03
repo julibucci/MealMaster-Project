@@ -8,12 +8,12 @@
 }
 
 .comments-section h3 {
-  font-size: 1.5rem;
+  font-size: 10%;
   margin-bottom: 15px;
 }
 
 .comments-section {
-  background-color: #ff7043; /* Fondo gris oscuro */
+  background-color: #ecbc75; /* Fondo gris oscuro */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(203, 143, 32, 0.2);
@@ -29,8 +29,8 @@
 }
 
 .toggle-button {
-  background-color: #dcd09d; /* Naranja */
-  color: #272525;
+  background-color: #6d6d6b; /* Naranja */
+  color: #eae6e6;
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
@@ -42,49 +42,59 @@
 }
 
 .toggle-button:hover {
-  background-color: #cc8400; /* Naranja más oscuro */
+  background-color: #5f523a; /* Naranja más oscuro */
   transform: scale(1.05);
 }
 
+/* Estilo para la lista de comentarios */
 .comment-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+/* Estilo para cada comentario */
 .comment-item {
-  background-color: #c7bd99; /* Gris intermedio */
-  border: 1px solid #4d4d4d; /* Borde gris oscuro */
-  border-radius: 5px;
+  background-color: #ded0c1;
+  color: #333;
   padding: 15px;
-  margin-bottom: 10px;
-  position: relative;
-  text-align: left;
-  color: #060606; /* Texto blanco grisáceo */
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 1.3rem; /* Hacer los comentarios más grandes */
+  display: flex;
+  align-items: center;
 }
 
-.comment-item textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ffa500; /* Naranja */
-  border-radius: 5px;
-  font-size: 1rem;
-  background-color: #2b2b2b; /* Fondo gris oscuro */
-  color: #f4f4f4; /* Texto blanco grisáceo */
+/* Contenedor de texto del comentario */
+.comment-item div:first-child {
+  flex-grow: 1;
 }
 
-.comment-item textarea::placeholder {
-  color: #aaa; /* Placeholder gris claro */
-}
-
+/* Estilo para los botones dentro de cada comentario */
 .comment-item button {
-  margin: 5px;
-  padding: 5px 10px;
+  background-color: #71706e;
+  color: white;
   border: none;
-  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 1.1rem;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.2s;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-left: 10px; /* Separa los botones */
+}
+
+.comment-item button:hover {
+  background-color: #6f6b69;
+}
+
+/* Estilo para el contenedor de la sección de comentarios */
+.comments-section {
+  background-color: #eeb472;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .comment-item button:nth-child(1) {
@@ -108,11 +118,11 @@
 }
 
 .comment-item button:nth-child(3) {
-  background-color: #4d4d4d; /* Gris oscuro */
+  background-color: #e64105; /* Gris oscuro */
   color: white;
 }
 
 .comment-item button:nth-child(3):hover {
-  background-color: #2b2b2b; /* Gris más oscuro */
+  background-color: #c20c0c; /* Gris más oscuro */
   transform: scale(1.05);
 }

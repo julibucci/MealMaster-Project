@@ -6,16 +6,16 @@
   padding: 20px;
 
   margin-top: -20px;
-  
+
   /* Ajustar el fondo */
-  background-image: url('../../../../imagenes/15.avif');
-  background-size: cover; 
+  background-image: url('../../../../imagenes/2.jpeg');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  height: 100vh; 
-  min-height: 100vh;  /* 100% de la altura de la pantalla */
-  width: 100%; /* Ocupar todo el ancho */
+  height: 100vh;
+  min-height: 100vh;
+  width: 100%;
 
   position: absolute;
 }
@@ -23,7 +23,7 @@
 
   .home-container h1 {
     font-size: 2.5rem;
-    color: #ffffff;
+    color: #151414;
     font-family: 'Playfair Display', serif;
     margin-top:30px;
   }
@@ -31,7 +31,7 @@
   .home-container p {
     font-size: 1.2rem;
     font-family: 'Cormorant';
-    color: #ffffff;
+    color: #0f0f0f;
     margin-bottom: 20px;
     margin-top:10px;
     font-style: italic;
@@ -46,13 +46,53 @@
   }
 
   .food-image {
-    width: 300px; /* Aumenta el ancho */
-    height: 300px; /* Aumenta la altura */
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 .food-image:hover {
-  transform: scale(1.05); /* Agrega un efecto de zoom al pasar el mouse */
+  transform: scale(1.05);
 }
+
+.footer {
+  background-color: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Estilo para el título del footer */
+.footer p {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Estilo para los iconos de las redes sociales */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.social-icon {
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #FF7043;
+}
+
+.about-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+

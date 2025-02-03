@@ -48,6 +48,13 @@
       "idMeal": "53009",
       "comment": "The best recipe!",
       "date": "2024-11-17T19:40:40.958Z"
+    },
+    {
+      "id": "5871",
+      "userId": "1",
+      "idMeal": "52977",
+      "comment": "sdadsd",
+      "date": "2025-02-02T05:19:20.333Z"
     }
   ],
   "favorites": [
@@ -92,43 +99,12 @@
       "id": "d338"
     },
     {
-      "id": "ywxrquwej",
-      "userId": "1",
-      "idMeal": "5306",
-      "strMeal": "Chick-Fil-A Sandwich",
-      "category": "Chicken"
-    },
-    {
       "id": "txwbsctxs",
       "userId": "1",
       "idMeal": "52893",
       "strMeal": "Apple & Blackberry Crumble",
       "strMealThumb": "https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg",
       "category": "Dessert"
-    },
-    {
-      "id": "daljjwif5",
-      "userId": "2",
-      "idMeal": "52939",
-      "strMeal": "Callaloo Jamaican Style",
-      "strMealThumb": "https://www.themealdb.com/images/media/meals/ussyxw1515364536.jpg",
-      "category": "Miscellaneous"
-    },
-    {
-      "id": "kzjvck5tc",
-      "userId": "2",
-      "idMeal": "52775",
-      "strMeal": "Vegan Lasagna",
-      "strMealThumb": "https://www.themealdb.com/images/media/meals/rvxxuy1468312893.jpg",
-      "category": "Vegan"
-    },
-    {
-      "id": "nvj69x3kr",
-      "userId": "2",
-      "idMeal": "53060",
-      "strMeal": "Burek",
-      "strMealThumb": "https://www.themealdb.com/images/media/meals/tkxquw1628771028.jpg",
-      "category": "Side"
     },
     {
       "id": "4xgxz50j3",
@@ -139,12 +115,12 @@
       "category": "Side"
     },
     {
-      "id": "5nl975vph",
+      "id": "uu5r6o6lt",
       "userId": "2",
-      "idMeal": "52841",
-      "strMeal": "Creamy Tomato Soup",
-      "strMealThumb": "https://www.themealdb.com/images/media/meals/stpuws1511191310.jpg",
-      "category": "Starter"
+      "idMeal": "52978",
+      "strMeal": "Kumpir",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/mlchx21564916997.jpg",
+      "category": "Side"
     }
   ],
   "meals": [
@@ -222,134 +198,9 @@
       ],
       "userId": "1",
       "imageUrl": ""
-    },
-    {
-      "id": "e056",
-      "idMeal": "941192297",
-      "strMeal": "sdads",
-      "strCategory": "Chicken",
-      "strArea": "Chinese",
-      "strInstructions": "sdad",
-      "ingredients": [
-        {
-          "ingredient": "",
-          "measure": ""
-        }
-      ],
-      "userId": "1",
-      "imageUrl": ""
-    },
-    {
-      "id": "643d",
-      "idMeal": "941192297",
-      "strMeal": "sdads",
-      "strCategory": "Chicken",
-      "strArea": "Chinese",
-      "strInstructions": "sdad",
-      "ingredients": [
-        {
-          "ingredient": "",
-          "measure": ""
-        }
-      ],
-      "userId": "1",
-      "imageUrl": "http://localhost:3001/uploads/1738285885317-images.jpeg"
-    },
-    {
-      "id": "9df0",
-      "idMeal": "898341967",
-      "strMeal": "SCDSDC",
-      "strCategory": "Vegan",
-      "strArea": "Malaysian",
-      "strInstructions": "SDADSD",
-      "ingredients": [
-        {
-          "ingredient": "SDAD",
-          "measure": "SAD"
-        }
-      ],
-      "userId": "1",
-      "imageUrl": "http://localhost:3001/uploads/1738286653677-images.jpeg"
-    },
-    {
-      "id": "955f",
-      "idMeal": "102779295",
-      "strMeal": "jwdljskad",
-      "strCategory": "Dessert",
-      "strArea": "Moroccan",
-      "strInstructions": "ijdislkjdkls",
-      "ingredients": [
-        {
-          "ingredient": "",
-          "measure": ""
-        }
-      ],
-      "userId": "1",
-      "imageUrl": ""
     }
   ],
   "mealPlans": [
-    {
-      "id": "1-53079",
-      "userId": "1",
-      "recipe": {
-        "idMeal": "53079",
-        "strMeal": "Fish Soup (Ukha)",
-        "strDrinkAlternate": null,
-        "strCategory": "Seafood",
-        "strArea": "Russian",
-        "strInstructions": "In a medium pot, heat the olive oil over medium-high heat. Add the onions and cook, stirring occasionally until the onions start to caramelize. Add the carrots and cook until the carrots start to soften, about 4 more minutes.\r\nAdd the stock, water, potatoes, bay leaves, and black peppercorns. Season with salt and bring to a boil. Reduce heat, cover and cook for 10 minutes. Add the millet and cook for 15 more minutes until millet and potatoes are cooked.\r\nGently add the fish cubes. Stir and bring the soup to a simmer. The fish will cook through very fast, so make sure to not overcook them. They are done when the flesh is opaque and flakes easily.\r\nGarnish the soup with chopped fresh dill or parsley before serving.",
-        "strMealThumb": "https://www.themealdb.com/images/media/meals/7n8su21699013057.jpg",
-        "strTags": "soup",
-        "strYoutube": "https://www.youtube.com/watch?v=cS3Yn-y5uVg",
-        "strIngredient1": "Olive Oil",
-        "strIngredient2": "Onion",
-        "strIngredient3": "Carrots",
-        "strIngredient4": "Fish Stock",
-        "strIngredient5": "Water",
-        "strIngredient6": "Potatoes",
-        "strIngredient7": "Bay Leaf",
-        "strIngredient8": "Cod",
-        "strIngredient9": "Salmon",
-        "strIngredient10": "",
-        "strIngredient11": "",
-        "strIngredient12": "",
-        "strIngredient13": "",
-        "strIngredient14": "",
-        "strIngredient15": "",
-        "strIngredient16": "",
-        "strIngredient17": "",
-        "strIngredient18": "",
-        "strIngredient19": "",
-        "strIngredient20": "",
-        "strMeasure1": "2 tbs",
-        "strMeasure2": "1 sliced",
-        "strMeasure3": "2 medium",
-        "strMeasure4": "3 cups ",
-        "strMeasure5": "3 cups ",
-        "strMeasure6": "4 large",
-        "strMeasure7": "3",
-        "strMeasure8": "1",
-        "strMeasure9": "1",
-        "strMeasure10": " ",
-        "strMeasure11": " ",
-        "strMeasure12": " ",
-        "strMeasure13": " ",
-        "strMeasure14": " ",
-        "strMeasure15": " ",
-        "strMeasure16": " ",
-        "strMeasure17": " ",
-        "strMeasure18": " ",
-        "strMeasure19": " ",
-        "strMeasure20": " ",
-        "strSource": "https://www.curiouscuisiniere.com/ukha-russian-fish-soup/",
-        "strImageSource": null,
-        "strCreativeCommonsConfirmed": null,
-        "dateModified": null
-      },
-      "category": "lunch",
-      "day": "Wednesday"
-    },
     {
       "id": "1-52995",
       "userId": "1",
@@ -471,6 +322,67 @@
       },
       "category": "dinner",
       "day": "Sunday"
+    },
+    {
+      "id": "1-52796",
+      "userId": "1",
+      "recipe": {
+        "idMeal": "52796",
+        "strMeal": "Chicken Alfredo Primavera",
+        "strDrinkAlternate": null,
+        "strCategory": "Chicken",
+        "strArea": "Italian",
+        "strInstructions": "Heat 1 tablespoon of butter and 2 tablespoons of olive oil in a large skillet over medium-high heat. Season both sides of each chicken breast with seasoned salt and a pinch of pepper. Add the chicken to the skillet and cook for 5-7 minutes on each side, or until cooked through.  While the chicken is cooking, bring a large pot of water to a boil. Season the boiling water with a few generous pinches of kosher salt. Add the pasta and give it a stir. Cook, stirring occasionally, until al dente, about 12 minutes. Reserve 1/2 cup of  pasta water before draining the pasta.  Remove the chicken from the pan and transfer it to a cutting board; allow it to rest. Turn the heat down to medium and dd the remaining 1 tablespoon of butter and olive oil to the same pan you used to cook the chicken. Add the veggies (minus the garlic) and red pepper flakes to the pan and stir to coat with the oil and butter (refrain from seasoning with salt until the veggies are finished browning). Cook, stirring often, until the veggies are tender, about 5 minutes. Add the garlic and a generous pinch of salt and pepper to the pan and cook for 1 minute.  Deglaze the pan with the white wine. Continue to cook until the wine has reduced by half, about 3 minutes. Stir in the milk, heavy cream, and reserved pasta water. Bring the mixture to a gentle boil and allow to simmer and reduce for 2-3 minutes. Turn off the heat and add the Parmesan cheese and cooked pasta. Season with salt and pepper to taste. Garnish with Parmesan cheese and chopped parsley, if desired. ",
+        "strMealThumb": "https://www.themealdb.com/images/media/meals/syqypv1486981727.jpg",
+        "strTags": "Pasta,Meat,Dairy",
+        "strYoutube": "https://www.youtube.com/watch?v=qCIbq8HywpQ",
+        "strIngredient1": "Butter",
+        "strIngredient2": "Olive Oil",
+        "strIngredient3": "Chicken",
+        "strIngredient4": "Salt",
+        "strIngredient5": "Squash",
+        "strIngredient6": "Broccoli",
+        "strIngredient7": "mushrooms",
+        "strIngredient8": "Pepper",
+        "strIngredient9": "onion",
+        "strIngredient10": "garlic",
+        "strIngredient11": "red pepper flakes",
+        "strIngredient12": "white wine",
+        "strIngredient13": "milk",
+        "strIngredient14": "heavy cream",
+        "strIngredient15": "Parmesan cheese",
+        "strIngredient16": "bowtie pasta",
+        "strIngredient17": "Salt",
+        "strIngredient18": "Pepper",
+        "strIngredient19": "Parsley",
+        "strIngredient20": "",
+        "strMeasure1": "2 tablespoons",
+        "strMeasure2": "3 tablespoons",
+        "strMeasure3": "5 boneless",
+        "strMeasure4": "1 teaspoon",
+        "strMeasure5": "1 cut into 1/2-inch cubes",
+        "strMeasure6": "1 Head chopped",
+        "strMeasure7": "8-ounce sliced",
+        "strMeasure8": "1 red",
+        "strMeasure9": "1 chopped",
+        "strMeasure10": "3 cloves",
+        "strMeasure11": "1/2 teaspoon",
+        "strMeasure12": "1/2 cup",
+        "strMeasure13": "1/2 cup",
+        "strMeasure14": "1/2 cup",
+        "strMeasure15": "1 cup grated",
+        "strMeasure16": "16 ounces",
+        "strMeasure17": "pinch",
+        "strMeasure18": "pinch ",
+        "strMeasure19": "chopped",
+        "strMeasure20": "",
+        "strSource": "",
+        "strImageSource": null,
+        "strCreativeCommonsConfirmed": null,
+        "dateModified": null
+      },
+      "category": "breakfast",
+      "day": "Saturday"
     }
   ]
 }

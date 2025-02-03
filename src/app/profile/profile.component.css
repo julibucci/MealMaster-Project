@@ -1,4 +1,4 @@
-/* Contenedor principal de la página */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant:wght@400&display=swap');
 .profile-page {
   display: flex;
   justify-content: center;
@@ -19,12 +19,12 @@
 /* Contenedor de las imágenes de los chefs */
 .chef-container-wrapper {
   display: flex;
-  flex-direction: column; /* Acomoda las imágenes una debajo de otra */
-  align-items: center; /* Centra las imágenes horizontalmente */
-  flex: 0.3; /* Ocupa el 30% del ancho */
+  flex-direction: column;
+  align-items: center;
+  flex: 0.3;
   padding-right: 20px;
   margin-left: -150px;
-  
+
 }
 
 /* Estilo para las imágenes de los chefs */
@@ -42,7 +42,7 @@
   flex: 1; /* Ocupa el 70% restante del ancho */
   width: 1500px;
   padding: 20px;
-  margin-left: 50px; 
+  margin-left: 50px;
 }
 
 /* Estilo para la imagen de perfil */
@@ -59,7 +59,7 @@
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid #ddd;
-  
+
 }
 
 /* Estilos para los detalles del perfil */
@@ -79,6 +79,7 @@
 
 .profile-details input,
 .profile-details textarea {
+  background-color:  #f7f3ef;
   width: 100%;
   padding: 10px;
   margin: 8px 0;

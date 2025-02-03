@@ -7,16 +7,23 @@
     align-items: center;
     font-family: 'Cormorant', serif;
     color: #4E342E; /* Marrón oscuro para el texto */
-    background-color: #fff; 
+    background-color: #fff;
     padding: 20px;
     min-height: 100vh;
     width: 100%;
     box-sizing: border-box;
-    background-image: url(../../../../imagenes/6.webp);
+    background-image: url(../../../../imagenes/pexels-karolina-grabowska-4199098.jpg);
     background-size:cover;  /* Ajusta la imagen para que se vea entera */
     background-position: center;  /* Centra la imagen */
     background-repeat: no-repeat;  /* Evita que la imagen se repita */
     position: relative;
+}
+
+.home-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 /* Barra de navegación en durazno más claro */
@@ -26,11 +33,11 @@
     align-items: center;
     width: 100%;
     gap: 1rem;
-    background-color: #FFE5CC; 
-    padding: 0.3rem 1.5rem; 
-    font-size: 1rem; 
-    border: 2px solid #FF9F80; 
-    width: 100vw;  
+    background-color: #FFE5CC;
+    padding: 0.3rem 1.5rem;
+    font-size: 1rem;
+    border: 2px solid #FF9F80;
+    width: 100vw;
 }
 
 .navbar a {
