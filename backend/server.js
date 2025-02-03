@@ -52,7 +52,7 @@ app.post('/paypal/product', async (req, res) => {
   }
 });
 
-// Crear plan de suscripción
+// Crear plan de suscripcion
 app.post('/paypal/plan', async (req, res) => {
   const { productId, planName, price, accessToken } = req.body;
   try {
@@ -90,7 +90,7 @@ const path = require('path');
 const fs = require('fs');
 
 
-// Configuración de Multer para guardar imágenes
+// Configuracion de Multer para guardar imagenes
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'uploads/');
@@ -155,7 +155,7 @@ app.post('/api/upload-recipe-image/:idMeal', upload.single('file'), (req, res) =
   res.json({ imageUrl });
 });
 
-// Servir la carpeta de uploads como estática
+// Servir la carpeta de uploads como estatica
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Iniciar el servidor en el puerto 3001
