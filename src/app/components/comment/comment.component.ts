@@ -27,7 +27,10 @@ export class CommentComponent {
   // Verificar si el comentario pertenece al usuario actual
   canDeleteComment(comment: any): boolean {
     const currentUserId = this.userService.getCurrentUserId();
-    return comment.userId === currentUserId;
+    console.log("Current User ID:", currentUserId);
+    console.log("Comment's User ID:", comment.userId);
+
+    return String(comment.userId) === String(currentUserId);
   }
 
   // Eliminar comentario
@@ -67,7 +70,7 @@ export class CommentComponent {
     }
   }
 
-  // Cancelar edicion del comentario    
+  // Cancelar edicion del comentario
   cancelEdit(): void {
     this.editingCommentId = null;
     this.editedText = '';

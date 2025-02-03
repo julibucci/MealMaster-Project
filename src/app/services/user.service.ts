@@ -52,6 +52,7 @@ export class UserService {
   }
 
   getCurrentUserId(): string | null {
+    console.log('Current User ID in UserService:', this.currentUserId);
     return this.currentUserId;
   }
 

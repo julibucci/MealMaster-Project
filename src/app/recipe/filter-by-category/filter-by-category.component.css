@@ -4,7 +4,7 @@ body {
   font-family: 'Playfair';
   margin: 0;
   padding: 0;
-  color: #333;
+  color: #1f1e1e;
 }
 
 
@@ -43,7 +43,7 @@ h2 {
 
 .category-container label {
   font-weight: bold;
-  color: #6d4b3f;
+  color: #232222;
   font-size: 2rem;
   font-family: 'Playfair';
   font-size: 2rem;

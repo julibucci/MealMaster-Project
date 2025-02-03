@@ -210,7 +210,7 @@ a:hover {
   box-sizing: border-box;
   resize: vertical;
   background-color: #f2dec1;
-  color: white;
+  color: rgb(18, 18, 18);
   font-family: 'Playfair';
 }
 /* Título dentro del contenedor */
