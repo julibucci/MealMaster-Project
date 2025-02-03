@@ -112,7 +112,6 @@ button:nth-of-type(2):hover {
   max-width: 1200px;
   min-height: 80vh;
   margin: 50px auto;
-  backdrop-filter: blur(10px);
 }
 
 .ingredients-wrapper {
