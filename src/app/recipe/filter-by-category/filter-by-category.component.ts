@@ -40,6 +40,7 @@ export class FilterByCategoryComponent {
     this.getAllRecipes();
   }
 
+  // Metodo para obtener todas las categorias
   getAllCategories(): void {
     this.filterByCategoryService.getAllCategorys().subscribe((data: Category[]) =>{
       console.log("Categories received:", data);
@@ -47,18 +48,21 @@ export class FilterByCategoryComponent {
     })
   }
 
+  // Metodo para obtener todas las recetas
   getAllRecipes(): void {
     this.recipeService.getRecipes().subscribe((data: Recipe[]) => {
       this.categoryRecipesFromJson = data;
     });
   }
 
+  // Metodo para obtener las recetas de la categoria
 getRecipesFromCategory(){
   this.filterByCategoryService.getAllRecipesFromCategory(this.selectedCategory).subscribe((data: Recipe[]) =>{
     this.recipeFromCategoryList = data;
   })
 }
 
+// Metodo para obtener la receta de la categoria
 getRecipeFromCategory(){
   this.filterByCategoryService.getRecipeFromCategory(this.selectedIdFromRecipe).subscribe((data: Recipe | null)=>{
     this.recipe = data;
@@ -66,19 +70,20 @@ getRecipeFromCategory(){
 
 }
 
+
 addRecipesToCategoryFromJson(){
 this.categoryRecipesFromJson = this.categoryRecipesFromJson.filter((recipe)=> recipe.strMeal === this.selectedCategory )
 }
 
-// Navegar a la página de detalles de la receta
+// Metodo para ver los detalles de la receta
 viewRecipeDetails(id: string): void {
-  // Verifica si el usuario ya está cargado
+  // Verifica si el usuario ya esta cargado
   this.userService.getUserProfile().subscribe(user => {
-    // Verifica el plan del usuario y navega según corresponda
+    // Verifica el plan del usuario y navega segun corresponda
     if (user.userPlan === 'premium') {
       this.router.navigate(['/plan-premium/recipe-details', id]); // Ruta para usuarios premium
     } else {
-      this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios básicos
+      this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios basicos
     }
   }, error => {
     console.error('Error getting user profile:', error);

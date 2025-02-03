@@ -5,12 +5,12 @@ body {
   margin: 0;
   padding: 0;
   color: #333;
-  line-height: 1.6; /* Mejorar la legibilidad con mayor espaciado de línea */
+  line-height: 1.6; 
   border:none;
   font-family: 'Playfair';
 }
 
-/* Encabezado */
+
 h2 {
   color: #0c0b0a;
   text-align: center;
@@ -25,7 +25,7 @@ h2 {
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 40px; /* Aumentar el padding para mejor separación de los bordes */
+  padding: 40px; 
   text-align: center;
   border: 2px solid #92776e;
   border-radius: 8px;
@@ -33,7 +33,6 @@ h2 {
   font-family: 'Playfair';
 }
 
-/* Centrar el contenedor de selector de categoría */
 .category-container {
   display: flex;
   justify-content: center;
@@ -44,7 +43,6 @@ h2 {
   font-family: 'Playfair';
 }
 
-/* Estilo de la etiqueta */
 .category-container label {
   font-weight: bold;
   color: #6d4b3f;
@@ -52,7 +50,6 @@ h2 {
   font-family: 'Playfair';
 }
 
-/* Estilo del selector de categoría */
 .category-container select {
   padding: 12px;
   font-size: 1rem;
@@ -70,7 +67,7 @@ h2 {
   border-color: #FF5722;
 }
 
-/* Estilo de las listas */
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -83,10 +80,10 @@ ul {
 
 li {
   background-color: #f2d8aa;
-  margin: 5px; /* Reducir margen para que quepan más elementos */
+  margin: 5px; 
   padding: 20px;
   border-radius: 10px;
-  flex: 1 1 calc(25% - 10px); /* Ajuste dinámico del ancho */
+  flex: 1 1 calc(25% - 10px); 
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -98,16 +95,16 @@ li {
   font-family: 'Playfair';
 }
 
-/* Media query para pantallas más pequeñas */
+
 @media (max-width: 1200px) {
   li {
-    flex: 1 1 calc(33.33% - 10px); /* Ajuste para tres elementos por fila */
+    flex: 1 1 calc(33.33% - 10px); 
   }
 }
 
 @media (max-width: 768px) {
   li {
-    flex: 1 1 calc(50% - 10px); /* Ajuste para dos elementos por fila */
+    flex: 1 1 calc(50% - 10px); 
   }
 }
 
@@ -122,19 +119,18 @@ li:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo de las imágenes de los favoritos */
+
 img {
   width: 100%;
   height: auto;
   border-radius: 8px;
   margin-bottom: 10px;
-  max-height: 200px; /* Limitar la altura para que todas las imágenes sean iguales */
+  max-height: 200px; 
   object-fit: cover;
 }
 
-/* Títulos y texto */
 p {
-  font-size: 1.8rem; /* Reducir el tamaño de fuente para que no se vea tan grande */
+  font-size: 1.8rem; 
   color: #333;
   font-weight: bold;
   margin-bottom: 10px;
@@ -151,7 +147,7 @@ button {
   border-radius: 5px;
   transition: background-color 0.3s ease;
   background-color: #aba39c;
-  display: block; /* Hacer que el botón ocupe todo el ancho posible */
+  display: block;
   width: 100%;
   font-family: 'Playfair';
 }
@@ -170,14 +166,14 @@ button:focus {
 }
 
 p {
-  font-size: 1.8rem; /* Reducir el tamaño de fuente para que no se vea tan grande */
+  font-size: 1.8rem; 
   color: #333;
   font-weight: bold;
   margin-bottom: 10px;
   line-height: 1.5;
   font-family: 'Playfair';
 }
-/* Mensaje de no favoritos */
+
 ng-template {
   color: #FF7043;
   font-size: 4rem;

@@ -3,23 +3,20 @@
 
 /* Contenedor Principal */
 .home-container {
-  width: 80%;
-  max-width: 800px;
+  width: 100%; 
   text-align: center;
   padding: 50px;
-  margin: 40px auto; /* Añade espacio superior */
-  background-color: #FFE5CC; /* Fondo beige claro */
+  margin: 40px auto; 
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid #FF9F80;
+  margin-top: 60px;
 }
 
 
-/* Título Principal */
+/* Titulo Principal */
 .home-container h1 {
   font-family: 'Playfair Display', serif;
   font-size: 36px;
-  color: #d07a50; /* Terracota cálido */
+  color: #d07a50; 
   font-weight: bold;
   margin-top: -10px;
 }
@@ -28,15 +25,15 @@
 .inspirational-text {
   font-family: 'Cormorant', serif;
   font-size: 18px;
-  color: #d07a50; /* Terracota cálido */
-  font-weight: bold; /* Negrita */
-  font-style: italic; /* Cursiva */
+  color: #d07a50; 
+  font-weight: bold; 
+  font-style: italic; 
   text-align: center;
   margin-top: 15px;
 }
 
 
-/* Contenedor de Imágenes de Lado */
+/* Contenedor de imagenes de Lado */
 .side-images {
   display: flex;
   gap: 15px;
@@ -45,7 +42,7 @@
   justify-content: center;
 }
 
-/* Estilo para las Imágenes */
+/* Estilo para las imagenes */
 .food-image {
   width: 240px;
   height: 240px;
@@ -60,16 +57,4 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* Ajustar tamaño del carrusel */
-#carouselExampleInterval {
-  max-width: 800px; /* Reducir el ancho */
-  height: 400px; /* Reducir la altura */
-  margin: 0 auto; /* Centrar */
-  overflow: hidden; /* Evitar desbordamiento */
-}
 
-/* Ajustar tamaño de las imágenes dentro del carrusel */
-#carouselExampleInterval .carousel-item img {
-  max-height: 400px; /* Ajustar altura */
-  object-fit: cover; /* Ajustar imagen sin distorsionar */
-}

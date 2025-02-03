@@ -42,32 +42,32 @@ export class CommentComponent {
     this.expanded = !this.expanded;
   }
 
-   // Iniciar edición
+   // Iniciar edicion del comentario
    startEditing(comment: any): void {
     this.editingCommentId = comment.id;
     this.editedText = comment.comment;
   }
 
-  // Guardar edición
+  // Guardar edicion del comentario
   saveEdit(): void {
     if (this.editingCommentId) {
       const comment = this.comments.find(c => c.id === this.editingCommentId);
       if (comment) {
         comment.comment = this.editedText;
         this.commentService.updateComment(comment).subscribe(updatedComment => {
-          // Actualiza el comentario en la lista local después de guardarlo en el servidor
+          // Actualiza el comentario en la lista local despues de guardarlo en el servidor
           const index = this.comments.findIndex(c => c.id === updatedComment.id);
           if (index !== -1) {
             this.comments[index] = updatedComment;
           }
-          this.editingCommentId = null; // Salir del modo edición
+          this.editingCommentId = null; // Salir del modo edicion
           this.editedText = '';
         });
       }
     }
   }
 
-  // Cancelar edición
+  // Cancelar edicion del comentario    
   cancelEdit(): void {
     this.editingCommentId = null;
     this.editedText = '';

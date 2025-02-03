@@ -29,17 +29,19 @@ export class UserRecipesComponentComponent implements OnInit {
     }
   }
 
+  // Metodo para eliminar una receta
   deleteRecipe(recipeId: string): void {
     this.recipeService.deleteRecipe(recipeId).subscribe(() => {
       this.recipes = this.recipes.filter(recipe => recipe.id !== recipeId);
     });
   }
 
-  // Método para ver los detalles de la receta
+  // Metodo para ver los detalles de la receta
   viewRecipeDetails(recipeId: string): void {
     this.router.navigate(['/plan-premium/recipe-details', recipeId]);
   }
 
+  // Metodo para ir a la pagina de creacion de recetas
   goToUserRecipesPage(): void {
     this.router.navigate(['/plan-premium/create-recipe']);
   }

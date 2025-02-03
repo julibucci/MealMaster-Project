@@ -48,7 +48,7 @@ export class MealPlanComponentComponent implements OnInit {
 
   sortMealPlan(): void {
     this.mealPlan.sort((a, b) => {
-      // Primero, ordenar por si la categoría es "uncategorized"
+      // Primero, ordenar por si la categoria es "uncategorized"
       if (a.category === 'uncategorized' && b.category !== 'uncategorized') {
         return -1; // A es "uncategorized" y B no, entonces A va primero
       }
@@ -56,11 +56,11 @@ export class MealPlanComponentComponent implements OnInit {
         return 1;  // B es "uncategorized" y A no, entonces B va primero
       }
 
-      // Ahora, ordenar por si tiene día asignado
-      if (!a.day && b.day) return -1;  // A sin día antes que B con día
-      if (a.day && !b.day) return 1;   // A con día después que B sin día
+      // Ahora, ordenar por si tiene dia asignado
+      if (!a.day && b.day) return -1;  // A sin dia antes que B con dia
+      if (a.day && !b.day) return 1;   // A con dia después que B sin dia
 
-      // Acá ordena por el día de la semana (lunes, martes, etc.)
+      // Aca ordena por el dia de la semana (lunes, martes, etc.)
       const dayOrder = this.daysOfWeek.indexOf(a.day || '') - this.daysOfWeek.indexOf(b.day || '');
       return dayOrder;
     });

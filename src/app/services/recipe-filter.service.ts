@@ -14,7 +14,7 @@ export class RecipeFilterService {
 
   private http = inject(HttpClient);
 
-  // Método para obtener recetas filtradas por un ingrediente
+  // Metodo para obtener recetas filtradas por un ingrediente
   getRecipesByIngredient(ingredient: string): Observable<Recipe[]> {
     return this.http.get<any>(`${this.apiUrl}${ingredient}`).pipe(
       map(response => {
@@ -34,7 +34,7 @@ export class RecipeFilterService {
   }
 
 
-  // Método para obtener todas las recetas creadas por cualquier usuario
+  // Metodo para obtener todas las recetas creadas por cualquier usuario
   getAllRecipes(): Observable<Recipe[]> {
     return this.http.get<any>('http://localhost:3002/meals').pipe(
       map(response => {
@@ -48,7 +48,7 @@ export class RecipeFilterService {
       }),
       catchError(error => {
         console.error('Error al obtener todas las recetas', error);
-        return of([]); // Devolver un array vacío en caso de error
+        return of([]); // Devolver un array vacio en caso de error
       })
     );
   }

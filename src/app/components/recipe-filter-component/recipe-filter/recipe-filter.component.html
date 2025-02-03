@@ -17,8 +17,6 @@
     <button type="submit" [disabled]="!ingredients.trim()">Search Recipes</button>
   </form>
 
-  <!--<button (click)="getAllRecipes()">Show All Recipes</button>-->
-
   <div *ngIf="errorMessage" class="error-message">
     <p>{{ errorMessage }}</p>
   </div>

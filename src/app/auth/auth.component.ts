@@ -33,9 +33,9 @@ export class AuthComponent {
 
     // Formulario de registro (solo con un campo de password)
     this.registerForm = this.fb.group({
-      name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]], // Validación para solo letras
+      name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]], // Validacion para solo letras
       email: ['', [Validators.required, Validators.email, Validators.pattern(/^[a-zA-Z0-9._%+-]+@(gmail|yahoo)\.com$/)]],
-      password: ['', [Validators.required, Validators.minLength(6)]], // Ahora solo el campo de password
+      password: ['', [Validators.required, Validators.minLength(3)]], 
     });
   }
 

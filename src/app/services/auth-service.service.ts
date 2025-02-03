@@ -33,7 +33,7 @@ export class AuthService {
   register(userData: RegisterData): Observable<any> {
     const userWithDefaultPlan = { ...userData, userPlan: 'basic' };
 
-    // Primero verificamos si el email ya está registrado
+    // Primero verificamos si el email ya esta registrado
     return this.http.get<User[]>(`${this.apiUrl}?email=${userWithDefaultPlan.email}`).pipe(
       switchMap((users) => {
         if (users.length > 0) {

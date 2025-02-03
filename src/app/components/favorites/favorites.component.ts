@@ -33,7 +33,7 @@ export class FavoritesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // Obtener el perfil del usuario y luego cargar los favoritos y las categorías
+    // Obtener el perfil del usuario y luego cargar los favoritos y las categorias
     this.favoriteService.getUserProfile().subscribe(user => {
       this.userService.getUserProfile().subscribe(() => {
         this.mealService.getCategories().subscribe(categories => {
@@ -49,12 +49,12 @@ export class FavoritesComponent implements OnInit {
     });
   }
 
-  // Filtrar favoritos basados en la categoría seleccionada
+  // Filtrar favoritos basados en la categoria seleccionada
   filterFavorites(): void {
     console.log("Selected category:", this.selectedCategory);
     console.log("Favorites before filtering:", this.favorites);
 
-    // Verifica si la categoría está vacía para mostrar todos los favoritos
+    // Verifica si la categoria esta vacía para mostrar todos los favoritos
     if (this.selectedCategory === '') {
       this.filteredFavorites = this.favorites;
     } else {
@@ -78,15 +78,15 @@ export class FavoritesComponent implements OnInit {
     }
   }
 
-  // Navegar a la página de detalles de la receta
+  // Ver detalles de la receta
   viewRecipeDetails(id: string): void {
-    // Verifica si el usuario ya está cargado
+    // Verifica si el usuario ya esta cargado
     this.userService.getUserProfile().subscribe(user => {
-      // Verifica el plan del usuario y navega según corresponda
+      // Verifica el plan del usuario y navega segun corresponda
       if (user.userPlan === 'premium') {
         this.router.navigate(['/plan-premium/recipe-details', id]); // Ruta para usuarios premium
       } else {
-        this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios básicos
+        this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios basicos
       }
     }, error => {
       console.error('Error getting user profile:', error);

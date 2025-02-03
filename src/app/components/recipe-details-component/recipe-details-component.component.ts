@@ -50,9 +50,9 @@ export class RecipeDetailsComponent implements OnInit {
   ngOnInit(): void {
     // Obtener el userId del usuario actual
     this.userId = this.userService.getCurrentUserId() || '';
-    // Obtener el ID de la receta de los parámetros de la ruta
+    // Obtener el ID de la receta de los parametros de la ruta
     this.recipeId = this.route.snapshot.paramMap.get('id') || '';
-    // Llamar al servicio para obtener los detalles de la receta
+    // Obtener detalles de la receta
     this.getRecipeDetails(this.recipeId);
     this.getComments(this.recipeId);
 
@@ -73,23 +73,25 @@ export class RecipeDetailsComponent implements OnInit {
     ]).subscribe(([localRecipes, apiRecipe]) => {
       // Almacena las recetas locales en recipeDetails
       if (localRecipes && localRecipes.length > 0) {
-        this.recipeDetails = localRecipes.find(recipe => recipe.idMeal === id) || {};  // Buscar receta específica en local
+        this.recipeDetails = localRecipes.find(recipe => recipe.idMeal === id) || {};  // Buscar receta especifica en local
       }
 
       // Si hay resultados de la API, actualizamos recipeDetails con la receta de la API
       if (apiRecipe && apiRecipe.meals && apiRecipe.meals.length > 0) {
-        this.recipeDetails = apiRecipe.meals[0];  // Tomar la receta de la API
+        this.recipeDetails = apiRecipe.meals[0];  // Toma la receta de la API
       }
 
       this.checkIfFavorite();
     });
   }
 
+  // Obtener la imagen de la receta
   getRecipeImage(): string {
     // Comprobar si la receta tiene imagen en el JSON o en la API
     return this.recipeDetails.imageUrl || this.recipeDetails.strMealThumb || '';
   }
 
+  // Obtener los ingredientes de la receta
   getIngredients(): string[] {
     if (this.recipeDetails.ingredients && Array.isArray(this.recipeDetails.ingredients)) {
       // Para las recetas del JSON local, devuelve el array de ingredientes formateado
@@ -110,11 +112,12 @@ export class RecipeDetailsComponent implements OnInit {
     }
   }
 
+
   goBack(): void {
     this.router.navigate(['/favorites']); // Redirige a la ruta de favoritos
   }
 
-   // Verificar si la receta está en favoritos
+   // Verificar si la receta este en favoritos
   checkIfFavorite(): void {
     this.favoriteService.getFavorites().subscribe(favorites => {
       this.isFavorite = favorites.some(fav => fav.idMeal === this.recipeDetails.idMeal);
@@ -129,7 +132,7 @@ export class RecipeDetailsComponent implements OnInit {
       strMeal: this.recipeDetails.strMeal,
       strMealThumb: this.recipeDetails.strMealThumb,
       category: this.recipeDetails.strCategory,
-      id: this.generateId()  // Generar un ID único para el favorito
+      id: this.generateId()  // Generar un ID unico para el favorito
     };
 
     this.favoriteService.addFavorite(favorite).subscribe(() => {
@@ -138,7 +141,7 @@ export class RecipeDetailsComponent implements OnInit {
     });
   }
 
-  // Método para generar un ID único (simple ejemplo)
+  // Metodo para generar un ID unico para los favoritos
   generateId(): string {
     return Math.random().toString(36).substr(2, 9);  // Genera un ID aleatorio
   }

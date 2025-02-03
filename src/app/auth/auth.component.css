@@ -1,9 +1,9 @@
-/* Contenedor global con fondo */
+
 .global-container {
   height: 100vh;
-  min-height: 100vh;  /* 100% de la altura de la pantalla */
+  min-height: 100vh;  
   width: 100%;
-  background-image: url('../../../imagenes/2.jpeg'); /* Asegúrate de que la ruta sea correcta */
+  background-image: url('../../../imagenes/2.jpeg'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,8 +21,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 750px; /* Ajustado a un tamaño intermedio */
-  width: 80%; /* Para mantener adaptabilidad */
+  max-width: 750px; 
+  width: 80%; 
   margin: 5rem auto;
   padding: 3rem;
   background-color: #f1f1f1;
@@ -34,28 +34,26 @@
 }
 
 
-
-
 .auth-container:hover {
-  transform: translateY(-10px); /* Elevación suave al hacer hover */
+  transform: translateY(-10px); 
 }
 
-/* Estilos del título */
+
 .auth-container h2 {
   font-size: 1.8rem;
-  color: #2c3e50; /* Color oscuro más neutral */
+  color: #2c3e50; 
   margin-bottom: 2rem;
   font-weight: bold;
   font-family: 'Roboto', sans-serif;
   letter-spacing: 1px;
 }
 
-/* Estilos del formulario */
+
 .auth-form {
   width: 100%;
 }
 
-/* Grupo de campos del formulario */
+
 .form-group {
   margin-bottom: 1.5rem;
   text-align: left;
@@ -63,7 +61,7 @@
 
 .form-group label {
   font-size: 1rem;
-  color: #34495e; /* Gris oscuro */
+  color: #34495e; 
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
@@ -71,28 +69,27 @@
 .form-group input {
   width: 100%;
   padding: 0.8rem;
-  border: 2px solid #bdc3c7; /* Gris más suave */
+  border: 2px solid #bdc3c7; 
   border-radius: 8px;
   font-size: 1rem;
-  background-color: #ecf0f1; /* Fondo gris claro */
+  background-color: #ecf0f1; 
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .form-group input:focus {
-  border-color: #3498db; /* Azul más brillante al enfocar */
+  border-color: #3498db; 
   outline: none;
-  box-shadow: 0 0 10px rgba(52, 152, 219, 0.4); /* Resaltado de campo enfocado */
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.4); 
 }
 
-/* Botón de autenticación */
 .auth-button {
   width: 100%;
   padding: 0.8rem;
-  background-color: #0d74b9; /* Azul */
+  background-color: #0d74b9; 
   color: white;
   font-size: 1.1rem;
   font-weight: bold;
-  border: 2px solid #2980b9; /* Borde azul más oscuro */
+  border: 2px solid #2980b9; 
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s;
@@ -100,15 +97,15 @@
 }
 
 .auth-button:hover {
-  background-color: #2980b9; /* Azul más oscuro al hacer hover */
-  border-color: #3498db; /* Borde más claro al hacer hover */
+  background-color: #2980b9; 
+  border-color: #3498db; 
 }
 
-/* Botón para alternar entre Login y Register */
+/* Boton para alternar entre Login y Register */
 .toggle-button {
   margin-top: 1.5rem;
   background: none;
-  color: #3498db; /* Azul */
+  color: #3498db; 
   border: none;
   cursor: pointer;
   font-size: 1rem;
@@ -118,18 +115,17 @@
 }
 
 .toggle-button:hover {
-  color: #2980b9; /* Azul más oscuro al hacer hover */
+  color: #2980b9;
 }
 
-/* Estilo para el mensaje de error */
 .error-message {
-  color: #e74c3c; /* Rojo brillante para errores */
+  color: #e74c3c; 
   font-size: 1rem;
   margin-top: 0.5rem;
   text-align: center;
 }
 
-/* Animación de entrada */
+
 .auth-container {
   animation: fadeIn 0.5s ease-in-out;
 }

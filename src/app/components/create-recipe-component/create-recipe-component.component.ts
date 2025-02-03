@@ -79,7 +79,7 @@ export class CreateRecipeComponentComponent implements OnInit {
         alert('Recipe saved successfully!');
 
         if (this.selectedFile) {
-          // Usar el mismo ID que el backend devolvió
+          // Usar el mismo ID que el backend devolvio
           this.uploadImage(this.selectedFile, savedRecipe.idMeal ?? savedRecipe.id);
         }
       },
@@ -126,6 +126,6 @@ export class CreateRecipeComponentComponent implements OnInit {
   }
 
   generateId(): string {
-    return Math.floor(100000000 + Math.random() * 900000000).toString(); // Genera un número de 9 dígitos
+    return Math.floor(100000000 + Math.random() * 900000000).toString(); // Genera un numero de 9 dígitos
   }
 }

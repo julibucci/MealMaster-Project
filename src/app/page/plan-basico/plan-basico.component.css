@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant:wght@400&display=swap');
 
-/* Fondo general en beige más oscuro */
+/* Fondo general */
 :host {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: 'Cormorant', serif;
-    color: #4E342E; /* Marrón oscuro para el texto */
+    color: #4E342E; 
     background-color: #fff;
     padding: 20px;
     min-height: 100vh;
     width: 100%;
     box-sizing: border-box;
     background-image: url(../../../../imagenes/pexels-karolina-grabowska-4199098.jpg);
-    background-size:cover;  /* Ajusta la imagen para que se vea entera */
-    background-position: center;  /* Centra la imagen */
-    background-repeat: no-repeat;  /* Evita que la imagen se repita */
+    background-size:cover;  
+    background-position: center;  
+    background-repeat: no-repeat;  
     position: relative;
 }
 
@@ -26,7 +26,7 @@
   object-fit: cover;
 }
 
-/* Barra de navegación en durazno más claro */
+/* Barra de navegacion */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -42,21 +42,21 @@
 
 .navbar a {
     font-family: 'Playfair Display', serif;
-    color: #6D4C41; /* Marrón cálido */
+    color: #6D4C41; 
     text-decoration: none;
     transition: color 0.3s, transform 0.3s;
     padding: 5px 10px;
 }
 
 .navbar a:hover {
-    color: #FF7043; /* Naranja vibrante en hover */
+    color: #FF7043; 
     transform: scale(1.1);
 }
 
-/* Botón de Log Out con fondo blanco y borde durazno */
+
 button {
-    background-color: #FFFFFF; /* Fondo blanco */
-    color: #FF7043; /* Texto en naranja vibrante */
+    background-color: #FFFFFF; 
+    color: #FF7043; 
     border: 2px solid #FF7043;
     padding: 10px 20px;
     font-weight: bold;
@@ -70,15 +70,15 @@ button {
 }
 
 button:hover {
-    background-color: #FF7043; /* Fondo naranja vibrante en hover */
+    background-color: #FF7043; 
     color: #FFFFFF;
     transform: scale(1.05);
 }
 
-/* Títulos y textos */
+
 h1 {
     font-family: 'Playfair Display', serif;
-    color: #4E342E; /* Marrón oscuro */
+    color: #4E342E; 
     font-size: 42px;
     margin-bottom: 15px;
     text-align: center;
@@ -86,28 +86,28 @@ h1 {
 
 p {
     font-size: 20px;
-    color: #8E5B45; /* Marrón medio para el texto */
+    color: #8E5B45; 
     text-align: center;
     max-width: 600px;
     margin-bottom: 20px;
 }
 
-/* Contenedor principal en beige claro */
+/* Contenedor principal */
 .home-container {
     width: 80%;
     max-width: 1200px;
     text-align: center;
     padding: 50px;
     margin: auto;
-    background-color: #FFF2E0; /* Beige claro */
+    background-color: #FFF2E0; 
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Título de bienvenida */
+/* Titulo */
 .home-container h1 {
     font-family: 'Playfair Display', serif;
-    color: #6D4C41; /* Marrón cálido */
+    color: #6D4C41; 
     font-size: 36px;
     margin-top: -20px;
 }
@@ -121,7 +121,7 @@ p {
     margin-top: 10px;
 }
 
-/* Contenedor de las imágenes de lado */
+
 .side-images {
     display: flex;
     gap: 10px;
@@ -129,7 +129,7 @@ p {
     margin-top: 20px;
 }
 
-/* Estilo para las imágenes */
+
 .food-image {
     width: 220px;
     height: 220px;
@@ -143,13 +143,13 @@ p {
     transform: scale(1.05);
 }
 
-/* Estilos de input para formulario */
+
 input[type="text"], textarea {
     width: 100%;
     padding: 12px;
-    border: 2px solid #FFB17A; /* Durazno vibrante */
+    border: 2px solid #FFB17A; 
     border-radius: 8px;
-    background-color: #FFF7EB; /* Fondo crema claro */
+    background-color: #FFF7EB; 
     color: #6D4C41;
     font-size: 16px;
     margin-bottom: 15px;
@@ -158,11 +158,11 @@ input[type="text"], textarea {
 }
 
 input[type="text"]:focus, textarea:focus {
-    border-color: #FF7043; /* Naranja en foco */
+    border-color: #FF7043; 
     outline: none;
 }
 
-/* Estilo para el botón Submit de formulario */
+
 .comment-form button {
     background-color: #FFB17A;
     color: #FFFFFF;
@@ -179,7 +179,7 @@ input[type="text"]:focus, textarea:focus {
     transform: scale(1.05);
 }
 
-/* Media Query para dispositivos móviles */
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
