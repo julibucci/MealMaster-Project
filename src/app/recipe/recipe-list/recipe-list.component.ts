@@ -20,6 +20,7 @@ export class RecipeListComponent implements OnInit {
     this.loadRecipes();
   }
 
+  // Metodo para cargar las recetas
   loadRecipes(): void {
     this.recipeService.getRecipes().subscribe((data: Recipe[]) => {
       this.recipes = data;

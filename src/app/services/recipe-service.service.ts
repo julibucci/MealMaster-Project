@@ -10,49 +10,49 @@ export class RecipeService {
 
   constructor(private http: HttpClient) {}
 
-  // Método para obtener recetas por usuario
+  // Metodo para obtener recetas por usuario
   getRecipesByUser(userId: string): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}?userId=${userId}`);
   }
 
-  // Método para crear una receta
+  // Metodo para crear una receta
   createRecipe(recipe: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, recipe);
   }
 
-  // Método para actualizar una receta
+  // Metodo para actualizar una receta
   updateRecipe(recipeId: string, recipe: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/${recipeId}`, recipe);
   }
 
-  // Método para eliminar una receta
+  // Metodo para eliminar una receta
   deleteRecipe(recipeId: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${recipeId}`);
   }
 
-  // Método para obtener categorías
+  // Metodo para obtener categorias
   getCategories(): Observable<any[]> {
     return this.http.get<any>('https://www.themealdb.com/api/json/v1/1/categories.php')
       .pipe(map(response => response.categories || []));
   }
 
-  // Método para obtener todas las recetas
+  // Metodo para obtener todas las recetas
   getAllRecipes(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl); // Devuelve todas las recetas sin filtrar
+    return this.http.get<any[]>(this.apiUrl); 
   }
 
 
-  // Método para obtener detalles de una receta específica
+  // Metodo para obtener detalles de una receta especifica
   getRecipeDetails(recipeId: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${recipeId}`);
   }
 
-// Método para obtener receta específica por id
+// Metodo para obtener receta especifica por id
 getRecipeById(id: string): Observable<any> {
   return this.http.get<any>(`${this.apiUrl}/${id}`);
 }
 
-// Método para obtener los detalles de una receta por idMeal
+// Metodo para obtener los detalles de una receta por idMeal
 getRecipeDetailsByIdMeal(idMeal: string): Observable<any> {
   return this.http.get<any>(`${this.apiUrl}?idMeal=${idMeal}`);
 }

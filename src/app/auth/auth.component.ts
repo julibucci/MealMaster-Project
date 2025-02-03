@@ -31,14 +31,15 @@ export class AuthComponent {
       password: ['', Validators.required]
     });
 
-    // Formulario de registro (solo con un campo de password)
+    // Formulario de registro de usuario
     this.registerForm = this.fb.group({
-      name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]], // Validación para solo letras
+      name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]], // Validacion para solo letras
       email: ['', [Validators.required, Validators.email, Validators.pattern(/^[a-zA-Z0-9._%+-]+@(gmail|yahoo)\.com$/)]],
-      password: ['', [Validators.required, Validators.minLength(6)]], // Ahora solo el campo de password
+      password: ['', [Validators.required, Validators.minLength(3)]], 
     });
   }
 
+  // Metodo para enviar el formulario de login o registro
   onSubmit(): void {
     this.errorMessage = null;
   
@@ -91,6 +92,7 @@ export class AuthComponent {
     }
   }
 
+  // Metodo para cambiar entre modo de login y registro
   toggleMode(): void {
     this.isLoginMode = !this.isLoginMode;
     this.errorMessage = null;

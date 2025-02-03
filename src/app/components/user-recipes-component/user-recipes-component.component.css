@@ -63,7 +63,6 @@
   font-family: 'Playfair';
 }
 
-/* Estilos para los botones de acción */
 .recipe-actions {
   display: flex;
   gap: 12px;
@@ -80,7 +79,7 @@
   font-family: 'Playfair';
 }
 
-/* Botón de Eliminar */
+
 .delete-btn {
   background-color: #ff6b6b;
   color: white;
@@ -90,7 +89,7 @@
   background-color: #ff4d4d;
 }
 
-/* Botón de Ver Detalles */
+
 .view-btn {
   background-color: #aba39c;
   color: white;

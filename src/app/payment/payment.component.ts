@@ -26,6 +26,7 @@ export class PaymentComponent implements AfterViewInit {
     this.initializePayPalButton();
   }
 
+
   initializePayPalButton(): void {
     this.paypalService.getAccessToken().subscribe({
       next: (tokenResponse: any) => {

@@ -17,17 +17,13 @@
     </li>
   </ul>
 
-
   <button *ngIf="!isFavorite" (click)="addToFavorites()">Add to favorites</button>
   <button *ngIf="isFavorite" disabled>This recipe is already in your favorites list </button>
   <button *ngIf="!isInMealPlan" (click)="addToMealPlan()">Add to Meal Plan</button>
 <button *ngIf="isInMealPlan" disabled>Already on your meal plan</button>
 </div>
 
-
-
 <app-comment [comments]="comments" [recipeId]="recipeId"></app-comment>
-
 
 <div *ngIf="true">
   <h3>Leave a comment:</h3>

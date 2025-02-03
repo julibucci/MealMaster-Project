@@ -119,7 +119,7 @@
 
 .chef-container {
   position: relative;
-  left: -100px; /* Ajusta este valor según lo necesites */
+  left: -100px; 
   top: 50px;
   margin-bottom: 20px;
   width: 500px;

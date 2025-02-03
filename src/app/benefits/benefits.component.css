@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Playfair';
-  background-color: #fffaf0; /* Fondo marfil */
+  background-color: #fffaf0; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,18 +26,18 @@ body {
 }
 
 .benefits-container h1 {
-  color: #000; /* Negro */
+  color: #000; 
   font-size: 2.2em;
   margin-bottom: 15px;
-  font-weight: bold; /* Texto en negrita */
+  font-weight: bold; 
   font-family: 'Playfair';
 }
 
 .benefits-container p {
-  color: #000; /* Negro */
+  color: #000;
   font-size: 1.1em;
   margin-bottom: 25px;
-  font-weight: bold; /* Texto en negrita */
+  font-weight: bold; 
   font-family: 'Playfair';
 }
 
@@ -46,10 +46,10 @@ body {
   padding: 0;
   max-width: 700px;
   margin: 0 auto;
-  color: #000; /* Negro */
+  color: #000;
   font-size: 1.1em;
   text-align: left;
-  font-weight: bold; /* Texto en negrita */
+  font-weight: bold; 
   font-family: 'Playfair';
 }
 
@@ -66,7 +66,7 @@ body {
   left: 0;
   top: 0.1em;
   font-size: 1.2em;
-  color: #000; /* Negro */
+  color: #000; 
   font-family: 'Playfair';
 }
 
@@ -86,7 +86,7 @@ body {
 }
 
 .upgrade-button:hover {
-  background-color: #2e7d32; /* Verde más oscuro para hover */
+  background-color: #2e7d32; 
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   font-family: 'Playfair';

@@ -26,7 +26,7 @@ export class MealPlanService {
       userId,
       id: `${userId}-${recipe.idMeal}`,
       recipe,
-      category: 'uncategorized', // Se asigna la categoría por defecto
+      category: 'uncategorized', // Se asigna la categoria por defecto
       day: null, // No asignado hasta que el usuario lo elija
     };
     return this.http.post<MealPlan>(this.apiUrl, mealEntry);
