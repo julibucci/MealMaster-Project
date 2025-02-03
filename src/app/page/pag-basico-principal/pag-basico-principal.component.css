@@ -4,14 +4,16 @@
 /* Contenedor Principal */
 .home-container {
   width: 80%;
-  max-width: 1200px;
+  max-width: 800px;
   text-align: center;
   padding: 50px;
   margin: 40px auto; /* Añade espacio superior */
-  background-color: #f9f4ef; /* Fondo beige claro */
+  background-color: #FFE5CC; /* Fondo beige claro */
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #FF9F80;
 }
+
 
 /* Título Principal */
 .home-container h1 {
@@ -56,4 +58,18 @@
 .food-image:hover {
   transform: scale(1.08);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Ajustar tamaño del carrusel */
+#carouselExampleInterval {
+  max-width: 800px; /* Reducir el ancho */
+  height: 400px; /* Reducir la altura */
+  margin: 0 auto; /* Centrar */
+  overflow: hidden; /* Evitar desbordamiento */
+}
+
+/* Ajustar tamaño de las imágenes dentro del carrusel */
+#carouselExampleInterval .carousel-item img {
+  max-height: 400px; /* Ajustar altura */
+  object-fit: cover; /* Ajustar imagen sin distorsionar */
 }

@@ -1,193 +1,126 @@
-/* Estilo general */
-* {
-  font-family: 'Playfair Display', serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-weight: bold;
-}
-
-body {
-  background-color: #fbe9e7;
-}
-
-/* Contenedor principal de la página */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant:wght@400&display=swap');
 .profile-page {
   display: flex;
   justify-content: center;
-  align-items: center;
-  position: relative;
-  padding: 2rem;
+  padding: 20px;
 }
 
-/* Contenedor de perfil */
+/* Contenedor del perfil */
 .profile-container {
-  max-width: 500px;
-  padding: 2rem;
-  background-color: #fff7f0;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  color: #5d4037;
-  z-index: 1;
-  position: relative;
-  text-align: center;  /* Alineación central del contenido */
+  display: flex;
+  flex-direction: row; /* Alinea las imágenes y el contenido en una fila */
+  justify-content: center;
+  align-items: flex-start; /* Alinea los elementos arriba */
+  width: 90%;
+  max-width: 1200px;
+
 }
 
-/* Botón "Seleccionar imagen" */
-input[type="file"] {
-  width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
-  padding: 10px;
-  margin-top: 15px;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #66bb6a;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-
-
-/* Contenedor de perfil */
-.profile-container {
-  max-width: 500px;
-  padding: 2rem;
-  background-color: #fff7f0;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  color: #5d4037;
-  z-index: 1;
-}
-
-
-/* Estilo de la imagen de perfil */
-.side-image img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #ffa726;
-  margin-bottom: 10px;
-}
-
-/* Contenedores de imágenes laterales */
-.side-image {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+/* Contenedor de las imágenes de los chefs */
+.chef-container-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #ffe0b2;
-  width: 100%;
-  max-width: 140px; /* Asegura que no sea más ancho que necesario */
-  left: 50%;
-  transform: translateX(-50%); /* Centrado absoluto */
+  flex: 0.3;
+  padding-right: 20px;
+  margin-left: -150px;
+
 }
 
-/* Ajuste del contenedor de imagen (izquierda y derecha) */
-.left-side, .right-side {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* Ajuste de la posición del contenedor izquierdo */
-.left-side {
-  left: -350px;
-  width: 300px;
-}
-
-.right-side {
-  right: -400px; /* Ajuste la posición en el lado derecho */
-  width: 350px; /* Aumenta el tamaño del contenedor derecho */
-  padding: 30px;
-}
-
-/* Tamaño y estilo del borde de las imágenes */
+/* Estilo para las imágenes de los chefs */
 .chef-image {
-  width: 320px;
+  width: 100%; /* Hace que las imágenes ocupen el ancho del contenedor */
+  max-width: 2000px; /* Evita que sean demasiado grandes */
   height: auto;
-  border-radius: 8px;
-  border: 5px solid #6d4c41; /* Color marrón para el borde */
+  border-radius: 10px;
+  margin-bottom: 15px; /* Espaciado entre imágenes */
+
 }
 
+/* Contenedor del contenido del perfil */
+.profile-content {
+  flex: 1; /* Ocupa el 70% restante del ancho */
+  width: 1500px;
+  padding: 20px;
+  margin-left: 50px;
+}
 
+/* Estilo para la imagen de perfil */
+.profile-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-h2 {
-  font-size: 2.5rem;
+.profile-image img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+
+}
+
+/* Estilos para los detalles del perfil */
+.profile-details {
+  background-color:  #FFDAB9;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
-  color: #6d4c41;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  font-family: 'Playfair Display', serif;
 }
 
-label {
+.profile-details label {
   display: block;
+  margin-bottom: 10px;
   font-weight: bold;
-  color: #6d4c41;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
 }
 
-input, textarea {
+.profile-details input,
+.profile-details textarea {
+  background-color:  #f7f3ef;
   width: 100%;
-  padding: 1rem;
-  font-size: 1rem;
-  border: 1px solid #bcaaa4;
-  border-radius: 8px;
-  background-color: #fff3e0;
-  margin-bottom: 1rem;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-button {
+.profile-details textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.profile-details button {
   width: 100%;
-  padding: 1rem;
-  font-size: 1.1rem;
-  font-weight: bold;
+  padding: 12px;
+  margin-top: 10px;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
 }
 
-.save-button {
-  background-color: #66bb6a;
-  color: #ffffff;
-}
-
-.save-button:hover {
-  background-color: #388e3c;
-}
-
-.delete-button {
-  background-color: #e53935;
-  color: #ffffff;
-  margin-top: 1.5rem;
-}
-
-.delete-button:hover {
-  background-color: #c62828;
-}
-
-.error-message {
-  color: #d32f2f;
-  font-weight: bold;
-  text-align: center;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
+/* Estilos para el mensaje de carga */
 .loading-message {
+  font-size: 18px;
+  color: #666666;
   text-align: center;
-  color: #6d4c41;
-  font-style: italic;
-  font-size: 1.1rem;
+}
+
+/* Estilo para los mensajes de error */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.chef-container {
+  position: relative;
+  left: -100px; /* Ajusta este valor según lo necesites */
+  top: 50px;
+  margin-bottom: 20px;
+  width: 500px;
 }

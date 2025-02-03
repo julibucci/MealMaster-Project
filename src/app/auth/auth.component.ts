@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.css']
 })
+
 export class AuthComponent {
   loginForm: FormGroup;
   registerForm: FormGroup;
@@ -24,15 +25,17 @@ export class AuthComponent {
     private authService: AuthService, 
     private router: Router
   ) {
+    // Formulario de login
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
 
+    // Formulario de registro (solo con un campo de password)
     this.registerForm = this.fb.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]], // Validación para solo letras
       email: ['', [Validators.required, Validators.email, Validators.pattern(/^[a-zA-Z0-9._%+-]+@(gmail|yahoo)\.com$/)]],
-      password: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(6)]], // Ahora solo el campo de password
     });
   }
 
@@ -64,13 +67,7 @@ export class AuthComponent {
       });
     } else {
       if (this.registerForm.invalid) {
-        if (this.registerForm.controls['name'].invalid) {
-          this.errorMessage = 'The name field is required.';
-        } else if (this.registerForm.controls['email'].invalid) {
-          this.errorMessage = 'Please provide a valid Gmail or Yahoo email address.';
-        } else if (this.registerForm.controls['password'].invalid) {
-          this.errorMessage = 'The password field is required.';
-        }
+        this.errorMessage = 'Please fill in all fields correctly.';
         return;
       }
   
@@ -99,4 +96,3 @@ export class AuthComponent {
     this.errorMessage = null;
   }
 }
-

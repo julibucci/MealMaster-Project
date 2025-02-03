@@ -53,6 +53,27 @@
       "email": "eRAADFERQ",
       "password": "123",
       "userPlan": "basic"
+    },
+    {
+      "id": "c89c",
+      "name": "Juan",
+      "email": "juan@gmail.com",
+      "password": "123456",
+      "userPlan": "basic"
+    },
+    {
+      "id": "ed86",
+      "name": "Julian",
+      "email": "julian@yahoo.com",
+      "password": "123456",
+      "userPlan": "basic"
+    },
+    {
+      "id": "6e92",
+      "name": "Juana",
+      "email": "juana@gmail.com",
+      "password": "7777777",
+      "userPlan": "basic"
     }
   ]
 }

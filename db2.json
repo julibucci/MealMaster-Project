@@ -48,6 +48,13 @@
       "idMeal": "53009",
       "comment": "The best recipe!",
       "date": "2024-11-17T19:40:40.958Z"
+    },
+    {
+      "id": "5871",
+      "userId": "1",
+      "idMeal": "52977",
+      "comment": "sdadsd",
+      "date": "2025-02-02T05:19:20.333Z"
     }
   ],
   "favorites": [
@@ -92,13 +99,6 @@
       "id": "d338"
     },
     {
-      "id": "ywxrquwej",
-      "userId": "1",
-      "idMeal": "5306",
-      "strMeal": "Chick-Fil-A Sandwich",
-      "category": "Chicken"
-    },
-    {
       "id": "txwbsctxs",
       "userId": "1",
       "idMeal": "52893",
@@ -112,6 +112,14 @@
       "idMeal": "53080",
       "strMeal": "Blini Pancakes",
       "strMealThumb": "https://www.themealdb.com/images/media/meals/0206h11699013358.jpg",
+      "category": "Side"
+    },
+    {
+      "id": "uu5r6o6lt",
+      "userId": "2",
+      "idMeal": "52978",
+      "strMeal": "Kumpir",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/mlchx21564916997.jpg",
       "category": "Side"
     }
   ],
@@ -183,70 +191,6 @@
           "ingredient": "150 g de Chocolate Negro dsad150 g de Chocolate Negro 150 g de Chocolate Negro ",
           "measure": "sdadsd"
         },
-        {
-          "ingredient": "",
-          "measure": ""
-        }
-      ],
-      "userId": "1",
-      "imageUrl": ""
-    },
-    {
-      "id": "e056",
-      "idMeal": "941192297",
-      "strMeal": "sdads",
-      "strCategory": "Chicken",
-      "strArea": "Chinese",
-      "strInstructions": "sdad",
-      "ingredients": [
-        {
-          "ingredient": "",
-          "measure": ""
-        }
-      ],
-      "userId": "1",
-      "imageUrl": ""
-    },
-    {
-      "id": "643d",
-      "idMeal": "941192297",
-      "strMeal": "sdads",
-      "strCategory": "Chicken",
-      "strArea": "Chinese",
-      "strInstructions": "sdad",
-      "ingredients": [
-        {
-          "ingredient": "",
-          "measure": ""
-        }
-      ],
-      "userId": "1",
-      "imageUrl": "http://localhost:3001/uploads/1738285885317-images.jpeg"
-    },
-    {
-      "id": "9df0",
-      "idMeal": "898341967",
-      "strMeal": "SCDSDC",
-      "strCategory": "Vegan",
-      "strArea": "Malaysian",
-      "strInstructions": "SDADSD",
-      "ingredients": [
-        {
-          "ingredient": "SDAD",
-          "measure": "SAD"
-        }
-      ],
-      "userId": "1",
-      "imageUrl": "http://localhost:3001/uploads/1738286653677-images.jpeg"
-    },
-    {
-      "id": "955f",
-      "idMeal": "102779295",
-      "strMeal": "jwdljskad",
-      "strCategory": "Dessert",
-      "strArea": "Moroccan",
-      "strInstructions": "ijdislkjdkls",
-      "ingredients": [
         {
           "ingredient": "",
           "measure": ""

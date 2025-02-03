@@ -2,8 +2,8 @@
   <h2>{{ recipeDetails.strMeal }}</h2>
   <img *ngIf="getRecipeImage()" [src]="getRecipeImage()" alt="{{ recipeDetails.strMeal }}">
 
-  <p><strong>Category:</strong> {{ recipeDetails.strCategory }}</p>
-  <p><strong>Area:</strong> {{ recipeDetails.strArea }}</p>
+  <p class="category-area"><strong>Category:</strong> {{ recipeDetails.strCategory }}</p>
+  <p class="category-area"><strong>Area:</strong> {{ recipeDetails.strArea }}</p>
 
   <div class="instructions">
     <p><strong>Instructions:</strong></p>
@@ -31,13 +31,12 @@
 
 <div *ngIf="true">
   <h3>Leave a comment:</h3>
-  <form [formGroup]="commentForm" (ngSubmit)="addComment()">
+  <div class="comment-input-container">
     <textarea formControlName="comment" rows="4" cols="50" placeholder="Write your comment.." required></textarea>
-
+  </div>
     <div *ngIf="commentForm.controls['comment'].invalid && commentForm.controls['comment'].touched" class="error-messages">
       <p *ngIf="commentForm.controls['comment'].hasError('maxlength')">The comment cannot exceed 500 characters.</p>
     </div>
     <br>
     <button type="submit" [disabled]="commentForm.invalid">Submit comment</button>
-  </form>
 </div>

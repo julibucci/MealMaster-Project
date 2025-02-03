@@ -1,3 +1,9 @@
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Mate:ital@0;1&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+
 <div *ngIf="recipes.length === 0; else recipesList" class="no-recipes-message">
   <p>You haven't published any recipes yet.</p>
   <button (click)="goToUserRecipesPage()" class="go-to-recipes-btn">Create your own recipes</button>
@@ -9,7 +15,7 @@
   <ul class="recipes-list">
     <li *ngFor="let recipe of recipes" class="recipe-item">
       <div class="recipe-info">
-        <strong class="recipe-name">{{ recipe.strMeal }}</strong> - <span class="recipe-category">{{ recipe.strCategory }}</span>
+        <strong class="recipe-name">{{ recipe.strMeal }}</strong> Category: <span class="recipe-category">{{ recipe.strCategory }}</span>
       </div>
       <div class="recipe-actions">
         <button (click)="deleteRecipe(recipe.id)" class="delete-btn">Delete</button>
