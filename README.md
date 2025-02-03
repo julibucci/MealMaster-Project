@@ -54,6 +54,7 @@ Plan Premium:
 
 
 
+
 Herramientas Utilizadas
 
 -Lenguajes: JavaScript, HTML, CSS
@@ -65,6 +66,7 @@ Herramientas Utilizadas
   -MealDB: Para recetas, ingredientes y categorías.
 
   -API de PayPal: Para procesar pagos y actualizar a los usuarios al plan premium.
+
 
 
 
@@ -81,6 +83,7 @@ npm i express multer
 
 npm install bootstrap
 npm install @popperjs/core
+
 
 
 
@@ -128,7 +131,9 @@ Esto iniciará la aplicación en http://localhost:4200/.
 
 
 
+
 Perfiles de Prueba:
+
 INDICACIONES: REFRESCAR LA PÁGINA CADA VEZ QUE SE CAMBIA DE PERFIL.
 
 Para probar las funcionalidades del usuario básico, puedes usar este perfil:
