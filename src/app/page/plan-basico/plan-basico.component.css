@@ -28,17 +28,17 @@
 
 /* Barra de navegación en durazno más claro */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    gap: 1rem;
-    background-color: #FFE5CC;
-    padding: 0.3rem 1.5rem;
-    font-size: 1rem;
-    border: 2px solid #FF9F80;
-    width: 100vw;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgba(255, 165, 85, 0.8); /* Naranja translúcido */
+  padding: 1rem;
+  font-size: 1.3rem;
+  width: 100vw;
+  font-family: 'Playfair';
 }
+
 
 .navbar a {
     font-family: 'Playfair Display', serif;
@@ -55,9 +55,9 @@
 
 /* Botón de Log Out con fondo blanco y borde durazno */
 button {
-    background-color: #FFFFFF; /* Fondo blanco */
-    color: #FF7043; /* Texto en naranja vibrante */
-    border: 2px solid #FF7043;
+    background-color: #807c74; /* Fondo blanco */
+    color: #080808; /* Texto en naranja vibrante */
+    border: 2px solid #111111;
     padding: 10px 20px;
     font-weight: bold;
     cursor: pointer;

@@ -3,8 +3,8 @@ import { RecipeService } from '../../services/recipe-service.service';
 import { UserService } from '../../services/user.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { response } from 'express';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-recipe-component',
@@ -39,6 +39,7 @@ export class CreateRecipeComponentComponent implements OnInit {
     private recipeService: RecipeService,
     private userService: UserService,
     private http: HttpClient,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -79,9 +80,12 @@ export class CreateRecipeComponentComponent implements OnInit {
         alert('Recipe saved successfully!');
 
         if (this.selectedFile) {
-          // Usar el mismo ID que el backend devolvió
           this.uploadImage(this.selectedFile, savedRecipe.idMeal ?? savedRecipe.id);
         }
+
+        this.router.navigate(['/plan-premium/create-recipe']).then(() => {
+          window.location.reload(); // Recargar la página después de la navegación
+        });
       },
       error: (err) => {
         console.error('Error saving recipe:', err);
@@ -95,13 +99,12 @@ export class CreateRecipeComponentComponent implements OnInit {
     formData.append('file', file);
 
     console.log(`Uploading image for recipe ID: ${idMeal}`);
-    alert(`Uploading image for recipe ID: ${idMeal}`);
+
 
     this.http.post<{ imageUrl: string }>(`http://localhost:3001/api/upload-recipe-image/${idMeal}`, formData)
       .subscribe({
         next: (response) => {
           console.log('Image uploaded successfully:', response.imageUrl);
-          alert('Image uploaded successfully!');
           this.recipe.imageUrl = response.imageUrl;
         },
         error: (error) => {

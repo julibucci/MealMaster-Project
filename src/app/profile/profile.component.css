@@ -1,22 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant:wght@400&display=swap');
+
 .profile-page {
   display: flex;
   justify-content: center;
   padding: 20px;
+  font-family: 'Playfair';
 }
 
-/* Contenedor del perfil */
+
 .profile-container {
   display: flex;
-  flex-direction: row; /* Alinea las imágenes y el contenido en una fila */
+  flex-direction: row;
   justify-content: center;
-  align-items: flex-start; /* Alinea los elementos arriba */
+  align-items: flex-start;
   width: 90%;
   max-width: 1200px;
-
+  font-family: 'Playfair';
+  font-size: 1.4rem;
 }
 
-/* Contenedor de las imágenes de los chefs */
+
 .chef-container-wrapper {
   display: flex;
   flex-direction: column;
@@ -24,28 +27,32 @@
   flex: 0.3;
   padding-right: 20px;
   margin-left: -150px;
+  font-family: 'Playfair';
+  font-size: 1.4rem;
 
 }
 
-/* Estilo para las imágenes de los chefs */
+
 .chef-image {
-  width: 100%; /* Hace que las imágenes ocupen el ancho del contenedor */
-  max-width: 2000px; /* Evita que sean demasiado grandes */
+  width: 100%;
+  max-width: 2000px;
   height: auto;
   border-radius: 10px;
-  margin-bottom: 15px; /* Espaciado entre imágenes */
+  margin-bottom: 15px;
+  font-size: 1.4rem;
 
 }
 
-/* Contenedor del contenido del perfil */
+
 .profile-content {
-  flex: 1; /* Ocupa el 70% restante del ancho */
+  flex: 1;
   width: 1500px;
   padding: 20px;
   margin-left: 50px;
+  font-family: 'Playfair';
 }
 
-/* Estilo para la imagen de perfil */
+
 .profile-image {
   display: flex;
   justify-content: center;
@@ -62,19 +69,20 @@
 
 }
 
-/* Estilos para los detalles del perfil */
 .profile-details {
-  background-color:  #FFDAB9;
+  background-color: rgba(207, 182, 126, 0.8);
   border-radius: 10px;
   padding: 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
+  font-family: 'Playfair';
 }
 
 .profile-details label {
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
+  font-family: 'Playfair';
 }
 
 .profile-details input,
@@ -85,11 +93,13 @@
   margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-family: 'Playfair';
 }
 
 .profile-details textarea {
   resize: vertical;
   min-height: 80px;
+  font-family: 'Playfair';
 }
 
 .profile-details button {
@@ -100,27 +110,30 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  font-family: 'Playfair';
 }
 
-/* Estilos para el mensaje de carga */
+
 .loading-message {
   font-size: 18px;
   color: #666666;
   text-align: center;
+  font-family: 'Playfair';
 }
 
-/* Estilo para los mensajes de error */
 .error-message {
   color: red;
   font-size: 14px;
   margin-bottom: 15px;
   text-align: center;
+  font-family: 'Playfair';
 }
 
 .chef-container {
   position: relative;
-  left: -100px; /* Ajusta este valor según lo necesites */
+  left: -100px;
   top: 50px;
   margin-bottom: 20px;
   width: 500px;
+  font-family: 'Playfair';
 }

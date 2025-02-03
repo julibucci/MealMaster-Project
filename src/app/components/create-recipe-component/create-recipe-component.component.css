@@ -2,11 +2,11 @@
 div {
   font-family: 'Playfair';
   padding: 30px;
-  background-color: #605d5d;
+  background-color: #aa9e8e;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
-  min-height: 80vh;
+  min-height: 29vh;
   margin: 50px auto;
 }
 
@@ -29,10 +29,9 @@ input, select, textarea {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
-  color: #333;
+  color: #282626;
   background-color: rgba(255, 255, 255, 0.8);
 }
-
 
 
 label {
@@ -112,4 +111,47 @@ button:nth-of-type(2):hover {
   min-height: 80vh;
   margin: 50px auto;
   backdrop-filter: blur(10px);
+}
+
+.ingredients-wrapper {
+  max-width: 100%; /* Limita el tamaño del contenedor a lo que le permite el contenedor principal */
+  width: 100%;
+  margin-bottom: 15px;
+  height: 10px;/* Agrega un pequeño espacio después de los ingredientes */
+}
+
+
+.ingredients-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  height: 10px;
+}
+
+.ingredients-container input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.ingredients-container button {
+  width: 70px;
+  height: 40px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ingredients-container button:hover {
+  background-color: #c9302c;
 }

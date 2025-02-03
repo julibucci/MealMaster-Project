@@ -25,7 +25,7 @@
 h1 {
 font-family: 'Playfair Display', serif;
 font-size: 36px;
-color: #6D4C41; /* Naranja cálido para combinar con el resto de la página */
+color: #6D4C41;
 font-weight: bold;
 text-align: center;
 margin-top: -20px;
@@ -34,7 +34,7 @@ margin-top: -20px;
 .inspirational-text {
 font-family: 'Cormorant';
 font-size: 18px;
-color: #6D4C41; /* Marrón cálido para complementar el título */
+color: #6D4C41;
 font-weight: bold;
 font-style: italic;
 text-align: center;

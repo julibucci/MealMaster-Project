@@ -25,6 +25,7 @@ h2 {
   text-align: center;
   border: 2px solid #92776e;
   font-family: 'Playfair';
+  font-size: 2rem;
 }
 
 /* Centrar el contenedor de selector de categoría */
@@ -36,6 +37,7 @@ h2 {
   margin-top: 30px;
   margin-bottom: 20px;
   font-family: 'Playfair';
+  font-size: 2rem;
 }
 
 /* Estilo de la etiqueta */
@@ -44,12 +46,12 @@ h2 {
   color: #6d4b3f;
   font-size: 2rem;
   font-family: 'Playfair';
+  font-size: 2rem;
 }
 
 /* Estilo del selector de categoría */
 .category-container select {
   padding: 10px;
-  font-size: 1rem;
   width: 200px;
   border: 2px solid #FF7043;
   border-radius: 5px;
@@ -58,6 +60,7 @@ h2 {
   font-weight: bold;
   transition: all 0.3s ease;
   font-family: 'Playfair';
+  font-size: 1.2rem;
 }
 
 .category-container select:hover {
