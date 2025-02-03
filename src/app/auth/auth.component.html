@@ -16,36 +16,40 @@
         </div>
       </div>
 
-    
+      <!-- Campo de email -->
       <div class="form-group">
         <label for="email">Email:</label>
         <input formControlName="email" id="email" type="email" placeholder="Enter your email"
                class="form-control" 
-               [ngClass]="{'is-valid': registerForm.get('email')?.valid && registerForm.get('email')?.touched, 
-                           'is-invalid': registerForm.get('email')?.invalid && registerForm.get('email')?.touched}" />
-        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="invalid-feedback">
-          Please provide a valid email.
+               [ngClass]="{'is-valid': (isLoginMode ? loginForm : registerForm).get('email')?.valid && (isLoginMode ? loginForm : registerForm).get('email')?.touched, 
+                           'is-invalid': (isLoginMode ? loginForm : registerForm).get('email')?.invalid && (isLoginMode ? loginForm : registerForm).get('email')?.touched}" />
+        <div *ngIf="(isLoginMode ? loginForm : registerForm).get('email')?.invalid && (isLoginMode ? loginForm : registerForm).get('email')?.touched" class="invalid-feedback">
+          Please provide a valid email (gmail or yahoo).
         </div>
       </div>
 
-     
+      <!-- Campo de password -->
       <div class="form-group">
         <label for="password">Password:</label>
-        <input formControlName="password" id="password" type="password" placeholder="Enter your password"
+        <input formControlName="password" id="password" [type]="isPasswordVisible ? 'text' : 'password'" placeholder="Enter your password"
                class="form-control" 
-               [ngClass]="{'is-valid': registerForm.get('password')?.valid && registerForm.get('password')?.touched, 
-                           'is-invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}" />
-        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="invalid-feedback">
-          Password must be at least 6 characters.
+               [ngClass]="{'is-valid': (isLoginMode ? loginForm : registerForm).get('password')?.valid && (isLoginMode ? loginForm : registerForm).get('password')?.touched, 
+                           'is-invalid': (isLoginMode ? loginForm : registerForm).get('password')?.invalid && (isLoginMode ? loginForm : registerForm).get('password')?.touched}" />
+
+        <div class="input-group-append">
+          <button type="button" class="btn btn-outline-secondary" (click)="isPasswordVisible = !isPasswordVisible">
+            <i class="bi" [ngClass]="{'bi-eye-slash': !isPasswordVisible, 'bi-eye': isPasswordVisible}"></i>
+          </button>
+        </div>
+        <div *ngIf="(isLoginMode ? loginForm : registerForm).get('password')?.invalid && (isLoginMode ? loginForm : registerForm).get('password')?.touched" class="invalid-feedback">
+          Password must be at least 3 characters.
         </div>
       </div>
 
-    
       <button type="submit" class="auth-button btn btn-primary" [disabled]="isLoginMode ? loginForm.invalid : registerForm.invalid">
         {{ isLoginMode ? 'Login' : 'Register' }}
       </button>
 
-      
       <p *ngIf="errorMessage" class="error-message text-danger">{{ errorMessage }}</p>
     </form>
 

@@ -81,6 +81,20 @@
       "email": "gimena@gmail.com",
       "password": "789",
       "userPlan": "basic"
+    },
+    {
+      "id": "8429",
+      "name": "julieta",
+      "email": "julieta@gmail.com",
+      "password": "123456",
+      "userPlan": "premium"
+    },
+    {
+      "id": "39ce",
+      "name": "Juana",
+      "email": "juana@yahoo.com",
+      "password": "123",
+      "userPlan": "basic"
     }
   ]
 }
