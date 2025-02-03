@@ -50,11 +50,12 @@ body {
 
 .recipe-filter-container input[type="text"]:focus {
   border-color: #b04332;
+  color: #282727;
 }
 
 .recipe-filter-container button[type="submit"] {
-  background-color: #e49851;
-  color: #ffffff;
+  border: 2px solid #d9b681;
+  background-color: #ecba6f;
   font-size: 18px;
   padding: 12px 25px;
   border: none;

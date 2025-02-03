@@ -7,7 +7,10 @@
 <ng-template #mealList>
 <div *ngFor="let meal of mealPlan">
   <div class="meal-item">
-    <img *ngIf="meal.recipe?.strMealThumb" [src]="meal.recipe.strMealThumb" alt="Recipe Image" class="meal-image" />
+    <img *ngIf="meal.recipe?.imageUrl || meal.recipe?.strMealThumb"
+     [src]="meal.recipe?.imageUrl ? meal.recipe.imageUrl : meal.recipe.strMealThumb"
+     alt="Recipe Image"
+     class="meal-image" />
 
     <div class="meal-details">
       <h3>{{ meal.recipe?.strMeal }}</h3>

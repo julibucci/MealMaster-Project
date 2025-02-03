@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MealPlanService } from '../../services/meal-plan-service.service';
 import { UserService } from '../../services/user.service';
 import { CommonModule } from '@angular/common';
@@ -22,7 +22,7 @@ export class MealPlanComponentComponent implements OnInit {
   mealPlans: any[] = [];
   daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-  constructor(private mealPlanService: MealPlanService, private userService: UserService, private router: Router,private route: ActivatedRoute) {}
+  constructor(private mealPlanService: MealPlanService, private userService: UserService, private router: Router,private route: ActivatedRoute, private cdr: ChangeDetectorRef) {}
 
 
   ngOnInit(): void {
@@ -47,24 +47,16 @@ export class MealPlanComponentComponent implements OnInit {
   }
 
   sortMealPlan(): void {
+    const dayOrder = this.daysOfWeek.reduce((acc, day, index) => {
+      acc[day] = index;
+      return acc;
+    }, {} as Record<string, number>);
+
     this.mealPlan.sort((a, b) => {
-      // Primero, ordenar por si la categoria es "uncategorized"
-      if (a.category === 'uncategorized' && b.category !== 'uncategorized') {
-        return -1; // A es "uncategorized" y B no, entonces A va primero
-      }
-      if (a.category !== 'uncategorized' && b.category === 'uncategorized') {
-        return 1;  // B es "uncategorized" y A no, entonces B va primero
-      }
-
-      // Ahora, ordenar por si tiene dia asignado
-      if (!a.day && b.day) return -1;  // A sin dia antes que B con dia
-      if (a.day && !b.day) return 1;   // A con dia después que B sin dia
-
-      // Aca ordena por el dia de la semana (lunes, martes, etc.)
-      const dayOrder = this.daysOfWeek.indexOf(a.day || '') - this.daysOfWeek.indexOf(b.day || '');
-      return dayOrder;
+      const orderA = dayOrder[a.selectedDay] !== undefined ? dayOrder[a.selectedDay] : 999;
+      const orderB = dayOrder[b.selectedDay] !== undefined ? dayOrder[b.selectedDay] : 999;
+      return orderA - orderB;
     });
-    console.log('After sorting:', this.mealPlan);
   }
 
   // Cargar el plan de comidas
@@ -76,8 +68,10 @@ export class MealPlanComponentComponent implements OnInit {
       this.mealPlan.forEach((meal) => {
         meal.selectedCategory = meal.category || '';
         meal.selectedDay = meal.day || 'Selecciona un día';
+        meal.recipe.imageUrl = meal.recipe.imageUrl || meal.recipe.strMealThumb;
       });
 
+      this.sortMealPlan();
     }, (error) => {
       console.error('Error loading meal plan:', error);
     });
@@ -100,6 +94,8 @@ export class MealPlanComponentComponent implements OnInit {
       }
     });
     this.sortMealPlan();
+    this.mealPlan = [...this.mealPlan]; // Crear una nueva referencia para que Angular lo detecte
+    this.cdr.detectChanges(); // Forzar la detección de cambios
   }
 
   // Actualizar la categoria de la receta
