@@ -223,7 +223,7 @@
         "dateModified": null
       },
       "category": "dinner",
-      "day": "Monday"
+      "day": "Tuesday"
     },
     {
       "id": "1-53080",
@@ -283,8 +283,8 @@
         "strCreativeCommonsConfirmed": null,
         "dateModified": null
       },
-      "category": "dinner",
-      "day": "Sunday"
+      "category": "breakfast",
+      "day": "Friday"
     },
     {
       "id": "1-52796",
@@ -344,8 +344,46 @@
         "strCreativeCommonsConfirmed": null,
         "dateModified": null
       },
-      "category": "breakfast",
+      "category": "dinner",
       "day": "Sunday"
+    },
+    {
+      "id": "1-576044875",
+      "userId": "1",
+      "recipe": {
+        "id": "26e6",
+        "idMeal": "576044875",
+        "strMeal": "Turkey Taco Bowls",
+        "strCategory": "Beef",
+        "strArea": "Mexican",
+        "strInstructions": "Cook the turkey:\nHeat the oil in a large nonstick skillet over medium-high heat. Add the turkey and cook, stirring often with a wooden spoon to crumble the meat into smaller pieces, until cooked through, about 5 minutes. \n\nAdd the taco seasoning, water, and salt; cook, stirring constantly, until meat is coated in the seasoning, about 1 minute. Remove from heat and stir in 1/2 cup of the cilantro.\n\nAssemble the taco bowls:\nDivide the rice and optional shredded lettuce evenly among four bowls. Top evenly with turkey mixture, queso fresco, remaining cilantro, and thinly sliced radishes (if using).\n\nLet the turkey and rice come to room temperature before transferring them to an airtight container. Store in the refrigerator for up to 3 days. Reheat in a skillet until warm throughout.",
+        "ingredients": [
+          {
+            "ingredient": "Olive oil",
+            "measure": "2 tablespoons "
+          },
+          {
+            "ingredient": "Ground turkey",
+            "measure": "1 pound "
+          },
+          {
+            "ingredient": "taco seasoning mix",
+            "measure": "2 tablespoons"
+          },
+          {
+            "ingredient": "",
+            "measure": ""
+          },
+          {
+            "ingredient": "cilantro",
+            "measure": "1 bunch"
+          }
+        ],
+        "userId": "1",
+        "imageUrl": "http://localhost:3001/uploads/1738546962022-Simply-Recipes-Turkey-Taco-Bowls-Lead-04-263a8ffab8bf4e9d90a7d63a9e2a926d.webp"
+      },
+      "category": "lunch",
+      "day": "Monday"
     }
   ]
 }

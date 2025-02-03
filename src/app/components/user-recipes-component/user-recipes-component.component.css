@@ -36,11 +36,12 @@
   align-items: center;
   padding: 20px;
   margin-bottom: 20px;
-  border: 1px solid #ddd;
+  border: 1px solid #e7c67a;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: rgba(207, 182, 126, 0.8);
   font-family: 'Playfair';
+  gap: 20px;
 }
 
 .recipe-info {
@@ -48,6 +49,7 @@
   flex-direction: column;
   align-items: flex-start;
   font-family: 'Playfair';
+  flex-grow: 1;
 }
 
 .recipe-name {
@@ -131,4 +133,16 @@
 .go-to-recipes-btn:hover {
   background-color: #e89d35;
   transform: scale(1.05);
+}
+
+.recipe-image {
+  margin-left: 20px;
+  width: 100px;
+  height: auto;
+}
+
+.recipe-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
