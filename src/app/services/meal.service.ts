@@ -17,12 +17,12 @@ export class MealService {
   getCategories(): Observable<any[]> {
     return this.http.get<any>(`${this.apiUrl}categories.php`).pipe(
       map(response => {
-        console.log('Categorías:', response); // Verifica la respuesta
+        console.log('Categorías:', response); 
         return response.categories;
       }),
       catchError(error => {
         console.error('Error al obtener categorías', error);
-        return of([]);  // Devuelve un array vacío en caso de error
+        return of([]);  // Devuelve un array vacio en caso de error
       })
     );
   }
@@ -30,12 +30,12 @@ export class MealService {
   getFilteredRecipes(category: string): Observable<any[]> {
     return this.http.get<any>(`${this.apiUrl}filter.php?c=${category}`).pipe(
       map(response => {
-        console.log('Recetas filtradas:', response); // Verifica la respuesta
+        console.log('Recetas filtradas:', response); 
         return response.meals;
       }),
       catchError(error => {
         console.error('Error al obtener recetas filtradas', error);
-        return of([]);  // Devuelve un array vacío en caso de error
+        return of([]);  
       })
     );
   }

@@ -53,14 +53,17 @@ export class CreateRecipeComponentComponent implements OnInit {
     }
   }
 
+  // Agregar un nuevo ingrediente a la receta
   addIngredient() {
     this.recipe.ingredients.push({ ingredient: '', measure: '' });
   }
 
+  // Eliminar un ingrediente de la receta
   removeIngredient(index: number) {
     this.recipe.ingredients.splice(index, 1);
   }
 
+  // Guardar la receta
   saveRecipe(): void {
     if (!this.recipe.strMeal || !this.recipe.strCategory || !this.recipe.strArea || !this.recipe.strInstructions) {
       alert('Please fill in all required fields before saving.');
@@ -94,6 +97,7 @@ export class CreateRecipeComponentComponent implements OnInit {
     });
   }
 
+  // Subir imagen de la receta
   uploadImage(file: File, idMeal: string): void {
     const formData = new FormData();
     formData.append('file', file);
@@ -129,6 +133,6 @@ export class CreateRecipeComponentComponent implements OnInit {
   }
 
   generateId(): string {
-    return Math.floor(100000000 + Math.random() * 900000000).toString(); // Genera un número de 9 dígitos
+    return Math.floor(100000000 + Math.random() * 900000000).toString(); // Genera un numero de 9 dígitos
   }
 }

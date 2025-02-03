@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <div class="container">
-  <!-- Selector de categorías centrado -->
   <div class="category-container">
     <label for="categorySelect">Select a category:</label>
     <select id="categorySelect" [(ngModel)]="selectedCategory" (change)="filterFavorites()">
@@ -21,20 +20,16 @@
 <div *ngIf="filteredFavorites.length > 0; else noFavorites">
   <ul>
     <li *ngFor="let favorite of filteredFavorites">
-      <!-- Muestra el nombre, la imagen y una descripción o receta -->
       <h3>{{ favorite.strMeal }}</h3>
       <img [src]="favorite.imageUrl || favorite.strMealThumb" alt="{{ favorite.strMeal }}" width="200" />
 
-      <!-- Botón para eliminar favorito -->
       <button (click)="removeFavorite(favorite.idMeal)">Delete from favorites</button>
-
 
       <button (click)="viewRecipeDetails(favorite.idMeal)">Recipe details </button>
     </li>
   </ul>
 </div>
 
-<!-- Mensaje en caso de no haber favoritos -->
 <ng-template #noFavorites>
   <p>You don't have favorite recipes in this category.</p>
 </ng-template>

@@ -1,11 +1,13 @@
-/* Contenedor principal */
 .home-container {
-  width: 80%;
-  max-width: 1200px;
+  width: 100%;
   text-align: center;
   padding: 50px;
-  margin: auto;
+  margin: 40px auto;
+  border-radius: 10px;
+  margin-right: 600px;
+  margin-top: 70px;
 }
+
 
 .side-images {
   display: flex;
@@ -42,3 +44,20 @@ margin-top: 10px;
 }
 
 
+/* Ajustar tamaño del carrusel */
+#carouselExampleInterval {
+  max-width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-left: -50px;
+  margin-top: 30px;
+}
+
+/* Ajustar tamaño de las imagenes dentro del carrusel */
+#carouselExampleInterval .carousel-item img {
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+
+}

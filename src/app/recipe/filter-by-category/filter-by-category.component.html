@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <div class="category-container">
-  <!-- Selector de categorias -->
   <label for="categorySelect"></label>
   <select id="categorySelect" [(ngModel)]="selectedCategory" (change)="getRecipesFromCategory()">
     <option value="">Choose a category</option>
@@ -16,7 +15,7 @@
   </select>
 </div>
 
-<!-- Lista de todas las recetas cuando no hay categoría seleccionada -->
+<!-- Lista de todas las recetas cuando no hay categoria seleccionada -->
 <div *ngIf="selectedCategory === '' && categoryRecipesFromJson.length > 0">
   <ul>
     <li *ngFor="let recipe of categoryRecipesFromJson">
@@ -27,13 +26,12 @@
   </ul>
 </div>
 
-<!-- Lista de recetas de la categoría seleccionada -->
+<!-- Lista de recetas de la categoria seleccionada -->
 <div *ngIf="recipeFromCategoryList.length > 0;">
   <ul>
     <li *ngFor="let recipe of recipeFromCategoryList" (click)="this.getRecipesFromCategory()">
       <h3>{{ recipe.strMeal }}</h3>
       <img [src]="recipe.strMealThumb" alt="{{ recipe.strMeal }}" width="200" />
-      <!-- Botón para ver detalles de la receta -->
       <button (click)="viewRecipeDetails(recipe.idMeal)">View Details</button>
     </li>
   </ul>

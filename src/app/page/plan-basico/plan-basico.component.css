@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant:wght@400&display=swap');
 
-/* Fondo general en beige más oscuro */
+/* Fondo general */
 :host {
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
   object-fit: cover;
 }
 
-/* Barra de navegación en durazno más claro */
+/* Barra de navegacion */
 .navbar {
   display: flex;
   justify-content:space-between;
@@ -53,7 +53,7 @@
     transform: scale(1.1);
 }
 
-/* Botón de Log Out con fondo blanco y borde durazno */
+
 button {
     background-color: #807c74; /* Fondo blanco */
     color: #080808; /* Texto en naranja vibrante */
@@ -75,7 +75,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Títulos y textos */
+
 h1 {
     font-family: 'Playfair Display', serif;
     color: #4E342E; /* Marrón oscuro */
@@ -92,7 +92,7 @@ p {
     margin-bottom: 20px;
 }
 
-/* Contenedor principal en beige claro */
+/* Contenedor principal */
 .home-container {
     width: 80%;
     max-width: 1200px;
@@ -104,7 +104,7 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Título de bienvenida */
+/* Titulo */
 .home-container h1 {
     font-family: 'Playfair Display', serif;
     color: #6D4C41; /* Marrón cálido */
@@ -121,7 +121,7 @@ p {
     margin-top: 10px;
 }
 
-/* Contenedor de las imágenes de lado */
+
 .side-images {
     display: flex;
     gap: 10px;
@@ -129,7 +129,7 @@ p {
     margin-top: 20px;
 }
 
-/* Estilo para las imágenes */
+
 .food-image {
     width: 220px;
     height: 220px;
@@ -143,7 +143,7 @@ p {
     transform: scale(1.05);
 }
 
-/* Estilos de input para formulario */
+
 input[type="text"], textarea {
     width: 100%;
     padding: 12px;
@@ -162,7 +162,7 @@ input[type="text"]:focus, textarea:focus {
     outline: none;
 }
 
-/* Estilo para el botón Submit de formulario */
+
 .comment-form button {
     background-color: #FFB17A;
     color: #FFFFFF;
@@ -179,7 +179,7 @@ input[type="text"]:focus, textarea:focus {
     transform: scale(1.05);
 }
 
-/* Media Query para dispositivos móviles */
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;

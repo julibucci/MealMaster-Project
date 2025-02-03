@@ -27,7 +27,7 @@ export class RecipeFilterComponent {
       return;
     }
 
-    this.errorMessage = ''; // Limpiar el mensaje de error
+    this.errorMessage = ''; 
 
     // Usamos el servicio para obtener recetas por ingrediente
     this.RecipeFilterService.getRecipesByIngredient(this.ingredients.trim()).subscribe(
@@ -44,6 +44,7 @@ export class RecipeFilterComponent {
     );
   }
 
+  // Obtener todas las recetas
   getAllRecipes(): void {
     this.RecipeFilterService.getAllRecipes().subscribe(
       (recipes: Recipe[]) => {
@@ -59,19 +60,18 @@ export class RecipeFilterComponent {
     );
   }
 
-  // Navegar a la página de detalles de la receta
+  // Ver detalles de la receta
   viewRecipeDetails(id: string): void {
-    // Verifica si el usuario ya está cargado
+    // Verifica si el usuario ya esta cargado
     this.userService.getUserProfile().subscribe(user => {
-      // Verifica el plan del usuario y navega según corresponda
+      // Verifica el plan del usuario y navega segun corresponda
       if (user.userPlan === 'premium') {
         this.router.navigate(['/plan-premium/recipe-details', id]); // Ruta para usuarios premium
       } else {
-        this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios básicos
+        this.router.navigate(['/plan-basico/recipe-details', id]); // Ruta para usuarios basicos
       }
     }, error => {
       console.error('Error getting user profile:', error);
-      // Si hay un error al cargar el perfil, puedes redirigir a una ruta predeterminada
       this.router.navigate(['/plan-basico/recipe-details', id]);
     });
   }

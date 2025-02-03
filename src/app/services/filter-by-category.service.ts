@@ -11,16 +11,13 @@ import { map } from 'rxjs';
 })
 export class FilterByCategoryService {
 
-  // inyecta httpClient para solicitudes HTTP y
-  // el servicio de las pibas, RecipeService
   constructor(private httpClient: HttpClient) {}
 
-// URL base de categorias
   urlBaseCategory = "https://www.themealdb.com/api/json/v1/1/list.php?c=list";
   urlFilterCatergory = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
-    urlRecipes = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
+  urlRecipes = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
 
-  // Obtener todas las categorias de la API
+  // Obtiene todas las categorias de la API
   getAllCategorys(): Observable<Category[]> {
     return this.httpClient
     .get<{meals: Category[]}>(this.urlBaseCategory)
@@ -52,7 +49,7 @@ export class FilterByCategoryService {
   }
 
 
-// Filtra la receta elegida en la susodicha categoria
+// Filtra la receta elegida en la dicha categoria
 
   getRecipeFromCategory(recipeId: string | null): Observable<Recipe | null> {
     return this.httpClient

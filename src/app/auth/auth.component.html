@@ -4,7 +4,7 @@
 
     <form [formGroup]="isLoginMode ? loginForm : registerForm" (ngSubmit)="onSubmit()" class="auth-form">
 
-      <!-- Name field (only for registration mode) -->
+      <!-- Campo del name (solo para modo de registro) -->
       <div *ngIf="!isLoginMode" class="form-group">
         <label for="name">Name:</label>
         <input formControlName="name" id="name" type="text" placeholder="Enter your name" 
@@ -16,7 +16,7 @@
         </div>
       </div>
 
-      <!-- Email field -->
+    
       <div class="form-group">
         <label for="email">Email:</label>
         <input formControlName="email" id="email" type="email" placeholder="Enter your email"
@@ -28,7 +28,7 @@
         </div>
       </div>
 
-      <!-- Password field -->
+     
       <div class="form-group">
         <label for="password">Password:</label>
         <input formControlName="password" id="password" type="password" placeholder="Enter your password"
@@ -40,16 +40,15 @@
         </div>
       </div>
 
-      <!-- Submit button -->
+    
       <button type="submit" class="auth-button btn btn-primary" [disabled]="isLoginMode ? loginForm.invalid : registerForm.invalid">
         {{ isLoginMode ? 'Login' : 'Register' }}
       </button>
 
-      <!-- Error message -->
+      
       <p *ngIf="errorMessage" class="error-message text-danger">{{ errorMessage }}</p>
     </form>
 
-    <!-- Toggle between Login and Register modes -->
     <button (click)="toggleMode()" class="toggle-button btn btn-secondary">
       {{ isLoginMode ? 'Register' : 'Switch to Login' }}
     </button>

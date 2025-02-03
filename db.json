@@ -74,6 +74,13 @@
       "email": "juana@gmail.com",
       "password": "7777777",
       "userPlan": "basic"
+    },
+    {
+      "id": "bbdc",
+      "name": "Juana",
+      "email": "gimena@gmail.com",
+      "password": "789",
+      "userPlan": "basic"
     }
   ]
 }

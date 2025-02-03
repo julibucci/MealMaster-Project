@@ -21,7 +21,6 @@ export class UserService {
     const userIdFromStorage = localStorage.getItem('authUserId');
     if (userIdFromStorage) {
       this.currentUserId = userIdFromStorage;
-      // Fetch user profile data asynchronously
       this.getUserProfileById(this.currentUserId).subscribe(user => {
         this.currentUser = user;
       });
@@ -82,7 +81,7 @@ export class UserService {
     return this.currentUser?.userPlan === 'premium';
   }
 
-  // Método para subir la imagen de perfil
+  // Metodo para subir la imagen de perfil
   uploadProfileImage(userId: string, formData: FormData): Observable<{ imageUrl: string }> {
     return this.http.post<{ imageUrl: string }>(
       `http://localhost:3001/api/upload-profile-image/${userId}`,
