@@ -1,6 +1,5 @@
-/* Contenedor principal */
 .home-container {
-  width: 100%; 
+  width: 100%;
   text-align: center;
   padding: 50px;
   margin: 40px auto;
@@ -28,7 +27,7 @@
 h1 {
 font-family: 'Playfair Display', serif;
 font-size: 36px;
-color: #6D4C41; 
+color: #6D4C41;
 font-weight: bold;
 text-align: center;
 margin-top: -20px;
@@ -37,7 +36,7 @@ margin-top: -20px;
 .inspirational-text {
 font-family: 'Cormorant';
 font-size: 18px;
-color: #6D4C41; 
+color: #6D4C41;
 font-weight: bold;
 font-style: italic;
 text-align: center;
@@ -47,18 +46,18 @@ margin-top: 10px;
 
 /* Ajustar tamaño del carrusel */
 #carouselExampleInterval {
-  max-width: 800px; 
-  height: 400px; 
-  margin: 0 auto; 
-  overflow: hidden; 
+  max-width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
   margin-left: -50px;
   margin-top: 30px;
 }
 
 /* Ajustar tamaño de las imagenes dentro del carrusel */
 #carouselExampleInterval .carousel-item img {
-  max-height: 400px; 
-  object-fit: cover; 
+  max-height: 400px;
+  object-fit: cover;
   border-radius: 15px;
 
 }

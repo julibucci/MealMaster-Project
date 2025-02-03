@@ -131,7 +131,7 @@ export class RecipeDetailsComponent implements OnInit {
       userId: this.userId,
       idMeal: this.recipeDetails.idMeal,
       strMeal: this.recipeDetails.strMeal,
-      strMealThumb: this.recipeDetails.strMealThumb,
+      strMealThumb: this.recipeDetails.strMealThumb || this.recipeDetails.imageUrl,
       category: this.recipeDetails.strCategory,
       id: this.generateId()  // Generar un ID unico para el favorito
     };

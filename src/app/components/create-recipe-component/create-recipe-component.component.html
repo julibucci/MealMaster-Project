@@ -44,7 +44,7 @@
   </label>
 
   <h4>Ingredients:</h4>
-  <div *ngFor="let ingredient of recipe.ingredients; let i = index">
+  <div *ngFor="let ingredient of recipe.ingredients; let i = index" class="ingredients-container">
     <input [(ngModel)]="ingredient.ingredient" placeholder="Ingredient" required />
     <input [(ngModel)]="ingredient.measure" placeholder="Measure" required />
     <button (click)="removeIngredient(i)">Remove</button>

@@ -4,5 +4,6 @@ export interface Favorite {
   strCategory: string;
   strArea: string;
   strInstructions: string;
-  strMealThumb: string;
+  strMealThumb?: string;
+  imageUrl?: string;
 }
