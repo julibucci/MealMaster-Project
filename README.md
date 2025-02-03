@@ -4,9 +4,10 @@
 <pre>
 Descripción del Proyecto:
 
-Meal Master es un sistema que permite a los usuarios gestionar su perfil, recetas, comentarios y listas de favoritos, así como 
-acceder a funcionalidades premium mediante un modelo de pago. Está diseñado para simplificar la búsqueda y gestión de recetas   
-y mejorar la experiencia del usuario a través de una interfaz intuitiva.
+Meal Master es un sistema que permite a los usuarios gestionar su perfil, recetas, comentarios y listas de 
+favoritos, así como acceder a funcionalidades premium mediante un modelo de pago. Está diseñado para 
+simplificar la búsqueda y gestión de recetas y mejorar la experiencia del usuario a través de una interfaz 
+intuitiva.
 
 
 Características:
@@ -19,8 +20,8 @@ Características:
 
   -API MealDB: Obtiene una base de datos extensa de recetas, ingredientes y categorías.
 
-  -API de PayPal: Permite a los usuarios básicos realizar pagos para actualizarse a un plan premium y disfrutar de beneficios 
-   adicionales.
+  -API de PayPal: Permite a los usuarios básicos realizar pagos para actualizarse a un plan premium y 
+  disfrutar de beneficios adicionales.
 
 
 
@@ -69,8 +70,8 @@ Herramientas Utilizadas:
 
 Configuración Inicial del Proyecto:
 
-Antes de comenzar con el desarrollo, es necesario inicializar e instalar ciertas dependencias y configuraciones. 
-Sigue estos pasos:
+Antes de comenzar con el desarrollo, es necesario inicializar e instalar ciertas dependencias 
+y configuraciones. Sigue estos pasos:
 
 1) Instalar Express y Multer:
    
@@ -93,8 +94,8 @@ cd MealMaster-Project
 npm install
 
 3) Iniciar el servidor JSON (para simular las bases de datos):
-Para que el sistema funcione correctamente, debes ejecutar el servidor JSON para almacenar y gestionar los datos.
-Ejecuta los siguientes comandos para abrir los puertos necesarios 
+Para que el sistema funcione correctamente, debes ejecutar el servidor JSON para almacenar y gestionar 
+los datos. Ejecuta los siguientes comandos para abrir los puertos necesarios.
 (Asegúrate de ejecutar ambos servidores JSON en puertos separados):
 
 -Inicia el servidor en el puerto 3000: json-server --watch db.json --port 3000
