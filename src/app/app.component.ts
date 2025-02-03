@@ -15,8 +15,7 @@ import { Router, NavigationEnd, RouterModule, RouterOutlet, RouterLink } from '@
     FormsModule,
     HttpClientModule,
     RouterOutlet,
-    RouterLink,
-    FavoritesComponent,RecipeDetailsComponent, RouterOutlet, RouterModule
+    RouterOutlet, RouterModule
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']

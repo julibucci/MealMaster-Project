@@ -17,7 +17,7 @@ export class CommentComponent {
 
   expanded: boolean = false; // Para controlar el despliegue de los comentarios
   editingCommentId: string | null = null; // Para identificar el comentario en edición
-  editedText: string = ''; // Texto editado temporalmente
+  editedText: string = '';
 
   constructor(
     private commentService: CommentService,

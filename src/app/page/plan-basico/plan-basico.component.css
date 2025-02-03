@@ -6,21 +6,21 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Cormorant', serif;
-    color: #4E342E; /* Marrón oscuro para el texto */
+    color: #4E342E;
     background-color: #fff;
     padding: 20px;
     min-height: 100vh;
     width: 100%;
     box-sizing: border-box;
     background-image: url(../../../../imagenes/pexels-karolina-grabowska-4199098.jpg);
-    background-size:cover;  /* Ajusta la imagen para que se vea entera */
-    background-position: center;  /* Centra la imagen */
-    background-repeat: no-repeat;  /* Evita que la imagen se repita */
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
 }
 
 .home-logo img {
-  width: 40px;
+  width: 42px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
@@ -32,7 +32,7 @@
   justify-content:space-between;
   align-items: center;
   gap: 1rem;
-  background-color: rgba(255, 165, 85, 0.8); /* Naranja translúcido */
+  background-color: rgba(255, 165, 85, 0.8);
   padding: 1rem;
   font-size: 1.3rem;
   width: 100vw;
@@ -42,21 +42,21 @@
 
 .navbar a {
     font-family: 'Playfair Display', serif;
-    color: #6D4C41; /* Marrón cálido */
+    color: #6D4C41;
     text-decoration: none;
     transition: color 0.3s, transform 0.3s;
     padding: 5px 10px;
 }
 
 .navbar a:hover {
-    color: #FF7043; /* Naranja vibrante en hover */
+    color: #FF7043;
     transform: scale(1.1);
 }
 
 
 button {
-    background-color: #807c74; /* Fondo blanco */
-    color: #080808; /* Texto en naranja vibrante */
+    background-color: #807c74;
+    color: #080808;
     border: 2px solid #111111;
     padding: 10px 20px;
     font-weight: bold;
@@ -70,7 +70,7 @@ button {
 }
 
 button:hover {
-    background-color: #FF7043; /* Fondo naranja vibrante en hover */
+    background-color: #FF7043;
     color: #FFFFFF;
     transform: scale(1.05);
 }
@@ -78,7 +78,7 @@ button:hover {
 
 h1 {
     font-family: 'Playfair Display', serif;
-    color: #4E342E; /* Marrón oscuro */
+    color: #4E342E;
     font-size: 42px;
     margin-bottom: 15px;
     text-align: center;
@@ -86,7 +86,7 @@ h1 {
 
 p {
     font-size: 20px;
-    color: #8E5B45; /* Marrón medio para el texto */
+    color: #8E5B45;
     text-align: center;
     max-width: 600px;
     margin-bottom: 20px;
@@ -99,7 +99,7 @@ p {
     text-align: center;
     padding: 50px;
     margin: auto;
-    background-color: #FFF2E0; /* Beige claro */
+    background-color: #FFF2E0;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -107,12 +107,12 @@ p {
 /* Titulo */
 .home-container h1 {
     font-family: 'Playfair Display', serif;
-    color: #6D4C41; /* Marrón cálido */
+    color: #6D4C41;
     font-size: 36px;
     margin-top: -20px;
 }
 
-/* Texto inspirador */
+
 .inspirational-text {
     font-family: 'Cormorant', serif;
     font-size: 18px;
@@ -147,9 +147,9 @@ p {
 input[type="text"], textarea {
     width: 100%;
     padding: 12px;
-    border: 2px solid #FFB17A; /* Durazno vibrante */
+    border: 2px solid #FFB17A;
     border-radius: 8px;
-    background-color: #FFF7EB; /* Fondo crema claro */
+    background-color: #FFF7EB;
     color: #6D4C41;
     font-size: 16px;
     margin-bottom: 15px;
@@ -158,7 +158,7 @@ input[type="text"], textarea {
 }
 
 input[type="text"]:focus, textarea:focus {
-    border-color: #FF7043; /* Naranja en foco */
+    border-color: #FF7043;
     outline: none;
 }
 

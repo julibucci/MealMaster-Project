@@ -20,6 +20,8 @@ export class AuthComponent {
   isLoginMode: boolean = true;
   errorMessage: string | null = null;
 
+  isPasswordVisible: boolean = false; // ojo abierto o cerrado
+
   constructor(
     private fb: FormBuilder, 
     private authService: AuthService, 
