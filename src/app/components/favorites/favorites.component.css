@@ -3,8 +3,8 @@ body {
   background-color: #fff;
   margin: 0;
   padding: 0;
-  color: #333;
-  line-height: 1.6; 
+  color: #1f1f1f;
+  line-height: 1.6;
   border:none;
   font-family: 'Playfair';
 }
@@ -24,7 +24,7 @@ h2 {
 .container {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 40px; 
+  padding: 40px;
   text-align: center;
   border: 2px solid #92776e;
   border-radius: 8px;
@@ -44,7 +44,7 @@ h2 {
 
 .category-container label {
   font-weight: bold;
-  color: #6d4b3f;
+  color: #1e1e1e;
   font-size: 1.7rem;
   font-family: 'Playfair';
 }
@@ -79,10 +79,10 @@ ul {
 
 li {
   background-color: #f2d8aa;
-  margin: 5px; 
+  margin: 5px;
   padding: 20px;
   border-radius: 10px;
-  flex: 1 1 calc(25% - 10px); 
+  flex: 1 1 calc(25% - 10px);
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
@@ -97,13 +97,13 @@ li {
 
 @media (max-width: 1200px) {
   li {
-    flex: 1 1 calc(33.33% - 10px); 
+    flex: 1 1 calc(33.33% - 10px);
   }
 }
 
 @media (max-width: 768px) {
   li {
-    flex: 1 1 calc(50% - 10px); 
+    flex: 1 1 calc(50% - 10px);
   }
 }
 
@@ -124,12 +124,12 @@ img {
   height: auto;
   border-radius: 8px;
   margin-bottom: 10px;
-  max-height: 200px; 
+  max-height: 200px;
   object-fit: cover;
 }
 
 p {
-  font-size: 1.8rem; 
+  font-size: 1.8rem;
   color: #333;
   font-weight: bold;
   margin-bottom: 10px;
@@ -165,7 +165,7 @@ button:focus {
 }
 
 p {
-  font-size: 1.8rem; 
+  font-size: 1.8rem;
   color: #333;
   font-weight: bold;
   margin-bottom: 10px;

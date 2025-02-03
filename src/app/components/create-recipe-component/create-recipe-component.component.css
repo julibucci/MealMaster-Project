@@ -8,11 +8,12 @@ div {
   max-width: 1200px;
   min-height: 29vh;
   margin: 50px auto;
+
 }
 
 
 h3 {
-  font-size: 48px;
+  font-size: 30px;
   color: #131313;
   text-align: center;
   margin-bottom: 20px;
@@ -51,10 +52,11 @@ textarea {
 
 
 h4 {
-  font-size: 22px;
+  font-size: 20px;
   color: #151515;
   margin-top: 30px;
   margin-bottom: 15px;
+  font-weight: bold;
 }
 
 
@@ -87,7 +89,7 @@ button:nth-of-type(1) {
   display: block; }
 
 button:nth-of-type(1):hover {
-  background-color: #f9b519;
+  background-color: #c88e1ada;
 }
 
 
@@ -114,10 +116,10 @@ button:nth-of-type(2):hover {
 }
 
 .ingredients-wrapper {
-  max-width: 100%; /* Limita el tamaño del contenedor a lo que le permite el contenedor principal */
+  max-width: 100%;
   width: 100%;
   margin-bottom: 15px;
-  height: 10px;/* Agrega un pequeño espacio después de los ingredientes */
+  height: 10px;
 }
 
 

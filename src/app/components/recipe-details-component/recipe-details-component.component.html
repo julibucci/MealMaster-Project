@@ -33,13 +33,17 @@
 <app-comment [comments]="comments" [recipeId]="recipeId"></app-comment>
 
 <div *ngIf="true">
-  <h3>Leave a comment:</h3>
-  <div class="comment-input-container">
-    <textarea formControlName="comment" rows="4" cols="50" placeholder="Write your comment.." required></textarea>
-  </div>
+  <form [formGroup]="commentForm" (ngSubmit)="addComment()">
+    <h3>Leave a comment:</h3>
+    <div class="comment-input-container">
+      <textarea formControlName="comment" rows="4" cols="50" placeholder="Write your comment.." required></textarea>
+    </div>
+
     <div *ngIf="commentForm.controls['comment'].invalid && commentForm.controls['comment'].touched" class="error-messages">
       <p *ngIf="commentForm.controls['comment'].hasError('maxlength')">The comment cannot exceed 500 characters.</p>
     </div>
+
     <br>
     <button type="submit" [disabled]="commentForm.invalid">Submit comment</button>
+  </form>
 </div>
