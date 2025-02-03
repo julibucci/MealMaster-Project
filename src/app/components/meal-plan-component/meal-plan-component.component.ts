@@ -67,6 +67,7 @@ export class MealPlanComponentComponent implements OnInit {
     console.log('After sorting:', this.mealPlan);
   }
 
+  // Cargar el plan de comidas
   loadMealPlan(): void {
     this.mealPlanService.getMealPlan(this.userId).subscribe((plan) => {
       console.log('API Response:', plan);
@@ -82,11 +83,13 @@ export class MealPlanComponentComponent implements OnInit {
     });
   }
 
+  // Eliminar receta del meal plan
   removeMeal(mealId: string): void {
     this.mealPlanService.removeMealFromPlan(mealId).subscribe(() => {
       this.mealPlan = this.mealPlan.filter((meal) => meal.id !== mealId);
     });
   }
+
 
   updateMealDay(mealId: string, event: any): void {
     const newDay = event.target.value;
@@ -99,6 +102,7 @@ export class MealPlanComponentComponent implements OnInit {
     this.sortMealPlan();
   }
 
+  // Actualizar la categoria de la receta
   updateMealCategory(mealId: string, event: any): void {
     const newCategory = event.target.value;
 
@@ -117,6 +121,7 @@ export class MealPlanComponentComponent implements OnInit {
     );
   }
 
+  // Ver detalles de la receta
   viewRecipeDetails(id: string): void {
         this.router.navigate(['/plan-premium/recipe-details', id]);
   }

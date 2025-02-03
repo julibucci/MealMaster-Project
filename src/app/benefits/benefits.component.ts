@@ -13,6 +13,7 @@ export class BenefitsComponent
 {
   constructor(private router: Router) {}
 
+  // Metodo para navegar a la pagina de pago
   navigateToPayment(): void {
     this.router.navigate(['/plan-basico/payment']);
   }

@@ -50,6 +50,7 @@ export class FavoritesComponent implements OnInit {
   }
 
   // Filtrar favoritos basados en la categoria seleccionada
+
   filterFavorites(): void {
     console.log("Selected category:", this.selectedCategory);
     console.log("Favorites before filtering:", this.favorites);
@@ -79,6 +80,7 @@ export class FavoritesComponent implements OnInit {
   }
 
   // Ver detalles de la receta
+  
   viewRecipeDetails(id: string): void {
     // Verifica si el usuario ya esta cargado
     this.userService.getUserProfile().subscribe(user => {

@@ -66,6 +66,7 @@ export class RecipeDetailsComponent implements OnInit {
   });
   }
 
+  // Obtener detalles de la receta
   getRecipeDetails(id: string): void {
     forkJoin([
       this.recipeService.getRecipesByUser(this.userId), // Obtener recetas del JSON Server
