@@ -2,12 +2,12 @@
 
 
 <pre>
-**Descripción del Proyecto**:
+Descripción del Proyecto:
 
 Meal Master es un sistema que permite a los usuarios gestionar su perfil, recetas, comentarios y listas de favoritos, así como acceder a funcionalidades premium mediante un modelo de pago. Está diseñado para simplificar la búsqueda y gestión de recetas y mejorar la experiencia del usuario a través de una interfaz intuitiva.
 
 
-Características
+Características:
 
 -Gestión de recetas, favoritos y comentarios.
 
@@ -22,8 +22,9 @@ Características
 
 
 Planes del Sistema:
+  
 
-### Plan Básico:
+Plan Básico:
 
 -Gestión de perfil del usuario (ABM).
 
@@ -37,7 +38,7 @@ Planes del Sistema:
 
 
 
-### Plan Premium:
+Plan Premium:
 
 -Gestión de recetas propias (ABM) por parte del usuario premium.
 
@@ -49,7 +50,7 @@ Planes del Sistema:
 
 
 
-## Herramientas Utilizadas
+Herramientas Utilizadas:
 
 -Lenguajes: JavaScript, HTML, CSS
 
@@ -63,7 +64,7 @@ Planes del Sistema:
 
 
 
-## Configuración Inicial del Proyecto
+Configuración Inicial del Proyecto:
 
 Antes de comenzar con el desarrollo, es necesario inicializar e instalar ciertas dependencias y configuraciones. Sigue estos pasos:
 
@@ -78,7 +79,7 @@ npm install @popperjs/core
 
 
 
-## Instrucciones para el Desarrollo
+Instrucciones para el Desarrollo:
 
 1) Clonar el repositorio:
 git clone https://github.com/julibucci/MealMaster-Project.git
@@ -95,14 +96,11 @@ Ejecuta los siguientes comandos para abrir los puertos necesarios (Asegúrate de
 
 -Inicia el servidor en el puerto 3002: json-server --watch db2.json --port 3002
 
-
 4) Navegar al directorio backend:
 cd backend
 
-
 5) Ejecutar el servidor backend:
 node server.js
-
 
 6) Ejecutar el servidor de desarrollo:
 ng serve
@@ -111,25 +109,26 @@ Esto iniciará la aplicación en http://localhost:4200/.
 
 
 
-## Perfiles de Prueba:
+Perfiles de Prueba:
 
-### INDICACIONES: REFRESCAR LA PÁGINA CADA VEZ QUE SE CAMBIA DE PERFIL.
+INDICACIONES: REFRESCAR LA PÁGINA CADA VEZ QUE SE CAMBIA DE PERFIL.
   
 
-### Para probar las funcionalidades del usuario básico, puedes usar este perfil:
+Para probar las funcionalidades del usuario básico, podés usar este perfil:
 
 -Email: jane.smith@example.com
 
 -Password: 456
   
 
-### Para probar las funcionalidades del usuario premium, puedes usar este perfil:
+Para probar las funcionalidades del usuario premium, podés usar este perfil:
 
 -Email: john.doe@example.com
 
 -Password: 123
   
 
-### También puedes crear tu propio perfil, que se inicializará con el plan básico y al simular el pago pasará a ser Premium.
+También podés crear tu propio perfil, que se inicializará con el plan básico.
+  
 
 </pre>
