@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant:wght@400&display=swap');
 body {
   background-color: #fff;
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   color: #333;
@@ -46,13 +45,13 @@ h2 {
 .category-container label {
   font-weight: bold;
   color: #6d4b3f;
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-family: 'Playfair';
 }
 
 .category-container select {
   padding: 12px;
-  font-size: 1rem;
+  font-size: 1.3rem;
   width: 250px;
   border: 2px solid #FF7043;
   border-radius: 5px;

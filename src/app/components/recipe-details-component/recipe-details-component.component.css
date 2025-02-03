@@ -1,6 +1,7 @@
-/* Estilos generales para la página de detalles de la receta */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant:wght@400&display=swap');
+
 .recipe-details-container {
-  font-family: Arial, sans-serif;
+  font-family: 'Playfair';
   background-color: rgba(112, 107, 107, 0.8);
   color: #0a0909;
   padding: 30px;
@@ -18,6 +19,7 @@ h2 {
   color: #0b0b0b;
   text-align: center;
   margin-bottom: 20px;
+  font-family: 'Playfair';
 }
 
 .recipe-details-container img {
@@ -36,6 +38,7 @@ h3 {
   color: #080808;
   margin-top: 30px;
   text-align: center;
+  font-family: 'Playfair';
 }
 
 /* Estilo para la lista de ingredientes */
@@ -43,6 +46,7 @@ h3 {
   list-style: none;
   padding: 0;
   margin: 0;
+  font-family: 'Playfair';
 }
 
 .ingredient-item {
@@ -59,6 +63,7 @@ h3 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s;
   border: 2px solid #6e6d6c;
+  font-family: 'Playfair';
 }
 
 .ingredient-item:hover {
@@ -72,12 +77,14 @@ h3 {
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
+  font-family: 'Playfair';
 }
 
 .instructions p {
   font-size: 1.2rem;
   color: #262323;
   margin-bottom: 20px;
+  font-family: 'Playfair';
 }
 
 /* Estilo para los botones */
@@ -92,6 +99,7 @@ button {
   transition: background-color 0.3s;
   display: block;
   margin: 20px auto;
+  font-family: 'Playfair';
 }
 
 button:hover {
@@ -103,6 +111,7 @@ a {
   color: #c1a69e;
   text-decoration: none;
   font-weight: bold;
+  font-family: 'Playfair';
 }
 
 a:hover {
@@ -116,6 +125,7 @@ a:hover {
   border-radius: 8px;
   margin-top: 20px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Playfair';
 }
 
 .category-area {
@@ -124,6 +134,7 @@ a:hover {
   text-align: center; /* Centra el texto */
   margin-bottom: 15px;
   font-weight: bold; /* Hace el texto más destacado */
+  font-family: 'Playfair';
 }
 
 .comments-section h3 {
@@ -131,12 +142,14 @@ a:hover {
   color: #0b0b0b;
   text-align: center;
   margin-bottom: 20px;
+  font-family: 'Playfair';
 }
 
 /* Estilo para la lista de comentarios */
 .comment-list {
   list-style: none;
   padding: 0;
+  font-family: 'Playfair';
   margin: 0;
 }
 
@@ -148,11 +161,13 @@ a:hover {
   border-radius: 8px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   font-size: 1.1rem;
+  font-family: 'Playfair';
 }
 
 .comment-item strong {
   color: #f8b852;
   font-size: 1.2rem;
+  font-family: 'Playfair';
 }
 
 .comment-item small {
@@ -160,6 +175,7 @@ a:hover {
   font-size: 0.9rem;
   color: #312f2f;
   margin-top: 5px;
+  font-family: 'Playfair';
 }
 
 .comment-form {
@@ -173,6 +189,7 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+  font-family: 'Playfair';
 }
 
 .comment-input-container {
@@ -180,6 +197,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   width: 100%;
+  font-family: 'Playfair';
 }
 
 .comment-input-container textarea {
@@ -193,12 +211,14 @@ a:hover {
   resize: vertical;
   background-color: #f2dec1;
   color: white;
+  font-family: 'Playfair';
 }
 /* Título dentro del contenedor */
 .comment-form h3 {
   font-size: 1.8rem;
   color: #070707;
   margin-bottom: 15px;
+  font-family: 'Playfair';
 }
 
 
@@ -216,6 +236,7 @@ a:hover {
   display: block;
   margin: 0 auto;
   color: #070707;
+  font-family: 'Playfair';
 }
 
 /* Estilo para el botón de enviar comentario */
@@ -230,6 +251,7 @@ a:hover {
   transition: background-color 0.3s;
   display: block;
   margin: 10px auto;
+  font-family: 'Playfair';
 }
 
 .comment-form button:hover {
@@ -240,6 +262,7 @@ a:hover {
   color: red;
   font-size: 0.9em;
   margin-top: 5px;
+  font-family: 'Playfair';
 }
 
 

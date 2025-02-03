@@ -29,6 +29,7 @@
     padding: 1rem;
     font-size: 1.1rem;
     width: 100vw;
+    font-family: 'Playfair';
 }
 
 .home-logo img {
@@ -53,9 +54,9 @@
 
 /* Botón de Log Out con tonos naranjas */
 button {
-    background-color: #FFE0B2; /* Naranja pastel suave */
-    color: #6D4C41;
-    border: 2px solid #FF7043;
+    background-color: #8f8e8d; /* Naranja pastel suave */
+    color: #0d0d0d;
+    border: 2px solid #171717;
     padding: 10px 20px;
     font-weight: bold;
     cursor: pointer;
@@ -65,6 +66,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Playfair';
 }
 
 button:hover {
@@ -87,6 +89,7 @@ h1 {
     font-size: 42px;
     margin-bottom: 15px;
     text-align: center;
+    font-family: 'Playfair';
 }
 
 p {
@@ -95,6 +98,7 @@ p {
     text-align: center;
     max-width: 600px;
     margin-bottom: 20px;
+    font-family: 'Playfair';
 }
 
 /* Estilos de input para formulario */
@@ -103,7 +107,7 @@ input[type="text"], textarea {
     padding: 12px;
     border: 2px solid #FFB385;
     border-radius: 8px;
-    background-color: #FFF3E0; /* Fondo beige claro */
+    background-color: #FFF3E0;
     color: #4E342E;
     font-size: 16px;
     margin-bottom: 15px;
@@ -112,7 +116,7 @@ input[type="text"], textarea {
 }
 
 input[type="text"]:focus, textarea:focus {
-    border-color: #FF7043; /* Naranja vibrante al enfocar */
+    border-color: #FF7043;
     outline: none;
 }
 

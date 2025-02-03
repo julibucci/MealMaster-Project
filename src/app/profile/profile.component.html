@@ -28,7 +28,7 @@
 
             <div *ngIf="user; else loading">
                 <div class="profile-details">
-                    <h2 class="text-decoration-underline">MY PROFILE</h2>
+                    <h2>MY PROFILE</h2>
 
                     <label>Profile Image:
                         <div class="profile-image">
@@ -45,8 +45,8 @@
                     <label>Tell us about yourself:
                         <textarea [(ngModel)]="user.bio" placeholder="Write a brief bio"></textarea>
                     </label>
-                    <button (click)="saveProfile()" class="btn btn-success">SAVE</button>
-                    <button (click)="deleteProfile()" class="btn btn-danger">DELETE</button>
+                    <button (click)="saveProfile()" class="btn btn-success">SAVE PROFILE</button>
+                    <button (click)="deleteProfile()" class="btn btn-danger">DELETE PROFILE</button>
                 </div>
             </div>
 

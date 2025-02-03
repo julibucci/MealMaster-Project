@@ -29,13 +29,6 @@
       "date": "2024-11-12T23:20:44.351Z"
     },
     {
-      "id": "5b28",
-      "userId": "1",
-      "idMeal": "52969",
-      "comment": "hola\n",
-      "date": "2024-11-15T06:26:25.668Z"
-    },
-    {
       "id": "3f12",
       "userId": "2",
       "idMeal": "52775",
@@ -48,13 +41,6 @@
       "idMeal": "53009",
       "comment": "The best recipe!",
       "date": "2024-11-17T19:40:40.958Z"
-    },
-    {
-      "id": "5871",
-      "userId": "1",
-      "idMeal": "52977",
-      "comment": "sdadsd",
-      "date": "2025-02-02T05:19:20.333Z"
     }
   ],
   "favorites": [
@@ -65,14 +51,6 @@
       "strMealThumb": "https://www.themealdb.com/images/media/meals/utxryw1511721587.jpg",
       "category": "Breakfast",
       "id": "e832"
-    },
-    {
-      "userId": 1,
-      "idMeal": "52957",
-      "strMeal": "Fruit and Cream Cheese Breakfast Pastries",
-      "strMealThumb": "https://www.themealdb.com/images/media/meals/1543774956.jpg",
-      "category": "Breakfast",
-      "id": "4e47"
     },
     {
       "userId": 1,
@@ -121,83 +99,68 @@
       "strMeal": "Kumpir",
       "strMealThumb": "https://www.themealdb.com/images/media/meals/mlchx21564916997.jpg",
       "category": "Side"
+    },
+    {
+      "id": "5ot9ts561",
+      "userId": "1",
+      "idMeal": "576044875",
+      "strMeal": "Turkey Taco Bowls",
+      "strMealThumb": "http://localhost:3001/uploads/1738546962022-Simply-Recipes-Turkey-Taco-Bowls-Lead-04-263a8ffab8bf4e9d90a7d63a9e2a926d.webp",
+      "category": "Beef"
     }
   ],
   "meals": [
     {
-      "idMeal": "5306",
-      "strMeal": "Chick-Fil-A Sandwich",
-      "strCategory": "Chicken",
-      "strInstructions": "In a small bowl, combine smoked paprika, cayenne, garlic powder, black pepper, and salt. Whisk to combine. In a different bowl, whisk the eggs with the milk, and set aside. In a separate dish, combine the flour with milk powder, baking powder, and the spice mix. To create a shaggy crust/crumbles, add 2 tablespoons of the egg milk mixture to the dry flour mixture, and rub with your fingertips until the flour mixture is coarse. In a dutch oven or a deep fryer, preheat about 2 inches (if using a dutch oven) of oil to 350°F (180°C) degrees. If you’re using a deep fryer, you need to fill enough oil to reach the “minimum” line.In a dutch oven or a deep fryer, preheat about 2 inches (if using a dutch oven) of oil to 350°F (180°C) degrees. If you’re using a deep fryer, you need to fill enough oil to reach the “minimum” line.In a dutch oven or a deep fryer, preheat about 2 inches (if using a dutch oven) of oil to 350°F (180°C) degrees. If you’re using a deep fryer, you need to fill enough oil to reach the “minimum” line.To coat your chicken like Chick-Fil-A, dip each chicken cutlet in the egg/milk mixture allowing any excess to drip off. Then, dredge the cutlets in the flour mixture pressing down firmly for it to adhere to the chicken. Shake off excess. Drop your chicken cutlets into the hot oil. Fry for 4 minutes if the oil covers the entire cutlet. If using shallow frying, fry for 3-4 minutes per side. The chicken is ready when the internal temperature registers at 165°F (74°C) degrees. Transfer to a wire rack or on paper towels then top with cheese (American, Colby Jack, or Pepper Jack). To assemble, toast the hamburger buns with some butter, spread the chick-fil-a sauce on both sides of the bun. Top with pickles, lettuce, 2 tomato slices, fried chicken, and cheese. Close the sandwich and there you have it, the best ever fried chicken sandwich that tastes even better than Chick-FilA!",
+      "id": "26e6",
+      "idMeal": "576044875",
+      "strMeal": "Turkey Taco Bowls",
+      "strCategory": "Beef",
+      "strArea": "Mexican",
+      "strInstructions": "Cook the turkey:\nHeat the oil in a large nonstick skillet over medium-high heat. Add the turkey and cook, stirring often with a wooden spoon to crumble the meat into smaller pieces, until cooked through, about 5 minutes. \n\nAdd the taco seasoning, water, and salt; cook, stirring constantly, until meat is coated in the seasoning, about 1 minute. Remove from heat and stir in 1/2 cup of the cilantro.\n\nAssemble the taco bowls:\nDivide the rice and optional shredded lettuce evenly among four bowls. Top evenly with turkey mixture, queso fresco, remaining cilantro, and thinly sliced radishes (if using).\n\nLet the turkey and rice come to room temperature before transferring them to an airtight container. Store in the refrigerator for up to 3 days. Reheat in a skillet until warm throughout.",
       "ingredients": [
         {
-          "ingredient": "Chicken Breast",
-          "measure": "1"
+          "ingredient": "Olive oil",
+          "measure": "2 tablespoons "
         },
         {
-          "ingredient": "Pickle Juice",
-          "measure": "1/4 cup"
-        }
-      ],
-      "userId": 1,
-      "id": "1984"
-    },
-    {
-      "idMeal": "5307",
-      "strMeal": "Biscuits",
-      "strCategory": "Dessert",
-      "strInstructions": "Step 1. Prepare oven and pan: First, preheat the oven to 450°F. Line a rimmed baking sheet with parchment paper and set it aside. Step 2. Combine ingredients: Put the flour in a large bowl and pour in the cream, stirring with a wooden spoon until the dough is combined but still a bit lumpy. Step 3. Roll out dough: Put the dough onto a lightly floured work surface and form it into a ball. Sprinkle it with more flour if it’s too sticky. Use a floured rolling pin to roll out the dough to 3/4-inch thickness. Cut it into rounds using a cutter, dipping the cutter into flour between each cut. Reroll any scraps as needed to make a dozen rounds in all. Step 4. Bake biscuits: Put the rounds on the prepared baking sheet and brush the tops of each with cream using a pastry brush. Bake in the oven until golden brown.",
-      "ingredients": [
-        {
-          "ingredient": "self-rising flour",
-          "measure": "2 cups"
+          "ingredient": "Ground turkey",
+          "measure": "1 pound "
         },
         {
-          "ingredient": "heavy cream",
-          "measure": "1 1/4 cups"
-        }
-      ],
-      "userId": 1,
-      "id": "1985"
-    },
-    {
-      "id": "f4da",
-      "idMeal": "321334",
-      "strMeal": "Smoked Mac and Cheese",
-      "strCategory": "Pasta",
-      "strArea": "American",
-      "strInstructions": "Preheat an electric smoker to 250 degrees F (120 degrees C), and add wood chips according to manufacturers’ directions. Use any wood chips that you would use for smoking meat.If prepared macaroni and cheese is not already in a heatproof dish, spoon it into a dish that can sit directly on the rack of a smoker. Divide cheese slices over the top.Place the dish directly on the rack of the smoker, and smoke until hot and bubbly, about 1 1/2 hours. Serve immediately.",
-      "ingredients": [
-        {
-          "ingredient": "Prepared macaroni and cheese",
-          "measure": "1 (20 ounce) package "
-        },
-        {
-          "ingredient": "American cheese",
-          "measure": "1 slice"
-        }
-      ],
-      "userId": "1"
-    },
-    {
-      "id": "23de",
-      "idMeal": "172897636",
-      "strMeal": "Pastel de chocolate con dos ingredientes",
-      "strCategory": "Dessert",
-      "strArea": "American",
-      "strInstructions": "Precalentar el horno a 170º y ponerse manos a la obra con este postre de 2 ingredientes.Fundir el chocolate al baño maría o al microondas.Montar las claras a punto de nieve (deben de estar muy firmes).Batir las yemas hasta que blanqueen e ir vertiendo el chocolate poco a poco y mezclando.Añadir poco a poco las claras montadas e ir incorporando con movimientos suaves y envolventes. Verter la preparación de bizcocho de chocolate con 2 ingredientes en un molde 18 cm forrado con papel de horno.Hornear al baño maría durante 15 min, bajar la temperatura del horno a 160º y dejar hornear otros 15 min.Apagar el horno, colocar una cuchara de madera en la puerta para que quede un poco abierta y dejar unos 15 min. Entreabrir la puerta y dejar enfriar con completo dentro del horno.",
-      "ingredients": [
-        {
-          "ingredient": "150 g de Chocolate Negro dsad150 g de Chocolate Negro 150 g de Chocolate Negro ",
-          "measure": "sdadsd"
+          "ingredient": "taco seasoning mix",
+          "measure": "2 tablespoons"
         },
         {
           "ingredient": "",
           "measure": ""
+        },
+        {
+          "ingredient": "cilantro",
+          "measure": "1 bunch"
         }
       ],
       "userId": "1",
-      "imageUrl": ""
+      "imageUrl": "http://localhost:3001/uploads/1738546962022-Simply-Recipes-Turkey-Taco-Bowls-Lead-04-263a8ffab8bf4e9d90a7d63a9e2a926d.webp"
+    },
+    {
+      "id": "68a8",
+      "idMeal": "854723813",
+      "strMeal": "Pistachio Milk",
+      "strCategory": "Vegan",
+      "strArea": "American",
+      "strInstructions": "Add pistachios to a large bowl with enough water to cover. Soak overnight; drain.\n\nPlace pistachios and 4 cups filtered water in a high powered blender, such as a Vitamix®. Blend until smooth and creamy.",
+      "ingredients": [
+        {
+          "ingredient": "Unsalted shelled pistachios",
+          "measure": "1 cup"
+        },
+        {
+          "ingredient": "Water",
+          "measure": "4 cups"
+        }
+      ],
+      "userId": "1",
+      "imageUrl": "http://localhost:3001/uploads/1738547127885-8713289_Pistachio-Milk_Yolanda-Gutierrez-4x3-1175a6373e1d4c42bf629e32821ff824.webp"
     }
   ],
   "mealPlans": [

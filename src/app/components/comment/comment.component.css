@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant:wght@400&display=swap');
+
 .comments-section {
   background-color: #f9f9f9;
   padding: 20px;
@@ -5,31 +7,35 @@
   box-shadow: 0px 4px 8px rgba(63, 63, 62, 0.1);
   margin-top: 20px;
   text-align: center;
+  font-family: 'Playfair';
 }
 
 .comments-section h3 {
   font-size: 10%;
   margin-bottom: 15px;
+  font-family: 'Playfair';
 }
 
 .comments-section {
-  background-color: #ecbc75; 
+  background-color: #ecbc75;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(203, 143, 32, 0.2);
   margin-top: 20px;
   text-align: center;
-  color: #f4f4f4; 
+  color: #f4f4f4;
+  font-family: 'Playfair';
 }
 
 .comments-section h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
   color: #151414;
+  font-family: 'Playfair';
 }
 
 .toggle-button {
-  background-color: #6d6d6b; 
+  background-color: #6d6d6b;
   color: #eae6e6;
   border: none;
   padding: 10px 15px;
@@ -39,10 +45,11 @@
   font-size: 1rem;
   font-weight: bold;
   transition: background-color 0.3s, transform 0.2s;
+  font-family: 'Playfair';
 }
 
 .toggle-button:hover {
-  background-color: #5f523a; 
+  background-color: #5f523a;
   transform: scale(1.05);
 }
 
@@ -51,6 +58,7 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  font-family: 'Playfair';
 }
 
 .comment-item {
@@ -60,9 +68,10 @@
   margin: 10px 0;
   border-radius: 8px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  font-size: 1.3rem; 
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
+  font-family: 'Playfair';
 }
 
 .comment-item div:first-child {
@@ -78,7 +87,8 @@
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s;
-  margin-left: 10px; 
+  margin-left: 10px;
+  font-family: 'Playfair';
 }
 
 .comment-item button:hover {
@@ -91,34 +101,35 @@
   border-radius: 8px;
   margin-top: 20px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Playfair';
 }
 
 .comment-item button:nth-child(1) {
-  background-color: #ff4d4d; 
+  background-color: #ff4d4d;
   color: white;
 }
 
 .comment-item button:nth-child(1):hover {
-  background-color: #cc0000; 
+  background-color: #cc0000;
   transform: scale(1.05);
 }
 
 .comment-item button:nth-child(2) {
-  background-color: #ffa500; 
+  background-color: #ffa500;
   color: black;
 }
 
 .comment-item button:nth-child(2):hover {
-  background-color: #cc8400; 
+  background-color: #cc8400;
   transform: scale(1.05);
 }
 
 .comment-item button:nth-child(3) {
-  background-color: #e64105; 
+  background-color: #e64105;
   color: white;
 }
 
 .comment-item button:nth-child(3):hover {
-  background-color: #c20c0c; 
+  background-color: #c20c0c;
   transform: scale(1.05);
 }
