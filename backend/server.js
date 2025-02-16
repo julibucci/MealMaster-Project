@@ -31,54 +31,55 @@ app.get('/paypal/access-token', async (req, res) => {
   }
 });
 
-// Crear producto
-app.post('/paypal/product', async (req, res) => {
-  const { name, description, accessToken } = req.body;
+// Crear orden de pago única
+app.post('/paypal/create-order', async (req, res) => {
+  const { accessToken } = req.body;
   try {
     const response = await axios.post(
-      `${PAYPAL_API}/v1/catalogs/products`,
+      `${PAYPAL_API}/v2/checkout/orders`,
       {
-        name,
-        description,
+        intent: 'CAPTURE',
+        purchase_units: [
+          {
+            amount: {
+              currency_code: 'USD',
+              value: '15.00',
+            },
+          },
+        ],
       },
       {
-        headers: { Authorization: `Bearer ${accessToken}` },
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
       }
     );
     res.json(response.data);
   } catch (error) {
-    console.error('Error creating product:', error.message);
-    res.status(500).send('Error creating product');
+    console.error('Error creating PayPal order:', error.message);
+    res.status(500).send('Error creating order');
   }
 });
 
-// Crear plan de suscripcion
-app.post('/paypal/plan', async (req, res) => {
-  const { productId, planName, price, accessToken } = req.body;
+// Capturar pago después de aprobación
+app.post('/paypal/capture-payment', async (req, res) => {
+  const { accessToken, orderId } = req.body;
   try {
     const response = await axios.post(
-      `${PAYPAL_API}/v1/billing/plans`,
+      `${PAYPAL_API}/v2/checkout/orders/${orderId}/capture`,
+      {},
       {
-        product_id: productId,
-        name: planName,
-        billing_cycles: [
-          {
-            frequency: { interval_unit: 'MONTH', interval_count: 1 },
-            tenure_type: 'REGULAR',
-            sequence: 1,
-            pricing_scheme: { fixed_price: { value: price, currency_code: 'USD' } },
-          },
-        ],
-        payment_preferences: { auto_bill_outstanding: true },
-      },
-      {
-        headers: { Authorization: `Bearer ${accessToken}` },
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
       }
     );
     res.json(response.data);
   } catch (error) {
-    console.error('Error creating plan:', error.message);
-    res.status(500).send('Error creating plan');
+    console.error('Error capturing payment:', error.message);
+    res.status(500).send('Error capturing payment');
   }
 });
 

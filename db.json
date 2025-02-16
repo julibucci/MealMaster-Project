@@ -23,7 +23,7 @@
       "name": "Julieta",
       "email": "julieta@example.com",
       "password": "123",
-      "userPlan": "premium"
+      "userPlan": "basic"
     },
     {
       "id": "de56",

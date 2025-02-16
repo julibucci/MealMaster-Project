@@ -32,38 +32,34 @@ export class PaymentComponent implements AfterViewInit {
       next: (tokenResponse: any) => {
         const accessToken = tokenResponse.access_token;
 
-        this.paypalService.createProduct('Premium Subscription', 'Access to premium recipes', accessToken).subscribe({
-          next: (productResponse: any) => {
-            const productId = productResponse.id;
+        this.paypalService.createOrder(accessToken).subscribe({
+          next: (orderResponse: any) => {
+            const orderId = orderResponse.id;
 
-            this.paypalService.createPlan(productId, 'Premium Plan', '9.99', accessToken).subscribe({
-              next: (planResponse: any) => {
-                const planId = planResponse.id;
-
-                paypal.Buttons({
-                  createSubscription: (data: any, actions: any) => {
-                    return actions.subscription.create({ plan_id: planId });
-                  },
-                  onApprove: (data: any, actions: any) => {
-                    return actions.subscription.get().then((details: any) => {
-                      this.onPaymentSuccess(details);
-                    });
-                  },
-                  onError: (err: any) => {
-                    console.error('PayPal error:', err);
-                    this.errorMessage = 'There was an issue with the payment. Please try again.';
-                  },
-                }).render('#paypal-button-container');
+            paypal.Buttons({
+              createOrder: (data: any, actions: any) => {
+                return orderId;
               },
-              error: (err) => {
-                console.error('Error creating PayPal plan:', err);
-                this.errorMessage = 'Could not create PayPal plan.';
+              onApprove: (data: any, actions: any) => {
+                this.paypalService.capturePayment(accessToken, data.orderID).subscribe({
+                  next: (paymentResponse: any) => {
+                    this.onPaymentSuccess(paymentResponse);
+                  },
+                  error: (err) => {
+                    console.error('Error capturing payment:', err);
+                    this.errorMessage = 'Payment was successful, but an issue occurred.';
+                  },
+                });
               },
-            });
+              onError: (err: any) => {
+                console.error('PayPal error:', err);
+                this.errorMessage = 'There was an issue with the payment. Please try again.';
+              },
+            }).render('#paypal-button-container');
           },
           error: (err) => {
-            console.error('Error creating PayPal product:', err);
-            this.errorMessage = 'Could not create PayPal product.';
+            console.error('Error creating PayPal order:', err);
+            this.errorMessage = 'Could not create PayPal order.';
           },
         });
       },
@@ -73,6 +69,7 @@ export class PaymentComponent implements AfterViewInit {
       },
     });
   }
+
 
   onPaymentSuccess(subscriptionDetails: any): void {
     const userId = localStorage.getItem('authUserId');

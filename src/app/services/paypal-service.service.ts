@@ -14,11 +14,11 @@ export class PaypalService {
     return this.http.get(`${this.backendUrl}/paypal/access-token`);
   }
 
-  createProduct(name: string, description: string, accessToken: string): Observable<any> {
-    return this.http.post(`${this.backendUrl}/paypal/product`, { name, description, accessToken });
+  createOrder(accessToken: string): Observable<any> {
+    return this.http.post(`${this.backendUrl}/paypal/create-order`, { accessToken });
   }
 
-  createPlan(productId: string, planName: string, price: string, accessToken: string): Observable<any> {
-    return this.http.post(`${this.backendUrl}/paypal/plan`, { productId, planName, price, accessToken });
+  capturePayment(accessToken: string, orderId: string): Observable<any> {
+    return this.http.post(`${this.backendUrl}/paypal/capture-payment`, { accessToken, orderId });
   }
 }
