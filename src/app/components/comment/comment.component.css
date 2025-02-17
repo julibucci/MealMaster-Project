@@ -7,13 +7,13 @@
   box-shadow: 0px 4px 8px rgba(63, 63, 62, 0.1);
   margin-top: 20px;
   text-align: center;
-  font-family: 'Playfair';
+  font-family: 'Playfair Display', serif;
 }
 
 .comments-section h3 {
   font-size: 10%;
   margin-bottom: 15px;
-  font-family: 'Playfair';
+  font-family: 'Playfair Display', serif;
 }
 
 .comments-section {
@@ -24,14 +24,14 @@
   margin-top: 20px;
   text-align: center;
   color: #f4f4f4;
-  font-family: 'Playfair';
+  font-family: 'Playfair Display', serif;
 }
 
 .comments-section h3 {
   font-size: 1.5rem;
   margin-bottom: 15px;
   color: #151414;
-  font-family: 'Playfair';
+  font-family: 'Playfair Display', serif;
 }
 
 .toggle-button {
@@ -45,12 +45,13 @@
   font-size: 1rem;
   font-weight: bold;
   transition: background-color 0.3s, transform 0.2s;
-  font-family: 'Playfair';
+  font-family: 'Playfair Display', serif;
 }
 
 .toggle-button:hover {
   background-color: #5f523a;
   transform: scale(1.05);
+  font-family: 'Playfair Display', serif;
 }
 
 
@@ -58,12 +59,12 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  font-family: 'Playfair';
+  font-family: 'Playfair Display', serif;
 }
 
 .comment-item {
   background-color: #ded0c1;
-  color: #333;
+  color: #2f2f2f;
   padding: 15px;
   margin: 10px 0;
   border-radius: 8px;
@@ -71,11 +72,12 @@
   font-size: 1.3rem;
   display: flex;
   align-items: center;
-  font-family: 'Playfair';
+  font-family: 'Playfair Display', serif;
 }
 
 .comment-item div:first-child {
   flex-grow: 1;
+  font-family: 'Playfair Display', serif;
 }
 
 .comment-item button {
@@ -88,11 +90,12 @@
   border-radius: 5px;
   transition: background-color 0.3s;
   margin-left: 10px;
-  font-family: 'Playfair';
+  font-family: 'Playfair Display', serif;
 }
 
 .comment-item button:hover {
   background-color: #6f6b69;
+  font-family: 'Playfair Display', serif;
 }
 
 .comments-section {
@@ -101,35 +104,41 @@
   border-radius: 8px;
   margin-top: 20px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: 'Playfair';
+  font-family: 'Playfair Display', serif;
 }
 
 .comment-item button:nth-child(1) {
   background-color: #ff4d4d;
   color: white;
+  font-family: 'Playfair Display', serif;
 }
 
 .comment-item button:nth-child(1):hover {
   background-color: #cc0000;
   transform: scale(1.05);
+  font-family: 'Playfair Display', serif;
 }
 
 .comment-item button:nth-child(2) {
   background-color: #ffa500;
-  color: black;
+  color: rgb(45, 44, 44);
+  font-family: 'Playfair Display', serif;
 }
 
 .comment-item button:nth-child(2):hover {
   background-color: #cc8400;
   transform: scale(1.05);
+  font-family: 'Playfair Display', serif;
 }
 
 .comment-item button:nth-child(3) {
   background-color: #e64105;
   color: white;
+  font-family: 'Playfair Display', serif;
 }
 
 .comment-item button:nth-child(3):hover {
   background-color: #c20c0c;
   transform: scale(1.05);
+  font-family: 'Playfair Display', serif;
 }

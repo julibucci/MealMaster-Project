@@ -95,14 +95,6 @@
       "email": "juana@yahoo.com",
       "password": "123",
       "userPlan": "basic"
-    },
-    {
-      "id": "ef5f",
-      "name": "lucia",
-      "email": "luu0808perez@gmail.com",
-      "password": "123",
-      "userPlan": "premium",
-      "profileImage": "http://localhost:3001/uploads/1739761560788-Gordon_Ramsay.jpg"
     }
   ]
 }
