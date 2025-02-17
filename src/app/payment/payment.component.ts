@@ -77,7 +77,9 @@ export class PaymentComponent implements AfterViewInit {
       this.userService.upgradeToPremium(userId).subscribe({
         next: () => {
           this.paymentSuccess = true;
-          this.router.navigate(['/plan-premium/home']);
+          this.router.navigate(['/plan-premium/home']).then(() => {
+            window.location.reload();
+          });
         },
         error: (error) => {
           console.error('Error upgrading plan:', error);

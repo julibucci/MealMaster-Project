@@ -23,8 +23,8 @@ export class AuthComponent {
   isPasswordVisible: boolean = false; // ojo abierto o cerrado
 
   constructor(
-    private fb: FormBuilder, 
-    private authService: AuthService, 
+    private fb: FormBuilder,
+    private authService: AuthService,
     private router: Router
   ) {
     // Formulario de login
@@ -37,26 +37,26 @@ export class AuthComponent {
     this.registerForm = this.fb.group({
       name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]], // Validacion para solo letras
       email: ['', [Validators.required, Validators.email, Validators.pattern(/^[a-zA-Z0-9._%+-]+@(gmail|yahoo)\.com$/)]],
-      password: ['', [Validators.required, Validators.minLength(3)]], 
+      password: ['', [Validators.required, Validators.minLength(3)]],
     });
   }
 
   // Metodo para enviar el formulario de login o registro
   onSubmit(): void {
     this.errorMessage = null;
-  
+
     if (this.isLoginMode) {
       if (this.loginForm.invalid) {
         this.errorMessage = 'Please fill in all fields correctly.';
         return;
       }
-  
+
       const credentials: LoginCredentials = this.loginForm.value;
       this.authService.login(credentials).subscribe({
         next: (response) => {
           console.log('Logged in', response);
           const userPlan = response.user.userPlan;
-  
+
           if (userPlan === 'premium') {
             this.router.navigate(['/plan-premium']);
           } else {
@@ -73,17 +73,21 @@ export class AuthComponent {
         this.errorMessage = 'Please fill in all fields correctly.';
         return;
       }
-  
+
       const userData: RegisterData = this.registerForm.value;
       this.authService.register(userData).subscribe({
         next: (response) => {
           console.log('Registered', response);
           const userPlan = response.user.userPlan;
-  
+
           if (userPlan === 'premium') {
             this.router.navigate(['/plan-premium']);
           } else {
             this.router.navigate(['/plan-basico']);
+
+          setTimeout(() => {
+            window.location.reload();
+          }, 50);
           }
         },
         error: (error) => {
@@ -92,6 +96,7 @@ export class AuthComponent {
         }
       });
     }
+
   }
 
   // Metodo para cambiar entre modo de login y registro

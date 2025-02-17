@@ -31,7 +31,9 @@ export class PlanPremiumComponent implements OnInit {
   // Metodo para cerrar sesion
   logout(): void {
     this.authService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login']).then(() => {
+      window.location.reload();
+    });
   }
 }
 

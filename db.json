@@ -4,7 +4,7 @@
       "id": "1",
       "name": "John Doe",
       "email": "john.doe@example.com",
-      "profileImage": "http://localhost:3001/uploads/1738261597032-4bdc66d9e8e8b3238177d08e4ccd702f.jpg",
+      "profileImage": "http://localhost:3001/uploads/1739761332867-Gordon_Ramsay.jpg",
       "bio": "I'm a professional chef",
       "password": "123",
       "userPlan": "premium"
@@ -13,7 +13,7 @@
       "id": "2",
       "name": "Jane Smith",
       "email": "jane.smith@example.com",
-      "profileImage": "http://localhost:3001/uploads/1738122250036-4bdc66d9e8e8b3238177d08e4ccd702f.jpg",
+      "profileImage": "http://localhost:3001/uploads/1739760886451-4bdc66d9e8e8b3238177d08e4ccd702f.jpg",
       "bio": "I'm an aspiring home cook",
       "password": "456",
       "userPlan": "basic"
@@ -95,6 +95,14 @@
       "email": "juana@yahoo.com",
       "password": "123",
       "userPlan": "basic"
+    },
+    {
+      "id": "ef5f",
+      "name": "lucia",
+      "email": "luu0808perez@gmail.com",
+      "password": "123",
+      "userPlan": "premium",
+      "profileImage": "http://localhost:3001/uploads/1739761560788-Gordon_Ramsay.jpg"
     }
   ]
 }

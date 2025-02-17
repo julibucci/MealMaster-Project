@@ -8,7 +8,7 @@
 <div class="profile-page">
     <div class="profile-container">
 
-      
+
         <div class="chef-container-wrapper">
             <div class="chef-container">
                 <img src="https://www.shutterstock.com/image-photo/young-beautiful-asian-woman-chef-600nw-2317761803.jpg"
@@ -20,7 +20,7 @@
             </div>
         </div>
 
-        
+
         <div class="profile-content">
             <div *ngIf="errorMessage" class="error-message">
                 {{ errorMessage }}
@@ -32,7 +32,7 @@
 
                     <label>Profile Image:
                         <div class="profile-image">
-                            <img [src]="user.profileImage || 'assets/default-profile.png'" alt="Profile Image" />
+                          <img [src]="user.profileImage ? user.profileImage : 'assets/default-profile.png'" alt="Profile Image" />
                         </div>
                         <input type="file" (change)="onFileSelected($event)" />
                     </label>

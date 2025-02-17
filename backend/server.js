@@ -91,7 +91,7 @@ const path = require('path');
 const fs = require('fs');
 
 
-// Configuracion de Multer para guardar imagenes
+// Configuración de Multer para guardar imágenes
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'uploads/');
@@ -106,27 +106,41 @@ const upload = multer({ storage });
 // Endpoint para subir la imagen de perfil
 app.post('/api/upload-profile-image/:userId', upload.single('file'), (req, res) => {
   if (!req.file) {
+    console.log('No file uploaded.');
     return res.status(400).send('No file uploaded.');
   }
 
   const userId = req.params.userId;
   const imageUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
 
+  const dbPath = path.join(__dirname, '../db.json'); // Ruta al archivo JSON
+  console.log('Reading database:', dbPath);
 
-  const users = require('./db.json').users;
-  const userIndex = users.findIndex(user => user.id === userId);
+  try {
+    const rawData = fs.readFileSync(dbPath, 'utf-8');
+    const db = JSON.parse(rawData);
 
-  if (userIndex === -1) {
-    return res.status(404).send('User not found.');
+    const userIndex = db.users.findIndex(user => user.id === userId);
+
+    if (userIndex === -1) {
+      console.log('User not found:', userId);
+      return res.status(404).send('User not found.');
+    }
+
+    console.log('Updating user:', db.users[userIndex]);
+    db.users[userIndex].profileImage = imageUrl;
+
+    // Guardar los cambios en la base de datos
+    fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf-8');
+    console.log('Database updated successfully');
+
+    res.json({ imageUrl });
+  } catch (error) {
+    console.error('Error updating profile image:', error);
+    res.status(500).send('Internal server error.');
   }
-
-  users[userIndex].profileImage = imageUrl;
-
-  // Guardar los cambios en la base de datos
-  fs.writeFileSync('./db.json', JSON.stringify({ users }, null, 2));
-
-  res.json({ imageUrl });
 });
+
 
 // Endpoint para subir la imagen de la receta
 app.post('/api/upload-recipe-image/:idMeal', upload.single('file'), (req, res) => {

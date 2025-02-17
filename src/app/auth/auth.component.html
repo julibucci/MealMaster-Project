@@ -7,9 +7,9 @@
       <!-- Campo del name (solo para modo de registro) -->
       <div *ngIf="!isLoginMode" class="form-group">
         <label for="name">Name:</label>
-        <input formControlName="name" id="name" type="text" placeholder="Enter your name" 
-               class="form-control" 
-               [ngClass]="{'is-valid': registerForm.get('name')?.valid && registerForm.get('name')?.touched, 
+        <input formControlName="name" id="name" type="text" placeholder="Enter your name"
+               class="form-control"
+               [ngClass]="{'is-valid': registerForm.get('name')?.valid && registerForm.get('name')?.touched,
                            'is-invalid': registerForm.get('name')?.invalid && registerForm.get('name')?.touched}" />
         <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="invalid-feedback">
           Please enter a valid name (letters only).
@@ -20,8 +20,8 @@
       <div class="form-group">
         <label for="email">Email:</label>
         <input formControlName="email" id="email" type="email" placeholder="Enter your email"
-               class="form-control" 
-               [ngClass]="{'is-valid': (isLoginMode ? loginForm : registerForm).get('email')?.valid && (isLoginMode ? loginForm : registerForm).get('email')?.touched, 
+               class="form-control"
+               [ngClass]="{'is-valid': (isLoginMode ? loginForm : registerForm).get('email')?.valid && (isLoginMode ? loginForm : registerForm).get('email')?.touched,
                            'is-invalid': (isLoginMode ? loginForm : registerForm).get('email')?.invalid && (isLoginMode ? loginForm : registerForm).get('email')?.touched}" />
         <div *ngIf="(isLoginMode ? loginForm : registerForm).get('email')?.invalid && (isLoginMode ? loginForm : registerForm).get('email')?.touched" class="invalid-feedback">
           Please provide a valid email (gmail or yahoo).
@@ -32,8 +32,8 @@
       <div class="form-group">
         <label for="password">Password:</label>
         <input formControlName="password" id="password" [type]="isPasswordVisible ? 'text' : 'password'" placeholder="Enter your password"
-               class="form-control" 
-               [ngClass]="{'is-valid': (isLoginMode ? loginForm : registerForm).get('password')?.valid && (isLoginMode ? loginForm : registerForm).get('password')?.touched, 
+               class="form-control"
+               [ngClass]="{'is-valid': (isLoginMode ? loginForm : registerForm).get('password')?.valid && (isLoginMode ? loginForm : registerForm).get('password')?.touched,
                            'is-invalid': (isLoginMode ? loginForm : registerForm).get('password')?.invalid && (isLoginMode ? loginForm : registerForm).get('password')?.touched}" />
 
         <div class="input-group-append">
