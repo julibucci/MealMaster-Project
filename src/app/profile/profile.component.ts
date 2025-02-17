@@ -3,6 +3,7 @@ import { UserService } from '../services/user.service';
 import { User } from '../interfaces/user.interface';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -17,7 +18,9 @@ export class ProfileComponent implements OnInit {
   selectedFile: File | null = null;
   currentUserId: string | null = null;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService,
+      private router: Router,
+      private route: ActivatedRoute) {}
 
   ngOnInit(): void {
      // Cargar el perfil del usuario al inicio
@@ -156,6 +159,9 @@ export class ProfileComponent implements OnInit {
             'Failed to delete profile. Please try again later.'),
       });
     }
+    this.router.navigate(['/login']).then(() => {
+      window.location.reload();
+    });
   }
 }
 

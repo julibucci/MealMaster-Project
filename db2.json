@@ -4,7 +4,7 @@
       "id": "a8bbb",
       "userId": 1,
       "idMeal": "52895",
-      "comment": "Esta receta está deliciosa, la volveré a hacer.",
+      "comment": "Esta receta está deliciosa, la volveré a hacer!",
       "date": "2024-11-12T10:00:00Z"
     },
     {
@@ -41,6 +41,13 @@
       "idMeal": "53009",
       "comment": "The best recipe!",
       "date": "2024-11-17T19:40:40.958Z"
+    },
+    {
+      "id": "9e3d",
+      "userId": "1",
+      "idMeal": "52967",
+      "comment": "dsadd",
+      "date": "2025-02-17T04:09:59.409Z"
     }
   ],
   "favorites": [
@@ -115,6 +122,14 @@
       "strMeal": "Japanese gohan rice",
       "strMealThumb": "https://www.themealdb.com/images/media/meals/kw92t41604181871.jpg",
       "category": "Side"
+    },
+    {
+      "id": "wbxnkh7i2",
+      "userId": "1",
+      "idMeal": "53027",
+      "strMeal": "Koshari",
+      "strMealThumb": "https://www.themealdb.com/images/media/meals/4er7mj1598733193.jpg",
+      "category": "Vegetarian"
     }
   ],
   "meals": [
@@ -508,6 +523,93 @@
         "strMeasure19": "",
         "strMeasure20": "",
         "strSource": "https://www.bbc.co.uk/food/recipes/stressfreefullenglis_67721",
+        "strImageSource": null,
+        "strCreativeCommonsConfirmed": null,
+        "dateModified": null
+      },
+      "category": "uncategorized",
+      "day": null
+    },
+    {
+      "id": "1-854723813",
+      "userId": "1",
+      "recipe": {
+        "id": "68a8",
+        "idMeal": "854723813",
+        "strMeal": "Pistachio Milk",
+        "strCategory": "Vegan",
+        "strArea": "American",
+        "strInstructions": "Add pistachios to a large bowl with enough water to cover. Soak overnight; drain.\n\nPlace pistachios and 4 cups filtered water in a high powered blender, such as a Vitamix®. Blend until smooth and creamy.",
+        "ingredients": [
+          {
+            "ingredient": "Unsalted shelled pistachios",
+            "measure": "1 cup"
+          },
+          {
+            "ingredient": "Water",
+            "measure": "4 cups"
+          }
+        ],
+        "userId": "1",
+        "imageUrl": "http://localhost:3001/uploads/1738547127885-8713289_Pistachio-Milk_Yolanda-Gutierrez-4x3-1175a6373e1d4c42bf629e32821ff824.webp"
+      },
+      "category": "uncategorized",
+      "day": null
+    },
+    {
+      "id": "1-53027",
+      "userId": "1",
+      "recipe": {
+        "idMeal": "53027",
+        "strMeal": "Koshari",
+        "strDrinkAlternate": null,
+        "strCategory": "Vegetarian",
+        "strArea": "Egyptian",
+        "strInstructions": "Cook the lentils. Bring lentils and 4 cups of water to a boil in a medium pot or saucepan over high heat. Reduce the heat to low and cook until lentils are just tender (15-17 minutes). Drain from water and season with a little salt. (Note: when the lentils are ready, they should not be fully cooked. They should be only par-cooked and still have a bite to them as they need to finish cooking with the rice).\r\nNow, for the rice. Drain the rice from its soaking water. Combine the par-cooked lentils and the rice in the saucepan over medium-high heat with 1 tbsp cooking oil, salt, pepper, and coriander. Cook for 3 minutes, stirring regularly. Add warm water to cover the rice and lentil mixture by about 1 1/2 inches (you’ll probably use about 3 cups of water here). Bring to a boil; the water should reduce a bit. Now cover and cook until all the liquid has been absorbed and both the rice and lentils are well cooked through (about 20 minutes).  Keep covered and undisturbed for 5 minutes or so.\r\nNow make the pasta. While the rice and lentils are cooking, make the pasta according to package instructions by adding the elbow pasta to boiling water with a dash of salt and a little oil. Cook until the pasta is al dente. Drain.\r\nCover the chickpeas and warm in the microwave briefly before serving.\r\n\r\nMake the crispy onion topping. \r\n\r\nSprinkle the onion rings with salt, then toss them in the flour to coat. Shake off excess flour.\r\nIn a large skillet, heat the cooking oil over medium-high heat, cook the onion rings, stirring often, until they turn a nice caramelized brown. Onions must be crispy, but not burned (15-20 minutes).",
+        "strMealThumb": "https://www.themealdb.com/images/media/meals/4er7mj1598733193.jpg",
+        "strTags": null,
+        "strYoutube": "https://www.youtube.com/watch?v=y0d2ZMZBW4Y",
+        "strIngredient1": "Brown Lentils",
+        "strIngredient2": "Rice",
+        "strIngredient3": "Coriander",
+        "strIngredient4": "Macaroni",
+        "strIngredient5": "Chickpeas",
+        "strIngredient6": "Onion",
+        "strIngredient7": "Salt",
+        "strIngredient8": "Vegetable Oil",
+        "strIngredient9": "",
+        "strIngredient10": "",
+        "strIngredient11": "",
+        "strIngredient12": "",
+        "strIngredient13": "",
+        "strIngredient14": "",
+        "strIngredient15": "",
+        "strIngredient16": "",
+        "strIngredient17": "",
+        "strIngredient18": "",
+        "strIngredient19": "",
+        "strIngredient20": "",
+        "strMeasure1": "1 1/2 cups ",
+        "strMeasure2": "1 1/2 cups ",
+        "strMeasure3": "1/2 tsp",
+        "strMeasure4": "2 cups ",
+        "strMeasure5": "Can",
+        "strMeasure6": "1 large",
+        "strMeasure7": "Sprinking",
+        "strMeasure8": "1/2 cup ",
+        "strMeasure9": " ",
+        "strMeasure10": " ",
+        "strMeasure11": " ",
+        "strMeasure12": " ",
+        "strMeasure13": " ",
+        "strMeasure14": " ",
+        "strMeasure15": " ",
+        "strMeasure16": " ",
+        "strMeasure17": " ",
+        "strMeasure18": " ",
+        "strMeasure19": " ",
+        "strMeasure20": " ",
+        "strSource": "https://www.themediterraneandish.com/egyptian-koshari-recipe/",
         "strImageSource": null,
         "strCreativeCommonsConfirmed": null,
         "dateModified": null

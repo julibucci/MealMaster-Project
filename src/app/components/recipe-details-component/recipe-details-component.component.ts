@@ -139,6 +139,7 @@ export class RecipeDetailsComponent implements OnInit {
     this.favoriteService.addFavorite(favorite).subscribe(() => {
       this.isFavorite = true;  // Marcar como favorito
       alert('Recipe added to favorites');
+      window.location.reload();
     });
   }
 
@@ -183,6 +184,7 @@ export class RecipeDetailsComponent implements OnInit {
     }
     this.mealPlanService.addMealToPlan(this.userId, this.recipeDetails).subscribe(() => {
       alert("Recipe added to meal plan!");
+      window.location.reload();
     });
   }
 }

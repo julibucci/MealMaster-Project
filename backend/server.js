@@ -113,7 +113,7 @@ app.post('/api/upload-profile-image/:userId', upload.single('file'), (req, res) 
   const userId = req.params.userId;
   const imageUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
 
-  const dbPath = path.join(__dirname, '../db.json'); // Ruta al archivo JSON
+  const dbPath = path.join(__dirname, '../db.json');
   console.log('Reading database:', dbPath);
 
   try {
